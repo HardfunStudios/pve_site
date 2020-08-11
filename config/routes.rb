@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
   # wp-connector endpoints
-  get    'test-webhook/:model', to: 'wpconnector#model_save'
+  match 'test-webhook/:model', to: 'wpconnector#model_save', via: [:head, :post]
 end
