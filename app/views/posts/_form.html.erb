@@ -1,0 +1,127 @@
+<%= form_with(model: post, local: true) do |form| %>
+  <% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+        <% post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :post_author %>
+    <%= form.text_field :post_author %>
+  </div>
+
+  <div class="field">
+    <%= form.label :post_date_gmt %>
+    <%= form.datetime_select :post_date_gmt %>
+  </div>
+
+  <div class="field">
+    <%= form.label :post_content %>
+    <%= form.text_area :post_content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :post_title %>
+    <%= form.text_field :post_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :post_status %>
+    <%= form.text_field :post_status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :post_excerpt %>
+    <%= form.text_area :post_excerpt %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comment_status %>
+    <%= form.text_field :comment_status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ping_status %>
+    <%= form.text_field :ping_status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :post_nama %>
+    <%= form.text_field :post_nama %>
+  </div>
+
+  <div class="field">
+    <%= form.label :post_modified %>
+    <%= form.datetime_select :post_modified %>
+  </div>
+
+  <div class="field">
+    <%= form.label :post_modified_gmt %>
+    <%= form.datetime_select :post_modified_gmt %>
+  </div>
+
+  <div class="field">
+    <%= form.label :post_content_filtered %>
+    <%= form.text_field :post_content_filtered %>
+  </div>
+
+  <div class="field">
+    <%= form.label :post_parent %>
+    <%= form.number_field :post_parent %>
+  </div>
+
+  <div class="field">
+    <%= form.label :post_wp_id %>
+    <%= form.number_field :post_wp_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :menu_order %>
+    <%= form.number_field :menu_order %>
+  </div>
+
+  <div class="field">
+    <%= form.label :guid %>
+    <%= form.text_field :guid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :post_type %>
+    <%= form.text_field :post_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :post_mime_type %>
+    <%= form.text_field :post_mime_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comment_count %>
+    <%= form.number_field :comment_count %>
+  </div>
+
+  <div class="field">
+    <%= form.label :filter %>
+    <%= form.text_field :filter %>
+  </div>
+
+  <div class="field">
+    <%= form.label :post_meta %>
+    <%= form.text_field :post_meta %>
+  </div>
+
+  <div class="field">
+    <%= form.label :post_thumbnail %>
+    <%= form.text_field :post_thumbnail %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

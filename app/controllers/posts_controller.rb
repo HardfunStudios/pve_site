@@ -1,43 +1,74 @@
 class PostsController < ApplicationController
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
 
+  # GET /posts
+  # GET /posts.json
+  def index
+    @posts = Post.all
+  end
+
+  # GET /posts/1
+  # GET /posts/1.json
+  def show
+  end
+
+  # GET /posts/new
   def new
-    @post = Wordpress::Post.new
+    @post = Post.new
   end
 
-  # Simply call #save on the newly created post
+  # GET /posts/1/edit
+  def edit
+  end
+
+  # POST /posts
+  # POST /posts.json
   def create
-    begin
-      @post = Wordpress::Post.new(post_params)
-      @post.save!
-      redirect_to post_path(@post), notice: 'Post was successfully created.'
-    rescue
-      render action: 'new'
+    @post = Post.new(post_params)
+
+    respond_to do |format|
+      if @post.save
+        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.json { render :show, status: :created, location: @post }
+      else
+        format.html { render :new }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
     end
   end
 
-  # This is an example of how to "revert" to an earlier version of the post
-  def revert
-    revision = Wordpress::Revision.find(params[:id])
-    revision.update_attribute(:post_modified, Time.now)
-    redirect_to edit_post_path(revision.parent)
-  end
-
-  # Note the use of "new_revision" against the post to save!
+  # PATCH/PUT /posts/1
+  # PATCH/PUT /posts/1.json
   def update
-    begin
-      @post.new_revision(post_params).save!
-      redirect_to post_path(@post), notice: 'Post was successfully updated.'
-    rescue
-      render action: 'edit'
+    respond_to do |format|
+      if @post.update(post_params)
+        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
+        format.json { render :show, status: :ok, location: @post }
+      else
+        format.html { render :edit }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
     end
   end
 
-  def set_post
-    @post = Wordpress::Post.find(params[:id])
-    @title = @post.title
+  # DELETE /posts/1
+  # DELETE /posts/1.json
+  def destroy
+    @post.destroy
+    respond_to do |format|
+      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
-  def post_params
-    params[:post].permit(:post_title, :post_content, :post_excerpt, :post_tags, :post_categories => [])
-  end
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_post
+      @post = Post.find(params[:id])
+    end
+
+    # Only allow a list of trusted parameters through.
+    def post_params
+      params.require(:post).permit(:post_author, :post_date_gmt, :post_content, :post_title, :post_status, :post_excerpt, :comment_status, :ping_status, :post_nama, :post_modified, :post_modified_gmt, :post_content_filtered, :post_parent, :post_wp_id, :menu_order, :guid, :post_type, :post_mime_type, :comment_count, :filter, :post_meta, :post_thumbnail)
+    end
 end

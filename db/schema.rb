@@ -10,18 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_10_154107) do
+ActiveRecord::Schema.define(version: 2020_08_12_173313) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "posts", force: :cascade do |t|
-    t.integer "wp_id"
-    t.string "title"
-    t.integer "author_id"
-    t.text "content"
-    t.string "slug"
-    t.text "excerpt"
+    t.string "post_author"
+    t.datetime "post_date_gmt"
+    t.text "post_content"
+    t.string "post_title"
+    t.string "post_status"
+    t.text "post_excerpt"
+    t.string "comment_status"
+    t.string "ping_status"
+    t.string "post_nama"
+    t.datetime "post_modified"
+    t.datetime "post_modified_gmt"
+    t.string "post_content_filtered"
+    t.integer "post_parent"
+    t.integer "post_wp_id"
+    t.integer "menu_order"
+    t.string "guid"
+    t.string "post_type"
+    t.string "post_mime_type"
+    t.integer "comment_count"
+    t.string "filter"
+    t.json "post_meta"
+    t.string "post_thumbnail"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
