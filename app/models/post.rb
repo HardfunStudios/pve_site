@@ -1,8 +1,11 @@
 class Post < ApplicationRecord
-  def self.schedule_create_or_update(wp_id_from_params, params)
+  
+  def self.create_from_hook(params)
     puts "=================================="
-    puts wp_id_from_params
-    puts "-------"
     puts params.to_json
+  end
+  
+  def self.update_from_hook(params)
+    
   end
 end
