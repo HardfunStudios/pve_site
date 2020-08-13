@@ -1,11 +1,20 @@
 class Post < ApplicationRecord
   
   def self.create_from_hook(params)
-    puts "=================================="
-    puts params.to_json
-    
     json_post = JSON.parse(params.to_json)
 
+    existing_post = Post.where(post_wp_id: json_post.dig('post_id'))
+
+    if existing_post.empty?
+      existing_post = create_post(post, post_id)
+      puts existing_post
+    else
+      existing_post = existing_post.first
+      update_post(json_post, existing_post)
+    end
+  end
+
+  def create_post(json_post)
     post = Post.new
 
     post.post_author = json_post.dig('post', 'post_author')
@@ -47,6 +56,8 @@ class Post < ApplicationRecord
   end
   
   def self.update_from_hook(params)
+    puts "=================================="
+    puts params.to_json
    
     
   end
