@@ -56,9 +56,6 @@ class Post < ApplicationRecord
   end
   
   def self.update_from_hook(params)
-    puts "=================================="
     puts params.to_json
-   
-    
   end
 end
