@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Categories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Term wp</th>
+      <th>Name</th>
+      <th>Slug</th>
+      <th>Term group</th>
+      <th>Term taxonomy</th>
+      <th>Taxonomy</th>
+      <th>Description</th>
+      <th>Parent wp</th>
+      <th>Count</th>
+      <th>Filter</th>
+      <th>Parent</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td><%= category.term_wp_id %></td>
+        <td><%= category.name %></td>
+        <td><%= category.slug %></td>
+        <td><%= category.term_group %></td>
+        <td><%= category.term_taxonomy_id %></td>
+        <td><%= category.taxonomy %></td>
+        <td><%= category.description %></td>
+        <td><%= category.parent_wp_id %></td>
+        <td><%= category.count %></td>
+        <td><%= category.filter %></td>
+        <td><%= category.parent_id %></td>
+        <td><%= link_to 'Show', category %></td>
+        <td><%= link_to 'Edit', edit_category_path(category) %></td>
+        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Category', new_category_path %>

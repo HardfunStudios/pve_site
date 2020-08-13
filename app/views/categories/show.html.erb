@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Term wp:</strong>
+  <%= @category.term_wp_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @category.name %>
+</p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @category.slug %>
+</p>
+
+<p>
+  <strong>Term group:</strong>
+  <%= @category.term_group %>
+</p>
+
+<p>
+  <strong>Term taxonomy:</strong>
+  <%= @category.term_taxonomy_id %>
+</p>
+
+<p>
+  <strong>Taxonomy:</strong>
+  <%= @category.taxonomy %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @category.description %>
+</p>
+
+<p>
+  <strong>Parent wp:</strong>
+  <%= @category.parent_wp_id %>
+</p>
+
+<p>
+  <strong>Count:</strong>
+  <%= @category.count %>
+</p>
+
+<p>
+  <strong>Filter:</strong>
+  <%= @category.filter %>
+</p>
+
+<p>
+  <strong>Parent:</strong>
+  <%= @category.parent_id %>
+</p>
+
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>
