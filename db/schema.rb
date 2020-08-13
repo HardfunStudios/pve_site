@@ -10,10 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_12_173313) do
+ActiveRecord::Schema.define(version: 2020_08_13_172252) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.integer "term_wp_id"
+    t.string "name"
+    t.string "slug"
+    t.integer "term_group"
+    t.integer "term_taxonomy_id"
+    t.string "taxonomy"
+    t.string "description"
+    t.integer "parent_wp_id"
+    t.integer "count"
+    t.string "filter"
+    t.bigint "parent_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["parent_id"], name: "index_categories_on_parent_id"
+  end
+
+  create_table "post_categories", force: :cascade do |t|
+    t.bigint "post_id", null: false
+    t.bigint "category_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_post_categories_on_category_id"
+    t.index ["post_id"], name: "index_post_categories_on_post_id"
+  end
+
+  create_table "post_tags", force: :cascade do |t|
+    t.bigint "post_id", null: false
+    t.bigint "tag_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_post_tags_on_post_id"
+    t.index ["tag_id"], name: "index_post_tags_on_tag_id"
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string "post_author"
@@ -42,4 +77,27 @@ ActiveRecord::Schema.define(version: 2020_08_12_173313) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "tags", force: :cascade do |t|
+    t.integer "term_wp_id"
+    t.string "name"
+    t.string "slug"
+    t.integer "term_group"
+    t.integer "term_taxonomy_id"
+    t.string "taxonomy"
+    t.string "description"
+    t.integer "parent_wp_id"
+    t.integer "count"
+    t.string "filter"
+    t.bigint "parent_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["parent_id"], name: "index_tags_on_parent_id"
+  end
+
+  add_foreign_key "categories", "categories", column: "parent_id"
+  add_foreign_key "post_categories", "categories"
+  add_foreign_key "post_categories", "posts"
+  add_foreign_key "post_tags", "posts"
+  add_foreign_key "post_tags", "tags"
+  add_foreign_key "tags", "tags", column: "parent_id"
 end

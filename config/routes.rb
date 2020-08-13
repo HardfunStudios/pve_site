@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :tags
+  resources :categories
   resources :posts
   
   # wp-connector endpoints

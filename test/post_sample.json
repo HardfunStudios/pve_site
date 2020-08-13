@@ -60,6 +60,18 @@
                 "parent": 0,
                 "count": 4,
                 "filter": "raw"
+            },
+            "subcat": {
+                "term_id": 6,
+                "name": "subcategoria",
+                "slug": "subcat",
+                "term_group": 0,
+                "term_taxonomy_id": 6,
+                "taxonomy": "category",
+                "description": "",
+                "parent": 4,
+                "count": 1,
+                "filter": "raw"
             }
         },
         "post_tag": {
