@@ -14,7 +14,7 @@ class WpconnectorController < ApplicationController
     existing_post = Post.where(post_wp_id: JSON.parse(params.to_json).dig('post_id'))
     unless existing_post.empty?
       model = params[:model].classify.constantize
-      render_json_200_or_404 model.update_from_hook(params, existing_post)
+      render_json_200_or_404 model.update_from_hook(params, existing_post.first)
     end
   end
 

@@ -45,7 +45,28 @@ class Post < ApplicationRecord
   
   def self.update_from_hook(params, existing_post)
     puts params.to_json
-    puts existing_post
+
+    json_post = JSON.parse(params.to_json)
+
+    existing_post.post_modified = json_post.dig('post', 'post_modified')
+    existing_post.post_modified_gmt = json_post.dig('post', 'post_modified_gmt')
+    existing_post.comment_count = json_post.dig('post', 'comment_count')
+    
+    existing_post.comment_status = json_post.dig('post', 'comment_status')
+    existing_post.ping_status = json_post.dig('post', 'ping_status')
+    existing_post.post_nama = json_post.dig('post', 'post_name')
+    existing_post.post_content = json_post.dig('post', 'post_content')
+
+    existing_post.post_title = json_post.dig('post', 'post_title')
+    existing_post.post_status = json_post.dig('post', 'post_status')
+    existing_post.post_excerpt = json_post.dig('post', 'post_excerpt')
+
+    if existing_post.save
+      existing_post
+    else
+      raise ActiveRecord::RecordNotSaved.new "STOP Wordpress post update" +
+        "Wordpress post can not be updated"
+    end
     #fazer update das coisas asap
   end
 end
