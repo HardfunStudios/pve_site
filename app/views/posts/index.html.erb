@@ -33,33 +33,35 @@
 
   <tbody>
     <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.post_author %></td>
-        <td><%= post.post_date_gmt %></td>
-        <td><%= post.post_content %></td>
-        <td><%= post.post_title %></td>
-        <td><%= post.post_status %></td>
-        <td><%= post.post_excerpt %></td>
-        <td><%= post.comment_status %></td>
-        <td><%= post.ping_status %></td>
-        <td><%= post.post_nama %></td>
-        <td><%= post.post_modified %></td>
-        <td><%= post.post_modified_gmt %></td>
-        <td><%= post.post_content_filtered %></td>
-        <td><%= post.post_parent %></td>
-        <td><%= post.post_wp_id %></td>
-        <td><%= post.menu_order %></td>
-        <td><%= post.guid %></td>
-        <td><%= post.post_type %></td>
-        <td><%= post.post_mime_type %></td>
-        <td><%= post.comment_count %></td>
-        <td><%= post.filter %></td>
-        <td><%= post.post_meta %></td>
-        <td><%= post.post_thumbnail %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <% cache post do %>
+        <tr>
+          <td><%= post.post_author %></td>
+          <td><%= post.post_date_gmt %></td>
+          <td><%= post.post_content %></td>
+          <td><%= post.post_title %></td>
+          <td><%= post.post_status %></td>
+          <td><%= post.post_excerpt %></td>
+          <td><%= post.comment_status %></td>
+          <td><%= post.ping_status %></td>
+          <td><%= post.post_nama %></td>
+          <td><%= post.post_modified %></td>
+          <td><%= post.post_modified_gmt %></td>
+          <td><%= post.post_content_filtered %></td>
+          <td><%= post.post_parent %></td>
+          <td><%= post.post_wp_id %></td>
+          <td><%= post.menu_order %></td>
+          <td><%= post.guid %></td>
+          <td><%= post.post_type %></td>
+          <td><%= post.post_mime_type %></td>
+          <td><%= post.comment_count %></td>
+          <td><%= post.filter %></td>
+          <td><%= post.post_meta %></td>
+          <td><%= post.post_thumbnail %></td>
+          <td><%= link_to 'Show', post %></td>
+          <td><%= link_to 'Edit', edit_post_path(post) %></td>
+          <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
