@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'pages/home'
   resources :tags
   resources :categories
   resources :posts
@@ -7,5 +8,5 @@ Rails.application.routes.draw do
   match 'wp-post-webhook/:model', to: 'wpconnector#model_create', via: [:head, :post]
   match 'wp-put-webhook/:model', to: 'wpconnector#model_update', via: [:head, :post]
 
-  root to: "posts#index"
+  root to: "pages#home"
 end

@@ -1,0 +1,8 @@
+
+<% @posts.each do |post| %>
+  <div>
+    <% cache post do %>
+      <%= post.post_content.html_safe %>    
+    <% end %>
+  </div>
+<% end %>
