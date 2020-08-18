@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   match 'wp-put-webhook/:model', to: 'wpconnector#model_update', via: [:head, :post]
 
   root to: "pages#home"
+  
+  get 'portal', to: 'pages#portal'
 end
