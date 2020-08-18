@@ -5,7 +5,7 @@ class Category < ApplicationRecord
 
   validates :name, uniqueness: true, presence: true
 
-  def self.create_from_hook(params)
+  def self.create_from_hook(params, post)
 
     params.each do |param|
       @category = Category.new
@@ -26,6 +26,7 @@ class Category < ApplicationRecord
         @category.taxonomy = param[1].dig('taxonomy')
 
         if @category.save
+          PostCategory.create_relationship(@category, post)
           @category
         else
           raise ActiveRecord::RecordNotSaved.new "STOP Wordpress category creation" +
@@ -33,17 +34,18 @@ class Category < ApplicationRecord
         end
       else
         puts "Updating..."
-        self.update_from_hook(param, existing_category.first)
+        self.update_from_hook(param, existing_category.first, post)
       end
     end
   end
 
-  def self.update_from_hook(param, existing_category)
+  def self.update_from_hook(param, existing_category, post)
    
     existing_category.description = param[1].dig('description')
     existing_category.count = param[1].dig('count')
 
     if existing_category.save
+      PostCategory.create_relationship(existing_category, post)
       existing_category
     else
       raise ActiveRecord::RecordNotSaved.new "STOP Wordpress category update" +

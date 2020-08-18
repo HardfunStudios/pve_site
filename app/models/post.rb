@@ -42,10 +42,11 @@ class Post < ApplicationRecord
 
     post.post_thumbnail = json_post.dig('post_thumbnail')
 
-    Category.create_from_hook(json_post.dig('taxonomies', 'category'))
-    Tag.create_from_hook(json_post.dig('taxonomies', 'post_tag'))
-    
     if post.save
+
+      Category.create_from_hook(json_post.dig('taxonomies', 'category'), post)
+      Tag.create_from_hook(json_post.dig('taxonomies', 'post_tag'), post)
+      
       post
     else
       raise ActiveRecord::RecordNotSaved.new "STOP Wordpress post creation" +
@@ -72,10 +73,11 @@ class Post < ApplicationRecord
     existing_post.post_status = json_post.dig('post', 'post_status')
     existing_post.post_excerpt = json_post.dig('post', 'post_excerpt')
 
-    Category.create_from_hook(json_post.dig('taxonomies', 'category'))
-    Tag.create_from_hook(json_post.dig('taxonomies', 'post_tag'))
-
     if existing_post.save
+
+      Category.create_from_hook(json_post.dig('taxonomies', 'category'), existing_post)
+      Tag.create_from_hook(json_post.dig('taxonomies', 'post_tag'), existing_post)
+
       existing_post
     else
       raise ActiveRecord::RecordNotSaved.new "STOP Wordpress post update" +
