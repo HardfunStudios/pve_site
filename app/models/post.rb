@@ -8,6 +8,9 @@ class Post < ApplicationRecord
   has_many :post_videos
   has_many :videos, :through => :post_videos, :dependent => :destroy
   accepts_nested_attributes_for :post_videos, :allow_destroy => true
+  has_many :post_image_files
+  has_many :image_files, :through => :post_image_files, :dependent => :destroy
+  accepts_nested_attributes_for :post_image_files, :allow_destroy => true
   has_many :text_contents
   
   validates :post_title, :post_content, presence: true
@@ -110,6 +113,15 @@ class Post < ApplicationRecord
     unless content.empty?
       content.each do |txt|
         text_contents << TextContent.create(content: txt.text.squish) unless txt.text.blank?
+      end
+    end
+    
+    # images
+    image_files.destroy_all
+    content = parsed_data.xpath("//img")
+    unless content.empty?
+      content.each do |img|
+        image_files << ImageFile.find_or_create_by(origin_url: img[:src])
       end
     end
   end

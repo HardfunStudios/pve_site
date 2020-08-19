@@ -1,0 +1,27 @@
+<%= form_with(model: image_file, local: true) do |form| %>
+  <% if image_file.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(image_file.errors.count, "error") %> prohibited this image_file from being saved:</h2>
+
+      <ul>
+        <% image_file.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :origin_url %>
+    <%= form.text_field :origin_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :local_url %>
+    <%= form.text_field :local_url %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

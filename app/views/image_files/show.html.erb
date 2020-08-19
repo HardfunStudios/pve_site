@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Origin url:</strong>
+  <%= @image_file.origin_url %>
+</p>
+
+<p>
+  <strong>Local url:</strong>
+  <%= @image_file.local_url %>
+</p>
+
+<%= link_to 'Edit', edit_image_file_path(@image_file) %> |
+<%= link_to 'Back', image_files_path %>

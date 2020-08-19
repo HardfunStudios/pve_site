@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :image_files
   resources :text_contents
   resources :videos
   get 'pages/home'
