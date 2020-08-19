@@ -4,14 +4,13 @@ class Tag < ApplicationRecord
   has_many :posts, :through => :post_tags, :dependent => :destroy
 
   def self.create_from_hook(params, post)
-    PostTag.where(post_id: post.id).destroy_all
+    post.tags.destroy_all
 
     params.each do |param|
-      @tag = Tag.new
-
       existing_tag = Tag.where(name: param[1].dig('name'))
 
       if existing_tag.empty?
+        @tag = Tag.new
 
         @tag.term_wp_id = param[1].dig('term_id')
         @tag.name = param[1].dig('name')

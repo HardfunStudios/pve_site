@@ -6,14 +6,13 @@ class Category < ApplicationRecord
   validates :name, uniqueness: true, presence: true
 
   def self.create_from_hook(params, post)
-    PostCategory.where(post_id: post.id).destroy_all
+    post.categories.destroy_all
 
     params.each do |param|
-      @category = Category.new
-
       existing_category = Category.where(term_wp_id: param[1].dig('term_id'))
 
       if existing_category.empty?
+        @category = Category.new
 
         @category.term_wp_id = param[1].dig('term_id')
         @category.name = param[1].dig('name')
