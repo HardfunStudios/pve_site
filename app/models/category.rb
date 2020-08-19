@@ -6,6 +6,7 @@ class Category < ApplicationRecord
   validates :name, uniqueness: true, presence: true
 
   def self.create_from_hook(params, post)
+    PostCategory.where(post_id: post.id).destroy_all
 
     params.each do |param|
       @category = Category.new
@@ -26,7 +27,7 @@ class Category < ApplicationRecord
         @category.taxonomy = param[1].dig('taxonomy')
 
         if @category.save
-          PostCategory.create_relationship(@category, post)
+          post.categories << @category
           @category
         else
           raise ActiveRecord::RecordNotSaved.new "STOP Wordpress category creation" +
@@ -45,7 +46,7 @@ class Category < ApplicationRecord
     existing_category.count = param[1].dig('count')
 
     if existing_category.save
-      PostCategory.create_relationship(existing_category, post)
+      post.categories << existing_category
       existing_category
     else
       raise ActiveRecord::RecordNotSaved.new "STOP Wordpress category update" +

@@ -4,6 +4,7 @@ class Tag < ApplicationRecord
   has_many :posts, :through => :post_tags, :dependent => :destroy
 
   def self.create_from_hook(params, post)
+    PostTag.where(post_id: post.id).destroy_all
 
     params.each do |param|
       @tag = Tag.new
@@ -24,7 +25,7 @@ class Tag < ApplicationRecord
         @tag.taxonomy = param[1].dig('taxonomy')
 
         if @tag.save
-          PostTag.create_relationship(@tag, post)
+          post.tags << @tag
           @tag
         else
           raise ActiveRecord::RecordNotSaved.new "STOP Wordpress tag creation" +
@@ -43,7 +44,7 @@ class Tag < ApplicationRecord
     existing_tag.count = param[1].dig('count')
 
     if existing_tag.save
-      PostTag.create_relationship(existing_tag, post)
+      post.tags << existing_tag
       existing_tag
     else
       raise ActiveRecord::RecordNotSaved.new "STOP Wordpress tag update" +
