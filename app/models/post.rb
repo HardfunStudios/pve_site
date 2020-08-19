@@ -115,7 +115,7 @@ class Post < ApplicationRecord
     content = parsed_data.css('p')
     unless content.empty?
       content.each do |txt|
-        text_contents << TextContent.create(content: txt.text.squish) unless txt.text.blank?
+        text_contents << TextContent.create(content: txt.inner_html.squish) unless txt.text.blank?
       end
     end
     
