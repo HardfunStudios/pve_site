@@ -5,6 +5,8 @@ class Post < ApplicationRecord
   has_many :post_tags
   has_many :tags, :through => :post_tags, :dependent => :destroy
   accepts_nested_attributes_for :post_tags, :allow_destroy => true
+  has_many :videos, :dependent => :nullify
+  
   validates :post_title, :post_content, presence: true
   
   def self.create_from_hook(params)
