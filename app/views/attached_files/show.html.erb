@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Origin url:</strong>
+  <%= @attached_file.origin_url %>
+</p>
+
+<p>
+  <strong>Local url:</strong>
+  <%= @attached_file.local_url %>
+</p>
+
+<p>
+  <strong>File type:</strong>
+  <%= @attached_file.file_type %>
+</p>
+
+<%= link_to 'Edit', edit_attached_file_path(@attached_file) %> |
+<%= link_to 'Back', attached_files_path %>
