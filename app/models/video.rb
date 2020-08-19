@@ -1,3 +1,6 @@
 class Video < ApplicationRecord
-  belongs_to :post
+  has_many :post_videos
+  has_many :posts, :through => :post_videos, :dependent => :destroy
+
+  validates :url, presence: true, uniqueness: true
 end

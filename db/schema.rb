@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_19_162633) do
+ActiveRecord::Schema.define(version: 2020_08_19_172001) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,15 @@ ActiveRecord::Schema.define(version: 2020_08_19_162633) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["post_id"], name: "index_post_tags_on_post_id"
     t.index ["tag_id"], name: "index_post_tags_on_tag_id"
+  end
+
+  create_table "post_videos", force: :cascade do |t|
+    t.bigint "post_id", null: false
+    t.bigint "video_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_post_videos_on_post_id"
+    t.index ["video_id"], name: "index_post_videos_on_video_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -96,10 +105,8 @@ ActiveRecord::Schema.define(version: 2020_08_19_162633) do
 
   create_table "videos", force: :cascade do |t|
     t.string "url"
-    t.bigint "post_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["post_id"], name: "index_videos_on_post_id"
   end
 
   add_foreign_key "categories", "categories", column: "parent_id"
@@ -107,6 +114,7 @@ ActiveRecord::Schema.define(version: 2020_08_19_162633) do
   add_foreign_key "post_categories", "posts"
   add_foreign_key "post_tags", "posts"
   add_foreign_key "post_tags", "tags"
+  add_foreign_key "post_videos", "posts"
+  add_foreign_key "post_videos", "videos"
   add_foreign_key "tags", "tags", column: "parent_id"
-  add_foreign_key "videos", "posts"
 end

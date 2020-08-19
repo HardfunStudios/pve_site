@@ -14,7 +14,6 @@ class VideosTest < ApplicationSystemTestCase
     visit videos_url
     click_on "New Video"
 
-    fill_in "Post", with: @video.post_id
     fill_in "Url", with: @video.url
     click_on "Create Video"
 
@@ -26,7 +25,6 @@ class VideosTest < ApplicationSystemTestCase
     visit videos_url
     click_on "Edit", match: :first
 
-    fill_in "Post", with: @video.post_id
     fill_in "Url", with: @video.url
     click_on "Update Video"
 
