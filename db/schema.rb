@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_19_172001) do
+ActiveRecord::Schema.define(version: 2020_08_19_175339) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -103,6 +103,14 @@ ActiveRecord::Schema.define(version: 2020_08_19_172001) do
     t.index ["parent_id"], name: "index_tags_on_parent_id"
   end
 
+  create_table "text_contents", force: :cascade do |t|
+    t.text "content"
+    t.bigint "post_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_text_contents_on_post_id"
+  end
+
   create_table "videos", force: :cascade do |t|
     t.string "url"
     t.datetime "created_at", precision: 6, null: false
@@ -117,4 +125,5 @@ ActiveRecord::Schema.define(version: 2020_08_19_172001) do
   add_foreign_key "post_videos", "posts"
   add_foreign_key "post_videos", "videos"
   add_foreign_key "tags", "tags", column: "parent_id"
+  add_foreign_key "text_contents", "posts"
 end

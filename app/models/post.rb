@@ -8,6 +8,7 @@ class Post < ApplicationRecord
   has_many :post_videos
   has_many :videos, :through => :post_videos, :dependent => :destroy
   accepts_nested_attributes_for :post_videos, :allow_destroy => true
+  has_many :text_contents
   
   validates :post_title, :post_content, presence: true
   
@@ -102,6 +103,14 @@ class Post < ApplicationRecord
         videos << Video.find_or_create_by(url: video.text.squish)
       end
     end
-
+    
+    # texts
+    text_contents.destroy_all
+    content = parsed_data.css("p")
+    unless content.empty?
+      content.each do |txt|
+        text_contents << TextContent.create(content: txt.text.squish) unless txt.text.blank?
+      end
+    end
   end
 end

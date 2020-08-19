@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :text_contents
   resources :videos
   get 'pages/home'
   resources :tags
