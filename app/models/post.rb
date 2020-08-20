@@ -22,7 +22,7 @@ class Post < ApplicationRecord
 
     post.comment_status = json_post.dig('post', 'comment_status')
     post.ping_status = json_post.dig('post', 'ping_status')
-    post.post_nama = json_post.dig('post', 'post_name')
+    post.post_name = json_post.dig('post', 'post_name')
 
     post.post_modified = json_post.dig('post', 'post_modified')
     post.post_modified_gmt = json_post.dig('post', 'post_modified_gmt')
@@ -66,7 +66,7 @@ class Post < ApplicationRecord
     
     existing_post.comment_status = json_post.dig('post', 'comment_status')
     existing_post.ping_status = json_post.dig('post', 'ping_status')
-    existing_post.post_nama = json_post.dig('post', 'post_name')
+    existing_post.post_name = json_post.dig('post', 'post_name')
     existing_post.post_content = json_post.dig('post', 'post_content')
 
     existing_post.post_title = json_post.dig('post', 'post_title')
