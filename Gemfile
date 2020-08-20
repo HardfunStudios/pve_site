@@ -53,3 +53,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'wp-connector', :github => 'wponrails/wp-connector'
 gem 'pg'
+gem 'nokogiri'
+gem 'sidekiq'
+gem 'sidekiq'
