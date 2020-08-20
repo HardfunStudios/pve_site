@@ -5,7 +5,20 @@ class Post < ApplicationRecord
   has_many :post_tags
   has_many :tags, :through => :post_tags, :dependent => :destroy
   accepts_nested_attributes_for :post_tags, :allow_destroy => true
+  has_many :post_videos
+  has_many :videos, :through => :post_videos, :dependent => :destroy
+  accepts_nested_attributes_for :post_videos, :allow_destroy => true
+  has_many :post_image_files
+  has_many :image_files, :through => :post_image_files, :dependent => :destroy
+  accepts_nested_attributes_for :post_image_files, :allow_destroy => true
+  has_many :post_attached_files
+  has_many :attached_files, :through => :post_attached_files, :dependent => :destroy
+  accepts_nested_attributes_for :post_attached_files, :allow_destroy => true
+  has_many :text_contents
+  
   validates :post_title, :post_content, presence: true
+  
+  after_save :parse_content
   
   def self.create_from_hook(params)
     json_post = JSON.parse(params.to_json)
@@ -44,8 +57,8 @@ class Post < ApplicationRecord
 
     if post.save
 
-      Category.create_from_hook(json_post.dig('taxonomies', 'category'), post)
-      Tag.create_from_hook(json_post.dig('taxonomies', 'post_tag'), post)
+      Category.create_from_hook(json_post.dig('taxonomies', 'category'), post) unless json_post.dig('taxonomies', 'category').nil?
+      Tag.create_from_hook(json_post.dig('taxonomies', 'post_tag'), post) unless json_post.dig('taxonomies', 'post_tag').nil?
       
       post
     else
@@ -75,13 +88,53 @@ class Post < ApplicationRecord
 
     if existing_post.save
 
-      Category.create_from_hook(json_post.dig('taxonomies', 'category'), existing_post)
-      Tag.create_from_hook(json_post.dig('taxonomies', 'post_tag'), existing_post)
+      Category.create_from_hook(json_post.dig('taxonomies', 'category'), existing_post) unless json_post.dig('taxonomies', 'category').nil?
+      Tag.create_from_hook(json_post.dig('taxonomies', 'post_tag'), existing_post) unless json_post.dig('taxonomies', 'post_tag').nil?
 
       existing_post
     else
       raise ActiveRecord::RecordNotSaved.new "STOP Wordpress post update" +
         "Wordpress post can not be updated"
+    end
+  end
+  
+  def parse_content
+    parsed_data = Nokogiri::HTML.parse(post_content)
+    
+    # videos
+    videos.destroy_all
+    content = parsed_data.css('.wp-block-embed-youtube div')
+    unless content.empty?
+      content.each do |video|
+        videos << Video.find_or_create_by(url: video.text.squish)
+      end
+    end
+    
+    # texts
+    text_contents.destroy_all
+    content = parsed_data.css('p')
+    unless content.empty?
+      content.each do |txt|
+        text_contents << TextContent.create(content: txt.inner_html.squish) unless txt.text.blank?
+      end
+    end
+    
+    # images
+    image_files.destroy_all
+    content = parsed_data.xpath('//img')
+    unless content.empty?
+      content.each do |img|
+        image_files << ImageFile.find_or_create_by(origin_url: img[:src])
+      end
+    end
+    
+    # files
+    attached_files.destroy_all
+    content = parsed_data.css('.wp-block-file a')
+    unless content.empty?
+      content.each do |file|
+        attached_files << AttachedFile.find_or_create_by(origin_url: file[:href])
+      end
     end
   end
 end

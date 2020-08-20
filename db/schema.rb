@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_13_172252) do
+ActiveRecord::Schema.define(version: 2020_08_19_190658) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attached_files", force: :cascade do |t|
+    t.string "origin_url"
+    t.string "local_url"
+    t.string "file_type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "categories", force: :cascade do |t|
     t.integer "term_wp_id"
@@ -32,6 +40,22 @@ ActiveRecord::Schema.define(version: 2020_08_13_172252) do
     t.index ["parent_id"], name: "index_categories_on_parent_id"
   end
 
+  create_table "image_files", force: :cascade do |t|
+    t.string "origin_url"
+    t.string "local_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "post_attached_files", force: :cascade do |t|
+    t.bigint "post_id", null: false
+    t.bigint "attached_file_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["attached_file_id"], name: "index_post_attached_files_on_attached_file_id"
+    t.index ["post_id"], name: "index_post_attached_files_on_post_id"
+  end
+
   create_table "post_categories", force: :cascade do |t|
     t.bigint "post_id", null: false
     t.bigint "category_id", null: false
@@ -41,6 +65,15 @@ ActiveRecord::Schema.define(version: 2020_08_13_172252) do
     t.index ["post_id"], name: "index_post_categories_on_post_id"
   end
 
+  create_table "post_image_files", force: :cascade do |t|
+    t.bigint "post_id", null: false
+    t.bigint "image_file_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["image_file_id"], name: "index_post_image_files_on_image_file_id"
+    t.index ["post_id"], name: "index_post_image_files_on_post_id"
+  end
+
   create_table "post_tags", force: :cascade do |t|
     t.bigint "post_id", null: false
     t.bigint "tag_id", null: false
@@ -48,6 +81,15 @@ ActiveRecord::Schema.define(version: 2020_08_13_172252) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["post_id"], name: "index_post_tags_on_post_id"
     t.index ["tag_id"], name: "index_post_tags_on_tag_id"
+  end
+
+  create_table "post_videos", force: :cascade do |t|
+    t.bigint "post_id", null: false
+    t.bigint "video_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_post_videos_on_post_id"
+    t.index ["video_id"], name: "index_post_videos_on_video_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -94,10 +136,31 @@ ActiveRecord::Schema.define(version: 2020_08_13_172252) do
     t.index ["parent_id"], name: "index_tags_on_parent_id"
   end
 
+  create_table "text_contents", force: :cascade do |t|
+    t.text "content"
+    t.bigint "post_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_text_contents_on_post_id"
+  end
+
+  create_table "videos", force: :cascade do |t|
+    t.string "url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   add_foreign_key "categories", "categories", column: "parent_id"
+  add_foreign_key "post_attached_files", "attached_files"
+  add_foreign_key "post_attached_files", "posts"
   add_foreign_key "post_categories", "categories"
   add_foreign_key "post_categories", "posts"
+  add_foreign_key "post_image_files", "image_files"
+  add_foreign_key "post_image_files", "posts"
   add_foreign_key "post_tags", "posts"
   add_foreign_key "post_tags", "tags"
+  add_foreign_key "post_videos", "posts"
+  add_foreign_key "post_videos", "videos"
   add_foreign_key "tags", "tags", column: "parent_id"
+  add_foreign_key "text_contents", "posts"
 end

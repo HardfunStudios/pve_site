@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Attached Files</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Origin url</th>
+      <th>Local url</th>
+      <th>File type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @attached_files.each do |attached_file| %>
+      <tr>
+        <td><%= attached_file.origin_url %></td>
+        <td><%= attached_file.local_url %></td>
+        <td><%= attached_file.file_type %></td>
+        <td><%= link_to 'Show', attached_file %></td>
+        <td><%= link_to 'Edit', edit_attached_file_path(attached_file) %></td>
+        <td><%= link_to 'Destroy', attached_file, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Attached File', new_attached_file_path %>
