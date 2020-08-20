@@ -5,34 +5,38 @@ class Tag < ApplicationRecord
 
   def self.create_from_hook(params, post)
     post.tags.destroy_all
+    
+    unless params.nil?
+      params.each do |param|
+      
+        existing_tag = Tag.where(name: param[1].dig('name'))
 
-    params.each do |param|
-      existing_tag = Tag.where(name: param[1].dig('name'))
+        if existing_tag.empty?
+          @tag = Tag.new
 
-      if existing_tag.empty?
-        @tag = Tag.new
+          @tag.term_wp_id = param[1].dig('term_id')
+          @tag.name = param[1].dig('name')
+          @tag.slug = param[1].dig('slug')
+          @tag.term_group = param[1].dig('term_group')
+          @tag.term_taxonomy_id = param[1].dig('term_taxonomy_id')
+          @tag.description = param[1].dig('description')
+          @tag.parent_wp_id = param[1].dig('parent')
+          @tag.count = param[1].dig('count')
+          @tag.filter = param[1].dig('filter')
+          @tag.taxonomy = param[1].dig('taxonomy')
 
-        @tag.term_wp_id = param[1].dig('term_id')
-        @tag.name = param[1].dig('name')
-        @tag.slug = param[1].dig('slug')
-        @tag.term_group = param[1].dig('term_group')
-        @tag.term_taxonomy_id = param[1].dig('term_taxonomy_id')
-        @tag.description = param[1].dig('description')
-        @tag.parent_wp_id = param[1].dig('parent')
-        @tag.count = param[1].dig('count')
-        @tag.filter = param[1].dig('filter')
-        @tag.taxonomy = param[1].dig('taxonomy')
-
-        if @tag.save
-          post.tags << @tag
-          @tag
+          if @tag.save
+            post.tags << @tag
+            @tag
+          else
+            raise ActiveRecord::RecordNotSaved.new "STOP Wordpress tag creation" +
+              "Wordpress tag can not be saved"
+          end
         else
-          raise ActiveRecord::RecordNotSaved.new "STOP Wordpress tag creation" +
-            "Wordpress tag can not be saved"
+          puts "Updating..."
+          self.update_from_hook(param, existing_tag.first, post)
         end
-      else
-        puts "Updating..."
-        self.update_from_hook(param, existing_tag.first, post)
+        
       end
     end
   end
