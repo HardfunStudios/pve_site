@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_19_190658) do
+ActiveRecord::Schema.define(version: 2020_08_20_170159) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -101,7 +101,7 @@ ActiveRecord::Schema.define(version: 2020_08_19_190658) do
     t.text "post_excerpt"
     t.string "comment_status"
     t.string "ping_status"
-    t.string "post_nama"
+    t.string "post_name"
     t.datetime "post_modified"
     t.datetime "post_modified_gmt"
     t.string "post_content_filtered"

@@ -19,16 +19,6 @@
 *.swp
 .byebug_history
 .rake_tasks~
-tags
-
-/node_modules
-/yarn-error.log
-
-/public/packs
-/public/packs-test
-yarn-debug.log*
-yarn-error.log*
-.yarn-integrity
 
 !.keep
 *.swo
@@ -47,3 +37,6 @@ yarn-debug.log*
 
 /config/database.yml
 config/database.yml
+
+/app/assets/images/posts/*
+!/app/assets/images/posts/.keep

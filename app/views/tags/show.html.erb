@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Term wp:</strong>
+  <%= @tag.term_wp_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @tag.name %>
+</p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @tag.slug %>
+</p>
+
+<p>
+  <strong>Term group:</strong>
+  <%= @tag.term_group %>
+</p>
+
+<p>
+  <strong>Term taxonomy:</strong>
+  <%= @tag.term_taxonomy_id %>
+</p>
+
+<p>
+  <strong>Taxonomy:</strong>
+  <%= @tag.taxonomy %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @tag.description %>
+</p>
+
+<p>
+  <strong>Parent wp:</strong>
+  <%= @tag.parent_wp_id %>
+</p>
+
+<p>
+  <strong>Count:</strong>
+  <%= @tag.count %>
+</p>
+
+<p>
+  <strong>Filter:</strong>
+  <%= @tag.filter %>
+</p>
+
+<p>
+  <strong>Parent:</strong>
+  <%= @tag.parent_id %>
+</p>
+
+<%= link_to 'Edit', edit_tag_path(@tag) %> |
+<%= link_to 'Back', tags_path %>

@@ -1,0 +1,72 @@
+<%= form_with(model: tag, local: true) do |form| %>
+  <% if tag.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tag.errors.count, "error") %> prohibited this tag from being saved:</h2>
+
+      <ul>
+        <% tag.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :term_wp_id %>
+    <%= form.number_field :term_wp_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :slug %>
+    <%= form.text_field :slug %>
+  </div>
+
+  <div class="field">
+    <%= form.label :term_group %>
+    <%= form.number_field :term_group %>
+  </div>
+
+  <div class="field">
+    <%= form.label :term_taxonomy_id %>
+    <%= form.number_field :term_taxonomy_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :taxonomy %>
+    <%= form.text_field :taxonomy %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :parent_wp_id %>
+    <%= form.number_field :parent_wp_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :count %>
+    <%= form.number_field :count %>
+  </div>
+
+  <div class="field">
+    <%= form.label :filter %>
+    <%= form.text_field :filter %>
+  </div>
+
+  <div class="field">
+    <%= form.label :parent_id %>
+    <%= form.text_field :parent_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
