@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ImageFile < ApplicationRecord
   has_many :post_image_files
   has_many :posts, :through => :post_image_files, :dependent => :destroy
@@ -7,6 +9,12 @@ class ImageFile < ApplicationRecord
   after_save :local_save
   
   def local_save
-    DownloadWorker.perform_async(id, origin_url)
+    filename = id.to_s + File.extname(origin_url)
+    DownloadWorker.perform_async(filename, origin_url)
+    update_column(:local_url, 'posts/' + filename)
+  end
+  
+  def img_url
+    local_url || origin_url
   end
 end

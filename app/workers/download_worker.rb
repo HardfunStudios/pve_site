@@ -5,9 +5,13 @@ require 'open-uri'
 class DownloadWorker
   include Sidekiq::Worker
 
-  def perform(id, url)
-    open('app/assets/images/posts/' + id.to_s + File.extname(url), 'wb') do |file|
-      file << open(url).read
+  def perform(filename, url)
+    begin
+      open('app/assets/images/posts/' + filename, 'wb') do |file|
+        file << open(url).read
+      end
+    rescue StandardError => e  
+      Rails.logger.error e
     end
   end
 end
