@@ -12,10 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_08_20_170159) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "attached_files", force: :cascade do |t|
+  create_table "attached_files", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "origin_url"
     t.string "local_url"
     t.string "file_type"
@@ -23,7 +20,7 @@ ActiveRecord::Schema.define(version: 2020_08_20_170159) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "categories", force: :cascade do |t|
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "term_wp_id"
     t.string "name"
     t.string "slug"
@@ -40,14 +37,14 @@ ActiveRecord::Schema.define(version: 2020_08_20_170159) do
     t.index ["parent_id"], name: "index_categories_on_parent_id"
   end
 
-  create_table "image_files", force: :cascade do |t|
+  create_table "image_files", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "origin_url"
     t.string "local_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "post_attached_files", force: :cascade do |t|
+  create_table "post_attached_files", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "post_id", null: false
     t.bigint "attached_file_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -56,7 +53,7 @@ ActiveRecord::Schema.define(version: 2020_08_20_170159) do
     t.index ["post_id"], name: "index_post_attached_files_on_post_id"
   end
 
-  create_table "post_categories", force: :cascade do |t|
+  create_table "post_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "post_id", null: false
     t.bigint "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -65,7 +62,7 @@ ActiveRecord::Schema.define(version: 2020_08_20_170159) do
     t.index ["post_id"], name: "index_post_categories_on_post_id"
   end
 
-  create_table "post_image_files", force: :cascade do |t|
+  create_table "post_image_files", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "post_id", null: false
     t.bigint "image_file_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -74,7 +71,7 @@ ActiveRecord::Schema.define(version: 2020_08_20_170159) do
     t.index ["post_id"], name: "index_post_image_files_on_post_id"
   end
 
-  create_table "post_tags", force: :cascade do |t|
+  create_table "post_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "post_id", null: false
     t.bigint "tag_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -83,7 +80,7 @@ ActiveRecord::Schema.define(version: 2020_08_20_170159) do
     t.index ["tag_id"], name: "index_post_tags_on_tag_id"
   end
 
-  create_table "post_videos", force: :cascade do |t|
+  create_table "post_videos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "post_id", null: false
     t.bigint "video_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -92,7 +89,7 @@ ActiveRecord::Schema.define(version: 2020_08_20_170159) do
     t.index ["video_id"], name: "index_post_videos_on_video_id"
   end
 
-  create_table "posts", force: :cascade do |t|
+  create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "post_author"
     t.datetime "post_date_gmt"
     t.text "post_content"
@@ -119,7 +116,7 @@ ActiveRecord::Schema.define(version: 2020_08_20_170159) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "tags", force: :cascade do |t|
+  create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "term_wp_id"
     t.string "name"
     t.string "slug"
@@ -136,7 +133,7 @@ ActiveRecord::Schema.define(version: 2020_08_20_170159) do
     t.index ["parent_id"], name: "index_tags_on_parent_id"
   end
 
-  create_table "text_contents", force: :cascade do |t|
+  create_table "text_contents", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.text "content"
     t.bigint "post_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -144,7 +141,7 @@ ActiveRecord::Schema.define(version: 2020_08_20_170159) do
     t.index ["post_id"], name: "index_text_contents_on_post_id"
   end
 
-  create_table "videos", force: :cascade do |t|
+  create_table "videos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
