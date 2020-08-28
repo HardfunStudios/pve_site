@@ -24,7 +24,6 @@ class Post < ApplicationRecord
 
   def self.create_from_hook(params)
     json_post = JSON.parse(params.to_json)
-
     post = Post.new
 
     post.post_author = json_post.dig('post', 'post_author')
@@ -58,18 +57,17 @@ class Post < ApplicationRecord
     post.post_thumbnail = json_post.dig('post_thumbnail')
 
     if post.save
-
+      
       unless json_post.dig('taxonomies', 'category').nil?
         Category.create_from_hook(json_post.dig('taxonomies', 'category'), post)
       end
       unless json_post.dig('taxonomies', 'post_tag').nil?
         Tag.create_from_hook(json_post.dig('taxonomies', 'post_tag'), post)
       end
-
+      
       post
     else
-      raise ActiveRecord::RecordNotSaved, 'STOP Wordpress post creation' \
-                                          'Wordpress post can not be saved'
+      raise ActiveRecord::RecordNotSaved, 'Wordpress post can not be saved'
     end
   end
 
@@ -102,8 +100,7 @@ class Post < ApplicationRecord
 
       existing_post
     else
-      raise ActiveRecord::RecordNotSaved, 'STOP Wordpress post update' \
-                                          'Wordpress post can not be updated'
+      raise ActiveRecord::RecordNotSaved, 'Wordpress post can not be updated'
     end
   end
 

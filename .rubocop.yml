@@ -1,4 +1,59 @@
+Style/Documentation:
+  Enabled: false
+Style/GuardClause:
+  Enabled: false
+Style/ParallelAssignment:
+  Enabled: false
+Style/FormatString:
+  Enabled: false
+Style/SignalException:
+  Enabled: false
+Style/IfUnlessModifier:
+  Enabled: false
+Style/EachWithObject:
+  Enabled: false
+Style/Next:
+  Enabled: false
+Style/DoubleNegation:
+  Enabled: false
+Style/FileName:
+  Enabled: false
+Style/PerlBackrefs:
+  Enabled: false
+Style/AsciiComments:
+  Enabled: false
+Style/SingleLineBlockParams:
+  Enabled: false
+Metrics/AbcSize:
+  Enabled: false
+Metrics/MethodLength:
+  Enabled: false
+Metrics/ModuleLength:
+  Enabled: false
+Metrics/BlockLength:
+  Enabled: false
+Metrics/LineLength:
+  Enabled: false
+Metrics/ParameterLists:
+  Enabled: false
+Lint/RescueException:
+  Enabled: false
+Lint/Void:
+  Enabled: false
+Lint/ShadowingOuterLocalVariable:
+  Enabled: false
 AllCops:
-  Excludes:
+  Exclude:
     - db/schema.rb
+    - code/**/*
     - node_modules/**/*
+    - vendor/bundle/**/*
+    - test/**/*
+    - db/migrate/**
+    - config/initializers/*
+    - bin/*
+    - Rakefile
+    - db/seeds.rb
+    - Gemfile*
+    - config/boot.rb
+    - config.ru
