@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_20_170159) do
+ActiveRecord::Schema.define(version: 2020_08_28_172820) do
 
   create_table "attached_files", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "origin_url"
@@ -103,7 +103,7 @@ ActiveRecord::Schema.define(version: 2020_08_20_170159) do
     t.datetime "post_modified_gmt"
     t.string "post_content_filtered"
     t.integer "post_parent"
-    t.integer "post_wp_id"
+    t.integer "wp_id"
     t.integer "menu_order"
     t.string "guid"
     t.string "post_type"

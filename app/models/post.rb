@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Post < ApplicationRecord
   has_many :post_categories
   has_many :categories, :through => :post_categories, :dependent => :destroy
@@ -14,7 +16,7 @@ class Post < ApplicationRecord
   has_many :post_attached_files
   has_many :attached_files, :through => :post_attached_files, :dependent => :destroy
   accepts_nested_attributes_for :post_attached_files, :allow_destroy => true
-  has_many :text_contents
+  has_many :text_contents, :dependent => :destroy
   
   validates :post_title, :post_content, presence: true
   
@@ -42,7 +44,7 @@ class Post < ApplicationRecord
     post.post_content_filtered = json_post.dig('post', 'post_content_filtered')
 
     post.post_parent = json_post.dig('post', 'post_parent')
-    post.post_wp_id = json_post.dig('post_id')
+    post.wp_id = json_post.dig('post_id')
     post.menu_order = json_post.dig('post', 'menu_order')
 
     post.guid = json_post.dig('post', 'guid')
