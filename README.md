@@ -54,6 +54,10 @@ Troubleshooting
 -- Aí ao rodar o db:create dava: Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2)
     Just run: mysql.server start
 
+- Ao importar um BD no phpMyAdmin - Error > Incorrect format parameter
+-- Setar as flags no php.ini:
+upload_max_filesize=64M
+post_max_size=64M
 
 
 
