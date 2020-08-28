@@ -11,7 +11,7 @@ class CreateTags < ActiveRecord::Migration[6.0]
       t.integer :parent_wp_id
       t.integer :count
       t.string :filter
-      t.references :parent, foreign_key: {to_table: :tags}
+      t.references :parent, foreign_key: { to_table: :tags }
 
       t.timestamps
     end

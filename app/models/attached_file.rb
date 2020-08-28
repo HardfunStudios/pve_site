@@ -2,7 +2,7 @@
 
 class AttachedFile < ApplicationRecord
   has_many :post_attached_files
-  has_many :posts, :through => :post_attached_files, :dependent => :destroy
-  
+  has_many :posts, through: :post_attached_files, dependent: :destroy
+
   validates :origin_url, presence: true, uniqueness: true
 end

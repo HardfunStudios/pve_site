@@ -1,1 +1,1 @@
-json.array! @videos, partial: "videos/video", as: :video
+json.array! @videos, partial: 'videos/video', as: :video

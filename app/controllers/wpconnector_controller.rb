@@ -8,7 +8,7 @@ class WpconnectorController < ApplicationController
     model = params[:model].classify.constantize
     id_field = params[:model].downcase + '_id'
     existing_records = model.where(wp_id: JSON.parse(params.to_json).dig(id_field))
-    if existing_records.empty?     
+    if existing_records.empty?
       render_json_200_or_404 model.create_from_hook(params)
     else
       render_json_200_or_404 model.update_from_hook(params, existing_records.first)

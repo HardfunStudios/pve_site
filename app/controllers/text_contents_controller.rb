@@ -1,5 +1,5 @@
 class TextContentsController < ApplicationController
-  before_action :set_text_content, only: [:show, :edit, :update, :destroy]
+  before_action :set_text_content, only: %i[show edit update destroy]
 
   # GET /text_contents
   # GET /text_contents.json
@@ -9,8 +9,7 @@ class TextContentsController < ApplicationController
 
   # GET /text_contents/1
   # GET /text_contents/1.json
-  def show
-  end
+  def show; end
 
   # GET /text_contents/new
   def new
@@ -18,8 +17,7 @@ class TextContentsController < ApplicationController
   end
 
   # GET /text_contents/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /text_contents
   # POST /text_contents.json
@@ -62,13 +60,14 @@ class TextContentsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_text_content
-      @text_content = TextContent.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def text_content_params
-      params.require(:text_content).permit(:content, :post_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_text_content
+    @text_content = TextContent.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def text_content_params
+    params.require(:text_content).permit(:content, :post_id)
+  end
 end

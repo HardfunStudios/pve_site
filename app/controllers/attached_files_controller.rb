@@ -1,5 +1,5 @@
 class AttachedFilesController < ApplicationController
-  before_action :set_attached_file, only: [:show, :edit, :update, :destroy]
+  before_action :set_attached_file, only: %i[show edit update destroy]
 
   # GET /attached_files
   # GET /attached_files.json
@@ -9,8 +9,7 @@ class AttachedFilesController < ApplicationController
 
   # GET /attached_files/1
   # GET /attached_files/1.json
-  def show
-  end
+  def show; end
 
   # GET /attached_files/new
   def new
@@ -18,8 +17,7 @@ class AttachedFilesController < ApplicationController
   end
 
   # GET /attached_files/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /attached_files
   # POST /attached_files.json
@@ -62,13 +60,14 @@ class AttachedFilesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_attached_file
-      @attached_file = AttachedFile.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def attached_file_params
-      params.require(:attached_file).permit(:origin_url, :local_url, :file_type)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_attached_file
+    @attached_file = AttachedFile.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def attached_file_params
+    params.require(:attached_file).permit(:origin_url, :local_url, :file_type)
+  end
 end

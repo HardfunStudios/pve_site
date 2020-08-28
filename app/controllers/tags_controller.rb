@@ -1,5 +1,5 @@
 class TagsController < ApplicationController
-  before_action :set_tag, only: [:show, :edit, :update, :destroy]
+  before_action :set_tag, only: %i[show edit update destroy]
 
   # GET /tags
   # GET /tags.json
@@ -9,8 +9,7 @@ class TagsController < ApplicationController
 
   # GET /tags/1
   # GET /tags/1.json
-  def show
-  end
+  def show; end
 
   # GET /tags/new
   def new
@@ -18,8 +17,7 @@ class TagsController < ApplicationController
   end
 
   # GET /tags/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /tags
   # POST /tags.json
@@ -62,13 +60,14 @@ class TagsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_tag
-      @tag = Tag.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def tag_params
-      params.require(:tag).permit(:term_wp_id, :name, :slug, :term_group, :term_taxonomy_id, :taxonomy, :description, :parent_wp_id, :count, :filter, :parent_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_tag
+    @tag = Tag.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def tag_params
+    params.require(:tag).permit(:term_wp_id, :name, :slug, :term_group, :term_taxonomy_id, :taxonomy, :description, :parent_wp_id, :count, :filter, :parent_id)
+  end
 end
