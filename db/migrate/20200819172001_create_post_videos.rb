@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Relation between posts and videos
 class CreatePostVideos < ActiveRecord::Migration[6.0]
   def change
     create_table :post_videos do |t|

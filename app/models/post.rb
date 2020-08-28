@@ -68,7 +68,7 @@ class Post < ApplicationRecord
 
       post
     else
-      raise ActiveRecord::RecordNotSaved, 'STOP Wordpress post creation' +
+      raise ActiveRecord::RecordNotSaved, 'STOP Wordpress post creation' \
                                           'Wordpress post can not be saved'
     end
   end
@@ -102,7 +102,7 @@ class Post < ApplicationRecord
 
       existing_post
     else
-      raise ActiveRecord::RecordNotSaved, 'STOP Wordpress post update' +
+      raise ActiveRecord::RecordNotSaved, 'STOP Wordpress post update' \
                                           'Wordpress post can not be updated'
     end
   end

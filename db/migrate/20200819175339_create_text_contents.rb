@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Just the texts from post contents
 class CreateTextContents < ActiveRecord::Migration[6.0]
   def change
     create_table :text_contents do |t|

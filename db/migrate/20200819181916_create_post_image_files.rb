@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Post x Images
 class CreatePostImageFiles < ActiveRecord::Migration[6.0]
   def change
     create_table :post_image_files do |t|

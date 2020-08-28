@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class VideosController < ApplicationController
   before_action :set_video, only: %i[show edit update destroy]
 

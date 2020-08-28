@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Tags from Wordpress
 class CreateTags < ActiveRecord::Migration[6.0]
   def change
     create_table :tags do |t|

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TextContentsController < ApplicationController
   before_action :set_text_content, only: %i[show edit update destroy]
 

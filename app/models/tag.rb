@@ -29,7 +29,7 @@ class Tag < ApplicationRecord
           post.tags << @tag
           @tag
         else
-          raise ActiveRecord::RecordNotSaved, 'STOP Wordpress tag creation' +
+          raise ActiveRecord::RecordNotSaved, 'STOP Wordpress tag creation' \
                                               'Wordpress tag can not be saved'
         end
       else
@@ -47,7 +47,7 @@ class Tag < ApplicationRecord
       post.tags << existing_tag
       existing_tag
     else
-      raise ActiveRecord::RecordNotSaved, 'STOP Wordpress tag update' +
+      raise ActiveRecord::RecordNotSaved, 'STOP Wordpress tag update' \
                                           'Wordpress tag can not be updated'
     end
   end

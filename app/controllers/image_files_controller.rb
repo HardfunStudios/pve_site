@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ImageFilesController < ApplicationController
   before_action :set_image_file, only: %i[show edit update destroy]
 

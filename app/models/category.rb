@@ -34,7 +34,7 @@ class Category < ApplicationRecord
           post.categories << @category
           @category
         else
-          raise ActiveRecord::RecordNotSaved, 'STOP Wordpress category creation' +
+          raise ActiveRecord::RecordNotSaved, 'STOP Wordpress category creation' \
                                               'Wordpress category can not be saved'
         end
       else
@@ -54,7 +54,7 @@ class Category < ApplicationRecord
       post.categories << existing_category
       existing_category
     else
-      raise ActiveRecord::RecordNotSaved, 'STOP Wordpress category update' +
+      raise ActiveRecord::RecordNotSaved, 'STOP Wordpress category update' \
                                           'Wordpress category can not be updated'
     end
   end

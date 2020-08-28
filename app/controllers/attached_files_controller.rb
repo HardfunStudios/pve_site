@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AttachedFilesController < ApplicationController
   before_action :set_attached_file, only: %i[show edit update destroy]
 
