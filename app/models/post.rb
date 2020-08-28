@@ -57,14 +57,12 @@ class Post < ApplicationRecord
     post.post_thumbnail = json_post.dig('post_thumbnail')
 
     if post.save
-      
       unless json_post.dig('taxonomies', 'category').nil?
         Category.create_from_hook(json_post.dig('taxonomies', 'category'), post)
       end
       unless json_post.dig('taxonomies', 'post_tag').nil?
         Tag.create_from_hook(json_post.dig('taxonomies', 'post_tag'), post)
       end
-      
       post
     else
       raise ActiveRecord::RecordNotSaved, 'Wordpress post can not be saved'
@@ -105,42 +103,7 @@ class Post < ApplicationRecord
   end
 
   def parse_content
-    parsed_data = Nokogiri::HTML.parse(post_content)
-
-    # videos
-    videos.destroy_all
-    content = parsed_data.css('.wp-block-embed-youtube div')
-    unless content.empty?
-      content.each do |video|
-        videos << Video.find_or_create_by(url: video.text.squish)
-      end
-    end
-
-    # texts
-    text_contents.destroy_all
-    content = parsed_data.css('p')
-    unless content.empty?
-      content.each do |txt|
-        text_contents << TextContent.create(content: txt.inner_html.squish) unless txt.text.blank?
-      end
-    end
-
-    # images
-    image_files.destroy_all
-    content = parsed_data.xpath('//img')
-    unless content.empty?
-      content.each do |img|
-        image_files << ImageFile.find_or_create_by(origin_url: img[:src])
-      end
-    end
-
-    # files
-    attached_files.destroy_all
-    content = parsed_data.css('.wp-block-file a')
-    unless content.empty?
-      content.each do |file|
-        attached_files << AttachedFile.find_or_create_by(origin_url: file[:href])
-      end
-    end
+    service_parser = PostContentParserService.new(self)
+    service_parser.execute
   end
 end

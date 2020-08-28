@@ -7,7 +7,7 @@ class DownloadWorker
 
   def perform(filename, url)
     open('app/assets/images/posts/' + filename, 'wb') do |file|
-      file << open(url).read
+      file << File.open(url).read
     end
   rescue StandardError => e
     Rails.logger.error e
