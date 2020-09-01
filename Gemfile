@@ -51,7 +51,6 @@ group :test do
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
   gem 'rspec-rails'
-  gem 'mysql2'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -61,3 +60,4 @@ gem 'mysql2'
 gem 'nokogiri'
 gem 'sidekiq'
 gem 'wp-connector', github: 'wponrails/wp-connector'
+gem "dotenv-rails"
