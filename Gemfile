@@ -41,6 +41,7 @@ group :development do
   gem 'rubocop', require: false
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'rspec-rails'
 end
 
 group :test do
@@ -49,12 +50,14 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'rspec-rails'
+  gem 'mysql2'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
-gem 'mysql2', '>= 0.4.4'
+gem 'mysql2'
 gem 'nokogiri'
 gem 'sidekiq'
 gem 'wp-connector', github: 'wponrails/wp-connector'
