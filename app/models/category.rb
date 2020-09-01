@@ -5,7 +5,7 @@ class Category < ApplicationRecord
   has_many :post_categories
   has_many :posts, through: :post_categories, dependent: :destroy
 
-  validates :name, uniqueness: true, presence: true
+  validates :name, uniqueness: { case_sensitive: false }, presence: true
 
   def self.create_from_hook(params, post)
     post.categories.destroy_all

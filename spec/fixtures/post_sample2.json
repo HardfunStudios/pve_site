@@ -1,0 +1,211 @@
+{
+    "post_id": 67,
+    "post": {
+        "ID": 67,
+        "post_author": "1",
+        "post_date": "2019-02-15 19:35:21",
+        "post_date_gmt": "2019-02-15 22:35:21",
+        "post_content": "O percentual de matrículas em tempo integral em escolas públicas, ou seja, de estudantes que passam sete horas diárias na escola, participando de diversas atividades, caiu no ensino fundamental, de acordo com os dados do Censo Escolar de 2018 divulgados em janeiro passado pelo Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (Inep). Já no ensino médio, o número cresceu.\n\nDe acordo com o Censo, o percentual de matrículas em tempo integral passou de 16,3% no ensino fundamental, nas escolas públicas, em 2017 para 10,9% em 2018. Esse percentual chegou a 19,4% em 2015. Nas escolas privadas, as matrículas tiveram um leve aumento, passando de 2,1% para 2,2% de 2017 para 2018.\n\nNo ensino médio, a situação foi oposta. O percentual de matrículas em tempo integral passou de 8,4% em 2017 para 10,3% em 2018, nas escolas públicas. Nas privadas, passou de 3,9% para 4% no mesmo período.\n\nOs estudantes podem, nesse tempo, ter acesso a atividades culturais, esportivas, além de conteúdos de comunicação, saúde, entre outros.\n\nNo ensino fundamental, o programa federal Mais Educação oferece recursos financeiros para que as escolas implementem as atividades. Em 2017, foi reformulado e renomeado para Novo Mais Educação. As ações passaram a priorizar escolas em situação de vulnerabilidade.\n\nNo ensino médio, o tempo integral ganhou destaque com o novo ensino médio, aprovado em lei em 2017, que visa a aumentar esse atendimento. O Ministério da Educação (MEC) auxilia os estados por meio do Programa de Fomento às Escolas de Ensino Médio em Tempo Integral.\n\nAmpliar a educação em tempo integral nas escolas é também uma das metas do Plano Nacional de Educação (PNE), lei que estabelece parâmetros para melhorar a qualidade da educação brasileira. Uma das metas do PNE é oferecer educação em tempo integral em, no mínimo, 50% das escolas públicas, de forma a atender, pelo menos, 25% dos alunos da educação básica até 2024.\n\n\u003cstrong\u003eMenos estudantes\u003c/strong\u003e\nNo ano de 2018, foram registradas 48,5 milhões de matrículas nas 181,9 mil escolas de educação básica brasileiras. O número total apresenta uma redução em relação aos 48,6 milhões de estudantes registrados em 2017.\n\nA maior parte dos estudantes está na rede pública, cerca de 39,5 milhões, 81,44% do total. Estão também, majoritariamente na área urbana (88,7%).\n\nApesar da redução do número geral de alunos, segundo o Censo, a quantidade de matrículas na educação infantil cresceu cerca de 2,8% em relação a 2017, atingindo 8,7 milhões em 2018. Esse crescimento foi decorrente principalmente do aumento das matrículas em creches (5,3%).\n\nO número de matrículas da Educação de Jovens e Adultos (EJA) diminuiu 1,5% no último ano, chegando a 3,5 milhões em 2018. Já o número total de matrículas da educação profissional aumentou 3,9% em relação ao ano de 2017, chegando a 1,9 milhão de estudantes.\n\n\u003cem\u003eFonte: Agência Brasil\u003c/em\u003e\n\n\u003cem\u003eFoto: Gabriel Jabur/Agência Brasil\u003c/em\u003e",
+        "post_title": "Ensino integrale cai no fundamental e cresce no médio, mostra Censo",
+        "post_excerpt": "",
+        "post_status": "publish",
+        "comment_status": "open",
+        "ping_status": "open",
+        "post_password": "[FILTERED]",
+        "post_name": "ensino-integral-cai-no-fundamental-e-cresce-no-medio",
+        "to_ping": "",
+        "pinged": "",
+        "post_modified": "2020-09-01 17:02:16",
+        "post_modified_gmt": "2020-09-01 17:02:16",
+        "post_content_filtered": "",
+        "post_parent": 0,
+        "guid": "http://pve.institutovotorantim.org.br/?p=67",
+        "menu_order": 121,
+        "post_type": "post",
+        "post_mime_type": "",
+        "comment_count": "0",
+        "filter": "raw"
+    },
+    "post_meta": {
+        "_edit_last": ["2"],
+        "_edit_lock": ["1598979689:1"],
+        "_thumbnail_id": ["408"],
+        "meta-checkbox": [""],
+        "_wp_old_slug": ["lorem-ipsum-dolor-elit-consecteur-nullan-ultricies-mauris-nulla-3"],
+        "_encloseme": ["1"],
+        "wpwhpro_create_post_temp_status": ["inherit"]
+    },
+    "post_thumbnail": "http://localhost:8888/wordpress/wp-content/uploads/27539804993_69eb0dd440_zfoto_por_gabriel_jabur_EBC.jpg",
+    "taxonomies": {
+        "post_tag": {
+            "censo-escolar": {
+                "term_id": 6,
+                "name": "Censo Escolar",
+                "slug": "censo-escolar",
+                "term_group": 0,
+                "term_taxonomy_id": 6,
+                "taxonomy": "post_tag",
+                "description": "",
+                "parent": 0,
+                "count": 4,
+                "filter": "raw"
+            },
+            "ensino-integral": {
+                "term_id": 8,
+                "name": "ensino integral",
+                "slug": "ensino-integral",
+                "term_group": 0,
+                "term_taxonomy_id": 8,
+                "taxonomy": "post_tag",
+                "description": "",
+                "parent": 0,
+                "count": 1,
+                "filter": "raw"
+            },
+            "ensino-medio": {
+                "term_id": 7,
+                "name": "ensino médio",
+                "slug": "ensino-medio",
+                "term_group": 0,
+                "term_taxonomy_id": 7,
+                "taxonomy": "post_tag",
+                "description": "",
+                "parent": 0,
+                "count": 1,
+                "filter": "raw"
+            },
+            "frontpage-edu-featured": {
+                "term_id": 13,
+                "name": "frontpage-edu-featured",
+                "slug": "frontpage-edu-featured",
+                "term_group": 0,
+                "term_taxonomy_id": 13,
+                "taxonomy": "post_tag",
+                "description": "",
+                "parent": 0,
+                "count": 9,
+                "filter": "raw"
+            }
+        },
+        "category": {
+            "uncategorized": {
+                "term_id": 1,
+                "name": "Sem categoria",
+                "slug": "uncategorized",
+                "term_group": 0,
+                "term_taxonomy_id": 1,
+                "taxonomy": "category",
+                "description": "",
+                "parent": 0,
+                "count": 112,
+                "filter": "raw"
+            }
+        }
+    },
+    "model": "post",
+    "wpconnector": {
+        "post_id": 67,
+        "post": {
+            "ID": 67,
+            "post_author": "1",
+            "post_date": "2019-02-15 19:35:21",
+            "post_date_gmt": "2019-02-15 22:35:21",
+            "post_content": "O percentual de matrículas em tempo integral em escolas públicas, ou seja, de estudantes que passam sete horas diárias na escola, participando de diversas atividades, caiu no ensino fundamental, de acordo com os dados do Censo Escolar de 2018 divulgados em janeiro passado pelo Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (Inep). Já no ensino médio, o número cresceu.\n\nDe acordo com o Censo, o percentual de matrículas em tempo integral passou de 16,3% no ensino fundamental, nas escolas públicas, em 2017 para 10,9% em 2018. Esse percentual chegou a 19,4% em 2015. Nas escolas privadas, as matrículas tiveram um leve aumento, passando de 2,1% para 2,2% de 2017 para 2018.\n\nNo ensino médio, a situação foi oposta. O percentual de matrículas em tempo integral passou de 8,4% em 2017 para 10,3% em 2018, nas escolas públicas. Nas privadas, passou de 3,9% para 4% no mesmo período.\n\nOs estudantes podem, nesse tempo, ter acesso a atividades culturais, esportivas, além de conteúdos de comunicação, saúde, entre outros.\n\nNo ensino fundamental, o programa federal Mais Educação oferece recursos financeiros para que as escolas implementem as atividades. Em 2017, foi reformulado e renomeado para Novo Mais Educação. As ações passaram a priorizar escolas em situação de vulnerabilidade.\n\nNo ensino médio, o tempo integral ganhou destaque com o novo ensino médio, aprovado em lei em 2017, que visa a aumentar esse atendimento. O Ministério da Educação (MEC) auxilia os estados por meio do Programa de Fomento às Escolas de Ensino Médio em Tempo Integral.\n\nAmpliar a educação em tempo integral nas escolas é também uma das metas do Plano Nacional de Educação (PNE), lei que estabelece parâmetros para melhorar a qualidade da educação brasileira. Uma das metas do PNE é oferecer educação em tempo integral em, no mínimo, 50% das escolas públicas, de forma a atender, pelo menos, 25% dos alunos da educação básica até 2024.\n\n\u003cstrong\u003eMenos estudantes\u003c/strong\u003e\nNo ano de 2018, foram registradas 48,5 milhões de matrículas nas 181,9 mil escolas de educação básica brasileiras. O número total apresenta uma redução em relação aos 48,6 milhões de estudantes registrados em 2017.\n\nA maior parte dos estudantes está na rede pública, cerca de 39,5 milhões, 81,44% do total. Estão também, majoritariamente na área urbana (88,7%).\n\nApesar da redução do número geral de alunos, segundo o Censo, a quantidade de matrículas na educação infantil cresceu cerca de 2,8% em relação a 2017, atingindo 8,7 milhões em 2018. Esse crescimento foi decorrente principalmente do aumento das matrículas em creches (5,3%).\n\nO número de matrículas da Educação de Jovens e Adultos (EJA) diminuiu 1,5% no último ano, chegando a 3,5 milhões em 2018. Já o número total de matrículas da educação profissional aumentou 3,9% em relação ao ano de 2017, chegando a 1,9 milhão de estudantes.\n\n\u003cem\u003eFonte: Agência Brasil\u003c/em\u003e\n\n\u003cem\u003eFoto: Gabriel Jabur/Agência Brasil\u003c/em\u003e",
+            "post_title": "Ensino integrale cai no fundamental e cresce no médio, mostra Censo",
+            "post_excerpt": "",
+            "post_status": "publish",
+            "comment_status": "open",
+            "ping_status": "open",
+            "post_password": "[FILTERED]",
+            "post_name": "ensino-integral-cai-no-fundamental-e-cresce-no-medio",
+            "to_ping": "",
+            "pinged": "",
+            "post_modified": "2020-09-01 17:02:16",
+            "post_modified_gmt": "2020-09-01 17:02:16",
+            "post_content_filtered": "",
+            "post_parent": 0,
+            "guid": "http://pve.institutovotorantim.org.br/?p=67",
+            "menu_order": 121,
+            "post_type": "post",
+            "post_mime_type": "",
+            "comment_count": "0",
+            "filter": "raw"
+        },
+        "post_meta": {
+            "_edit_last": ["2"],
+            "_edit_lock": ["1598979689:1"],
+            "_thumbnail_id": ["408"],
+            "meta-checkbox": [""],
+            "_wp_old_slug": ["lorem-ipsum-dolor-elit-consecteur-nullan-ultricies-mauris-nulla-3"],
+            "_encloseme": ["1"],
+            "wpwhpro_create_post_temp_status": ["inherit"]
+        },
+        "post_thumbnail": "http://localhost:8888/wordpress/wp-content/uploads/27539804993_69eb0dd440_zfoto_por_gabriel_jabur_EBC.jpg",
+        "taxonomies": {
+            "post_tag": {
+                "censo-escolar": {
+                    "term_id": 6,
+                    "name": "Censo Escolar",
+                    "slug": "censo-escolar",
+                    "term_group": 0,
+                    "term_taxonomy_id": 6,
+                    "taxonomy": "post_tag",
+                    "description": "",
+                    "parent": 0,
+                    "count": 4,
+                    "filter": "raw"
+                },
+                "ensino-integral": {
+                    "term_id": 8,
+                    "name": "ensino integral",
+                    "slug": "ensino-integral",
+                    "term_group": 0,
+                    "term_taxonomy_id": 8,
+                    "taxonomy": "post_tag",
+                    "description": "",
+                    "parent": 0,
+                    "count": 1,
+                    "filter": "raw"
+                },
+                "ensino-medio": {
+                    "term_id": 7,
+                    "name": "ensino médio",
+                    "slug": "ensino-medio",
+                    "term_group": 0,
+                    "term_taxonomy_id": 7,
+                    "taxonomy": "post_tag",
+                    "description": "",
+                    "parent": 0,
+                    "count": 1,
+                    "filter": "raw"
+                },
+                "frontpage-edu-featured": {
+                    "term_id": 13,
+                    "name": "frontpage-edu-featured",
+                    "slug": "frontpage-edu-featured",
+                    "term_group": 0,
+                    "term_taxonomy_id": 13,
+                    "taxonomy": "post_tag",
+                    "description": "",
+                    "parent": 0,
+                    "count": 9,
+                    "filter": "raw"
+                }
+            },
+            "category": {
+                "uncategorized": {
+                    "term_id": 1,
+                    "name": "Sem categoria",
+                    "slug": "uncategorized",
+                    "term_group": 0,
+                    "term_taxonomy_id": 1,
+                    "taxonomy": "category",
+                    "description": "",
+                    "parent": 0,
+                    "count": 112,
+                    "filter": "raw"
+                }
+            }
+        }
+    }
+}

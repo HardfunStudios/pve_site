@@ -18,7 +18,7 @@ class Post < ApplicationRecord
   accepts_nested_attributes_for :post_attached_files, allow_destroy: true
   has_many :text_contents, dependent: :destroy
 
-  validates :post_title, :post_content, presence: true
+  validates :post_title, :post_content, :wp_id, presence: true
 
   after_save :parse_content
 
