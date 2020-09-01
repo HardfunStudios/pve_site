@@ -6,7 +6,7 @@ class ImageFile < ApplicationRecord
 
   validates :origin_url, presence: true, uniqueness: true
 
-  after_save :local_save
+  # after_save :local_save
 
   def local_save
     filename = id.to_s + File.extname(origin_url)
