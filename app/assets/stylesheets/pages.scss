@@ -1,3 +1,25 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.home-top-bg-img {
+  background: {
+    image: asset_url("bg_home_top.png");
+  }
+}
+
+.full-bg-width {
+  left: 0;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  top: 0
+}
+
+.font-color1 {
+  color: #584898; 
+}
+
+.font-color2 {
+  color: #8477B5; 
+}

@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+@font-face {
+  font-family: "VotorantimSans";
+  src: url(asset-path('VotorantimSans-Regular.ttf')) format("truetype");
+}
