@@ -61,3 +61,4 @@ gem 'nokogiri'
 gem 'sidekiq'
 gem 'wp-connector', github: 'wponrails/wp-connector'
 gem "dotenv-rails"
+gem 'material_icons'
