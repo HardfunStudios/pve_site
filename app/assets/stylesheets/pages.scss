@@ -19,10 +19,37 @@
   top: 0
 }
 
-.font-color1 {
+.font-color-purple {
   color: #584898; 
 }
 
-.font-color2 {
+.font-color-purple-light {
   color: #8477B5; 
+}
+
+.font-color-white {
+  color: #F9FAFF;
+}
+
+.font-color-orange {
+  color: #F36B26;
+}
+
+.login-button {
+  position: absolute;
+  background-color: #F9FAFF;
+  border: 1px solid #F36B26;
+  color: #584898;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 20px;
+  right:10vw;
+}
+
+.login-button:hover {
+  background-color: #F36B26;
 }
