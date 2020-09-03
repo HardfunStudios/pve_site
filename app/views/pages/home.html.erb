@@ -5,12 +5,17 @@
       <h1 class="title-font sm:text-base text-sm mb-2 font-color1">
         <strong>Seja bem vindo(a) ao PVE</strong>
       </h1>
-      <p class="mb-4 leading-snug sm:text-3xl text-2xl mb-4 font-color1">
+      <p class="mb-4 leading-snug lg:text-3xl md:text-2xl text-2xl mb-4 font-color1">
         <strong class="font-color2">O programa que valoriza a educação com ajuda de </strong>
         <strong class="font-color1">Gestores Educacionais</strong>
       </p>
-      <div class="flex justify-center">
-        <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
+      <div class="flex w-full">
+        <input class="w-full rounded mr-2 border-purple-1" type="text" placeholder="Digite o que você procura. Ex: Webinar, Telas Abertas, Notícias">
+        <button class="bg-grey-lightest border-grey border-l shadow hover:bg-grey-lightest">
+          <span class="w-auto flex justify-end items-center text-grey p-2 hover:text-grey-darkest">
+            <%= material_icon.search %>
+          </span>
+        </button>
       </div>
     </div>
     <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
