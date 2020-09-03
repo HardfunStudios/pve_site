@@ -1,6 +1,10 @@
 
+.bg-color-orange {
+  background-color: #F36B26;
+}
+
 .border-purple-1 {
-  border-color: #584898;
+  border-color: #584898 !important;
   border: solid 1px;
 }
 
@@ -10,11 +14,16 @@
   }
 }
 
+#home-search-input {
+  padding: revert;
+  font-weight: bold;
+}
+
 .full-bg-width {
   left: 0;
   position: absolute;
   width: 100vw;
-  height: 100vh;
+ // height: 100vh;
   z-index: -1;
   top: 0
 }

@@ -1,25 +1,76 @@
-<div class="home-top-bg-img bg-cover bg-center full-bg-width"></div>
-<section class="text-gray-700 body-font">
-  <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-    <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+<section class="body-font" id="home-hero-section">
+    
+  <div class="home-top-bg-img bg-cover bg-center full-bg-width" id="home-top-bg"></div>
+  
+  <div class="container mx-auto flex px-5 py-2 md:flex-row flex-col items-center mb-4">
+    <div class="lg:flex-grow md:w-1/2 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
       <h1 class="title-font sm:text-base text-sm mb-2 font-color-purple">
         <strong>Seja bem vindo(a) ao PVE</strong>
       </h1>
       <p class="mb-4 leading-snug lg:text-3xl md:text-2xl text-2xl mb-4 font-color-purple">
         <strong class="font-color-purple-light">O programa que valoriza a educação com ajuda de </strong>
-        <strong class="font-color-purple">Gestores Educacionais</strong>
+        <br/><strong class="font-color-purple">Gestores Educacionais</strong>
       </p>
       <div class="flex w-full">
-        <input class="w-full rounded mr-2 border-purple-1" type="text" placeholder="Digite o que você procura. Ex: Webinar, Telas Abertas, Notícias">
-        <button class="bg-grey-lightest border-grey border-l shadow hover:bg-grey-lightest">
-          <span class="w-auto flex justify-end items-center text-grey p-2 hover:text-grey-darkest">
-            <%= material_icon.search %>
+        <input class="w-full rounded mr-2 border-purple-1" type="text" id="home-search-input"
+              placeholder="Digite o que você procura. Ex: Webinar, Telas Abertas, Notícias">
+        <button class="bg-color-orange border-grey border-l shadow hover:bg-grey-lightest rounded">
+          <span class="w-auto flex justify-end items-center p-2 hover:text-grey-darkest font-color-white font-bold">
+            <%= material_icon.search.css_class('font-bold') %>
           </span>
         </button>
       </div>
     </div>
-    <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+    <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 pl-12">
       <%= image_tag 'home_hero', {class: "object-cover object-center rounded", alt:"hero"} %>
+    </div>
+  </div>
+
+  <div class="flex flex-wrap -m-4 container mx-auto" id="collaborators-buttons">
+    <div class="p-4 md:w-1/3">
+      <a class="flex h-full border-purple-1 lg:p-8 p-2 flex-col bg-white" href="#">
+        <div class="flex flex-col items-center mb-3">
+          <%= image_tag 'hero-gestores' %>
+        </div>
+        <div class="flex-grow text-center">
+          <p class="leading-relaxed text-sm"><strong>Gestores Educacionais</strong></p>
+        </div>
+        <div class="flex-grow text-center">
+          <p class="leading-snug text-xm"><strong>Entre aqui</strong>
+              para ver conteúdos exclusivos para Gestores Educacionais
+          </p>
+        </div>
+      </a>
+    </div>
+    <div class="p-4 md:w-1/3">
+      <a class="flex h-full border-purple-1 lg:p-8 p-2 flex-col bg-white" href="#">
+        <div class="flex flex-col items-center mb-3">
+          <%= image_tag 'hero-familias' %>
+        </div>
+        <div class="flex-grow text-center">
+          <p class="leading-relaxed text-sm"><strong>Famílias</strong></p>
+        </div>
+        <div class="flex-grow text-center">
+          <p class="leading-snug text-xm"><strong>Entre aqui</strong>
+              para ver conteúdos exclusivos para Mobilizadores
+          </p>
+        </div>
+      </a>
+    </div>
+    <div class="p-4 md:w-1/3">
+      <a class="flex h-full border-purple-1 lg:p-8 p-2 flex-col bg-white" href="#">
+        <div class="flex flex-col items-center mb-3">
+          <%= image_tag 'hero-professores' %>
+        </div>
+        <div class="flex-grow text-center">
+          <p class="leading-relaxed text-sm"><strong>Professores</strong></p>
+        </div>
+        <div class="flex-grow text-center">
+          <p class="leading-snug text-xm"><strong>Entre aqui</strong>
+              para ver conteúdos exclusivos para Professores
+          </p>
+        </div>
+      </a>
     </div>
   </div>
 </section>
@@ -98,3 +149,13 @@
     </div>
   </div>
 </section>
+
+<script>
+  window.onresize = adjustHomeBg();
+  window.onload = adjustHomeBg();
+  function adjustHomeBg() { 
+    console.log('opopop');
+    h = parseInt(document.getElementById('home-hero-section').offsetHeight) + parseInt(document.getElementById('pve-menu-header').offsetHeight) / 2;
+    document.getElementById("home-top-bg").style.height = h + "px";
+  }
+</script>
