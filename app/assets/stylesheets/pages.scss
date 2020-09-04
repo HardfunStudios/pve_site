@@ -5,6 +5,7 @@
 
 .border-purple-1 {
   border-color: #584898 !important;
+  outline-color: #584898 !important;
   border: solid 1px;
 }
 
@@ -15,7 +16,6 @@
 }
 
 #home-search-input {
-  padding: revert;
   font-weight: bold;
   outline-color: #584898;
 }

@@ -9,11 +9,11 @@
       </h1>
       <p class="mb-4 leading-snug lg:text-3xl md:text-2xl text-2xl mb-4 font-color-purple">
         <strong class="font-color-purple-light">O programa que valoriza a educação com ajuda de </strong>
-        <br/><strong class="font-color-purple">Gestores Educacionais</strong>
+        <br/><strong class="font-color-purple"><span id='home-collaborator-name'>{{title}}</span></strong>
       </p>
       <%= search_form_for @q, url: search_posts_path, html: { method: :post, class:'flex w-full' } do |f| %>
         <%= f.search_field :post_content_cont, {id: 'home-search-input',
-          class: 'w-full rounded mr-2 border-purple-1',
+          class: 'w-full rounded mr-2 border-purple-1 pl-2',
           placeholder: 'Digite o que você procura. Ex: Webinar, Telas Abertas, Notícias'} %>
         <%= f.button type: 'submit', class: 'bg-color-orange border-grey border-l shadow hover:bg-grey-lightest rounded' do %>
           <span class='w-auto flex justify-end items-center p-2 hover:text-grey-darkest font-color-white font-bold'>
@@ -79,11 +79,11 @@
           <%= image_tag 'hero-professores' %>
         </div>
         <div class="flex-grow text-center">
-          <p class="leading-relaxed text-sm"><strong>Professores</strong></p>
+          <p class="leading-relaxed text-sm"><strong>Mobilizadores</strong></p>
         </div>
         <div class="flex-grow text-center">
           <p class="leading-snug text-xs"><strong>Entre aqui</strong>
-              para ver conteúdos exclusivos para Professores
+              para ver conteúdos exclusivos para Mobilizadores
           </p>
         </div>
       </a>
