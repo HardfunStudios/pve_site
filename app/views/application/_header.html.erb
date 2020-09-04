@@ -1,17 +1,24 @@
 <header class="text-gray-700 body-font">
-  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-    <%= link_to root_url, class: "flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" do %>
-      <%= image_tag 'logo_2020' %>
-    <% end %>
+<div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+  <%= link_to root_url, class: "flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" do %>
+    <%= image_tag 'logo_2020' %>
+  <% end %>
 
-    <nav class="md:ml-12 md:mr-auto flex flex-wrap items-center text-base justify-center">
-      
-      <p class="mr-10 hover:text-gray-900 cursor: pointer;">O PVE</p>
-      <p class="mr-10 hover:text-gray-900 cursor: pointer;">Ações</p>
-      <p class="mr-10 hover:text-gray-900 cursor: pointer;">Junte-se a nós</p>
-      <p class="mr-10 hover:text-gray-900 cursor: pointer;">Últimas notícias</p>
-   
-    </nav>
-    <button class="login-button inline-flex items-center text-base mt-4 md:mt-0">Entrar</button>
-  </div>
+  <nav class="md:ml-12 md:mr-auto flex flex-wrap items-center text-base justify-center">
+    
+    <p class="mb-4 leading-snug sm:text-xs text-xs mb-16 ml-32 mr-10 menu-items">
+      <strong class="font-color-purple">O PVE</strong>
+    </p>
+    <p class="mb-4 leading-snug sm:text-xs text-xs mb-16 mr-10 menu-items">
+      <strong class="font-color-purple">Ações</strong>
+    </p>
+    <p class="mb-4 leading-snug sm:text-xs text-xs mb-16 mr-10 menu-items">
+      <strong class="font-color-white">Junte-se a nós</strong>
+    </p>
+    <p class="mb-4 leading-snug sm:text-xs text-xs mb-16 mr-10 menu-items">
+      <strong class="font-color-white">Últimas notícias</strong>
+    </p>
+    <button class="mb-4 login-button inline-flex items-center text-base">Entrar</button>
+  </nav>
+</div>
 </header>

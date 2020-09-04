@@ -20,6 +20,18 @@
   src: url(asset-path('VotorantimSans-Regular.ttf')) format("truetype");
 }
 
+@font-face {
+    font-family: "VotorantimSans";
+    src: url(asset-path('VotorantimSans-Bold.ttf')) format("truetype");
+    font-weight: bold;
+}
+/*
+@font-face {
+    font-family: "VotorantimSans";
+    src: url(asset-path('VotorantimSans-Black.ttf')) format("truetype");
+    font-weight: bolder;
+}*/
+
 body {
   font-family: "VotorantimSans";
 }
