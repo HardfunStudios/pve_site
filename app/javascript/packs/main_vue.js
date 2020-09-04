@@ -8,7 +8,33 @@ Vue.use(TurbolinksAdapter);
 document.addEventListener('turbolinks:load', () => {
   Vue.http.headers.common['X-CSRF-Token'] = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
  
-
+  var collaboratorType = document.getElementById("home-collaborator-name");
+  if (collaboratorType != null) {
+    new Vue({
+      el: collaboratorType,
+      data () {
+        return {
+          title: 'Famílias',
+          timer: '',
+          i: 0,
+          names: ['Famílias', 'Professores', 'Gestores Educacionais', 'Mobilizadores']
+        }
+      },
+      created () {
+        this.timer = setInterval(this.changeTitle, 5000);
+      },
+      methods: {
+        changeTitle() {
+          this.i >= 3 ? this.i = 0 : this.i++;
+          this.title = this.names[this.i];
+          return this.title;
+        }
+      },
+      beforeDestroy () {
+        clearInterval(this.timer);
+      }
+    });
+  }
 });
 
 
