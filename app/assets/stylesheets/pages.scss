@@ -56,9 +56,13 @@
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 20px;
-  right:10vw;
+  visibility: hidden;
 }
 
 .login-button:hover {
   background-color: #F36B26;
+}
+
+.menu-items {
+  cursor: pointer;
 }
