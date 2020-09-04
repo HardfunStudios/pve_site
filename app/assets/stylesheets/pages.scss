@@ -17,19 +17,20 @@
 #home-search-input {
   padding: revert;
   font-weight: bold;
+  outline-color: #584898;
 }
 
 .full-bg-width {
   left: 0;
   position: absolute;
-  width: 100vw;
+  width: 100%;
  // height: 100vh;
   z-index: -1;
   top: 0
 }
 
 .font-color-purple {
-  color: #584898; 
+  color: #584898;
 }
 
 .font-color-purple-light {

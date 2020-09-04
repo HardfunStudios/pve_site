@@ -8,7 +8,11 @@ Rails.application.routes.draw do
   get 'pages/home'
   resources :tags
   resources :categories
-  resources :posts
+  resources :posts do
+    collection do
+      match 'search' => 'posts#search', via: %i[get post], as: :search
+    end
+  end
 
   # wp-connector endpoints
   match 'wp-post-webhook/:model', to: 'wpconnector#model_create', via: %i[head post]

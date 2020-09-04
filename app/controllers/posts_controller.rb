@@ -13,6 +13,15 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show; end
 
+  def search
+    puts 'TO DO - Render posts page'
+    @q = Post.ransack(params[:q])
+    @posts = @q.result(distinct: true).order(:updated_at).limit(12)
+    respond_to do |format|
+      format.html
+    end
+  end
+
   # GET /posts/new
   def new
     @post = Post.new

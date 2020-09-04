@@ -2,7 +2,7 @@
     
   <div class="home-top-bg-img bg-cover bg-center full-bg-width" id="home-top-bg"></div>
   
-  <div class="container mx-auto flex px-5 py-2 md:flex-row flex-col items-center mb-8">
+  <div class="container mx-auto flex px-5 py-2 md:flex-row flex-col items-center mb-8 mt-6">
     <div class="lg:flex-grow md:w-1/2 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
       <h1 class="title-font sm:text-base text-sm mb-2 font-color-purple">
         <strong>Seja bem vindo(a) ao PVE</strong>
@@ -11,15 +11,16 @@
         <strong class="font-color-purple-light">O programa que valoriza a educação com ajuda de </strong>
         <br/><strong class="font-color-purple">Gestores Educacionais</strong>
       </p>
-      <div class="flex w-full">
-        <input class="w-full rounded mr-2 border-purple-1" type="text" id="home-search-input"
-              placeholder="Digite o que você procura. Ex: Webinar, Telas Abertas, Notícias">
-        <button class="bg-color-orange border-grey border-l shadow hover:bg-grey-lightest rounded">
-          <span class="w-auto flex justify-end items-center p-2 hover:text-grey-darkest font-color-white font-bold">
+      <%= search_form_for @q, url: search_posts_path, html: { method: :post, class:'flex w-full' } do |f| %>
+        <%= f.search_field :post_content_cont, {id: 'home-search-input',
+          class: 'w-full rounded mr-2 border-purple-1',
+          placeholder: 'Digite o que você procura. Ex: Webinar, Telas Abertas, Notícias'} %>
+        <%= f.button type: 'submit', class: 'bg-color-orange border-grey border-l shadow hover:bg-grey-lightest rounded' do %>
+          <span class='w-auto flex justify-end items-center p-2 hover:text-grey-darkest font-color-white font-bold'>
             <%= material_icon.search.css_class('font-bold') %>
           </span>
-        </button>
-      </div>
+        <% end %>
+      <% end %>
     </div>
     <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 pl-16">
       <%= image_tag 'home_hero', {class: "object-cover object-center rounded", alt:"hero"} %>
