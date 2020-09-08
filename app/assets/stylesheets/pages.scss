@@ -3,6 +3,10 @@
   background-color: #F36B26;
 }
 
+.bg-very-light-blue {
+  background-color: #F7FAFC;
+}
+
 .border-purple-1 {
   border-color: #584898 !important;
   outline-color: #584898 !important;
@@ -67,4 +71,9 @@
 .menu-items {
   cursor: pointer;
   height:16px;
+}
+
+#bg-matrizes-competencias {
+  background: image-url('bg-matrizes.svg') no-repeat;
+  background-size: auto 100%;
 }
