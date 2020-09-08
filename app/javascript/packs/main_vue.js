@@ -35,6 +35,19 @@ document.addEventListener('turbolinks:load', () => {
       }
     });
   }
+  
+  new Vue({
+    el: '#animated-matrix',
+    data: {
+      activeBtn: ''
+    },
+    methods: {
+      toggleSelected: function(btn) {
+        this.activeBtn = btn;
+        
+      }
+    }
+  });
 });
 
 
