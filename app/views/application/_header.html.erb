@@ -1,34 +1,34 @@
 <header class="text-gray-700 body-font">
-<div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-  <%= link_to root_url, class: "flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" do %>
-    <%= image_tag 'logo_2020' %>
-  <% end %>
+  <div class="container mx-auto flex flex-wrap p-2 pb-0 flex-col md:flex-row items-center">
+    <%= link_to root_url, class: "flex items-center w-1/6" do %>
+      <%= image_tag 'logo_2020' %>
+    <% end %>
 
-  <nav class="md:ml-12 md:mr-auto flex flex-wrap items-center text-base justify-center">
-    
-    <span class="mb-4 leading-snug sm:text-xs text-xs mb-16 ml-32 mr-12 menu-items">
-      <strong class="font-color-purple">O PVE</strong>
-    </span>
+    <nav class="ml-4 lg:ml-12 md:mr-auto flex flex-wrap items-center text-base justify-center pb-16">
 
-    <div class="dropdown inline-block relative menu-items mb-16 mr-12">
-      <span class="mb-4 leading-snug sm:text-sx text-xs">
-        <strong class="font-color-purple">Ações</strong>
+      <a class="leading-snug text-xs ml-32 mr-12 menu-items" href="/pve">
+        <strong class="font-color-purple">O PVE</strong>
+      </a>
+
+      <div class="dropdown inline-block relative menu-items mr-12">
+        <span class="leading-snug text-xs">
+          <strong class="font-color-purple">Ações</strong>
+        </span>
+        <ul class="dropdown-menu absolute hidden text-gray-700 pt-1">
+          <li class=""><a class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Linha do tempo</a></li>
+          <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Matrizes e competências</a></li>
+          <li class=""><a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Onde estamos</a></li>
+          <li class=""><a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">PVE em números</a></li>
+        </ul>
+      </div>
+
+      <span class="leading-snug text-xs mr-10 menu-items">
+        <strong class="font-color-white">Junte-se a nós</strong>
       </span>
-      <ul class="dropdown-menu absolute hidden text-gray-700 pt-1">
-        <li class=""><a class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Linha do tempo</a></li>
-        <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Matrizes e competências</a></li>
-        <li class=""><a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Onde estamos</a></li>
-        <li class=""><a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">PVE em números</a></li>
-      </ul>
-    </div>
-
-    <span class="mb-4 leading-snug sm:text-xs text-xs mb-16 mr-10 menu-items">
-      <strong class="font-color-white">Junte-se a nós</strong>
-    </span>
-    <span class="mb-4 leading-snug sm:text-xs text-xs mb-16 mr-12 menu-items">
-      <strong class="font-color-white">Últimas notícias</strong>
-    </span>
-    <button class="mb-4 login-button inline-flex items-center text-base">Entrar</button>
-  </nav>
-</div>
+      <span class="leading-snug text-xs mr-12 menu-items">
+        <strong class="font-color-white">Últimas notícias</strong>
+      </span>
+      <button class="login-button inline-flex items-center text-base">Entrar</button>
+    </nav>
+  </div>
 </header>
