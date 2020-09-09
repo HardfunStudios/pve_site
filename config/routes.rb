@@ -21,4 +21,5 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   get 'portal', to: 'pages#portal'
+  get 'pve', to: 'pages#pve'
 end

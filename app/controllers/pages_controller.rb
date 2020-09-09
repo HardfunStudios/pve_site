@@ -8,4 +8,6 @@ class PagesController < ApplicationController
   def portal
     @posts = Post.order(:created_at).limit(6)
   end
+  
+  def pve; end
 end
