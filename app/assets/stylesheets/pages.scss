@@ -51,6 +51,22 @@
   mix-blend-mode: multiply;
 }
 
+.font-color-gray {
+  color: #7C7C7C;
+}
+
+.font-color-blue {
+  color: #5A90FF;
+}
+
+.font-color-blue-strong {
+  color: #6A75FF;
+}
+
+.font-color-blue-stronger {
+  color: #584898;
+}
+
 .login-button {
   position: absolute;
   background-color: #F9FAFF;
@@ -83,4 +99,10 @@
   button.active {
     background-color: #c5caff;
   }
+}
+
+#section-pve-impact {
+  background: image-url('bg-matrizes.svg') no-repeat;
+  background-size: auto 100%;
+  background-position-x: 128%;
 }
