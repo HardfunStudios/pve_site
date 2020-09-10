@@ -110,3 +110,15 @@
   background-size: auto 100%;
   background-position-x: 128%;
 }
+
+#section-top-gestores {
+  background: image-url('bg-gestores.svg') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.top-buttons-collaborator-page {
+  position: absolute;
+  left: 0;
+  top: 470px;
+}

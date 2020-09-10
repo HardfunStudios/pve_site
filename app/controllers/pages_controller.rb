@@ -10,4 +10,8 @@ class PagesController < ApplicationController
   end
   
   def pve; end
+  
+  def gestores
+    @posts = Post.limit(6)
+  end
 end
