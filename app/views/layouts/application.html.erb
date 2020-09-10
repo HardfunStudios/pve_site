@@ -22,9 +22,11 @@
     <%= javascript_pack_tag 'main_vue' %>
     <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     
-    <div class="xl:container xl:mx-auto xl:px-20">
-      <%= render 'header' %>
-    </div>
+    <div class='<%= @color %>'>
+      <div class="xl:container xl:mx-auto xl:px-20">
+        <%= render 'header' %>
+      </div>
+    </div>    
   </head>
 
   <body>
