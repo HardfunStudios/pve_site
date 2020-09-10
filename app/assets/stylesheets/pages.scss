@@ -130,3 +130,14 @@
   background-size: cover;
   background-position: center;
 }
+
+#top-buttons-gestores {
+  button:hover {
+    background-color: #584898;
+    color: white;
+    
+    img {
+      filter: brightness(0) invert(1);
+    }
+  }
+}
