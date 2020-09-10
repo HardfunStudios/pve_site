@@ -109,6 +109,11 @@
   background-color: #F7FAFC;
 }
 
+#mapa-bg {
+  background: image-url('mapa.png') no-repeat;
+  background-size: auto 100%;
+}
+
 #numeros-bg {
   background: image-url('numeros-bg.png') no-repeat;
   background-size: auto 100%;
@@ -126,8 +131,13 @@
   background-position: center;
 }
 
-.top-buttons-collaborator-page {
-  position: absolute;
-  left: 0;
-  top: 470px;
+#top-buttons-gestores {
+  button:hover {
+    background-color: #584898;
+    color: white;
+    
+    img {
+      filter: brightness(0) invert(1);
+    }
+  }
 }
