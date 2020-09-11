@@ -51,6 +51,26 @@ document.addEventListener('turbolinks:load', () => {
       }
     });
   }
+  
+  var gestores = document.getElementById('top-buttons-gestores');
+  if (gestores != null) {
+    new Vue({
+      el: gestores,
+      data: {
+        activeBtn: '0',
+        categories: ['gestor-category-0', 'gestor-category-1', 'gestor-category-2']
+      },
+      methods: {
+        toggleSelected: function(btn) {
+          this.activeBtn = btn;
+          this.categories.forEach(function(category) {
+            document.getElementById(category).classList.add('hidden');
+          });
+          document.getElementById(this.categories[parseInt(btn)]).classList.remove('hidden');
+        }
+      }
+    });
+  }
 });
 
 

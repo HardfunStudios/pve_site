@@ -12,6 +12,7 @@ class PagesController < ApplicationController
   def pve; end
   
   def gestores
-    @posts = Post.limit(6)
+    @posts = Post.joins(:categories).where('categories.name LIKE ?', '%Webinar%').limit(6)
+    @posts += Post.joins(:categories).where('categories.name LIKE ?', '%PVE2020%').limit(6)
   end
 end
