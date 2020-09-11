@@ -132,9 +132,10 @@
 }
 
 #top-buttons-gestores {
-  button:hover {
+  button:hover, button.active {
     background-color: #584898;
     color: white;
+    outline: none;
     
     img {
       filter: brightness(0) invert(1);
