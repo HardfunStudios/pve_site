@@ -140,4 +140,8 @@
       filter: brightness(0) invert(1);
     }
   }
+  
+  button {
+      min-height: 50px;
+  }
 }
