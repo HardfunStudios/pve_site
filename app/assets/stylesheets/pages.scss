@@ -71,6 +71,17 @@
   color: #584898;
 }
 
+.magnifying-glass {
+  position: relative;
+  width: 10%;
+  z-index: 10;
+}
+
+.map {
+  position: relative;
+  width: 48%;
+}
+
 .login-button {
   position: absolute;
   background-color: #F9FAFF;
@@ -109,10 +120,6 @@
   background-color: #F7FAFC;
 }
 
-#mapa-bg {
-  background: image-url('mapa.png') no-repeat;
-  background-size: auto 100%;
-}
 
 #numeros-bg {
   background: image-url('numeros-bg.png') no-repeat;
