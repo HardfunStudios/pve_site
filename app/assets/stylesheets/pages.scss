@@ -131,3 +131,40 @@
   background-size: auto 100%;
   background-position-x: 128%;
 }
+
+#mapa {
+  width: 100%;
+  height: 1005;
+  margin-left: 35rem;
+  margin-top: -9rem;
+  display: inline-block;
+}
+
+#mapa svg a:hover{ 
+  cursor: pointer;
+}
+
+
+#city-info {
+  position:relative;
+  top: 0;
+  left: 0;
+  border-radius: 15px;
+  border: 1px solid #7C7C7C;
+  width: 230px;
+  height: 200px; 
+  background-color: #F7FAFC;
+  visibility: hidden;
+}
+
+#city-info-header {
+  text-align: center;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+  padding: 6px;
+  cursor: move;
+  z-index: 10;
+  background-color: #584898;
+  color: #fff;
+  margin-bottom: 1em;
+}
