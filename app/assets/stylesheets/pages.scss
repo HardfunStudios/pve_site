@@ -17,8 +17,9 @@
 }
 
 .home-top-bg-img {
-  background: asset_url("top-hero-header.png") no-repeat fixed, asset_url("lower-hero-home.png") no-repeat;
-  background-size: 80%, 80%;
+  background: asset_url("top-hero-header.png") no-repeat, asset_url("lower-hero-home.png") no-repeat;
+  background-size: 1200px 250px, 80%;
+  background-position: relative, relative;
   background-position-x: 60%, left;
   background-position-y: top, bottom;
   background-color: #F9FAFF;

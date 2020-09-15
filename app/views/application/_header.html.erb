@@ -5,12 +5,12 @@
       <%= image_tag 'logo_2020' %>
     <% end %>
      
-    <nav class="ml-4 lg:ml-20 xl:ml-32 md:mr-auto flex flex-wrap items-center text-base justify-center pb-4">
-      <a class="leading-snug text-xs ml-32 mr-12 menu-items" href="/pve">
+    <nav class=" ml-4 lg:ml-20 xl:ml-32 md:mr-auto flex flex-wrap items-center text-base justify-center pb-4">
+      <a class="leading-snug text-xs ml-10 mr-12 menu-items absolute" href="/pve">
         <strong class="font-color-purple">O PVE</strong>
       </a>
 
-      <div class="dropdown inline-block relative menu-items ml-4 mr-12">
+      <div class="dropdown inline-block relative menu-items ml-56 mr-12 absolute">
         <span class="leading-snug text-xs">
           <strong class="font-color-purple">Ações</strong>
         </span>
@@ -22,12 +22,14 @@
         </ul>
       </div>
 
-      <span class="leading-snug text-xs mr-10 menu-items">
-        <strong id="text-in-white1" class="font-color-white">Junte-se a nós</strong>
-      </span>
-      <span class="leading-snug text-xs mr-12 menu-items">
-        <strong class="font-color-white">Últimas notícias</strong>
-      </span>
+      <div class="text-right">
+        <span class="leading-snug text-xs ml-2 mr-10 -mt-1 menu-items absolute">
+          <strong id="text-in-white1" class="font-color-white">Junte-se a nós</strong>
+        </span>
+        <span class="leading-snug text-xs ml-32 mr-12 -mt-1 menu-items absolute">
+          <strong class="font-color-white">Últimas notícias</strong>
+        </span>
+      </div>
       <button class="login-button inline-flex items-center text-base">Entrar</button>
     </nav>
   </div>
