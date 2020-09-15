@@ -14,6 +14,6 @@ class PagesController < ApplicationController
   def gestores
     @posts = Post.joins(:categories).where('categories.name LIKE ?', '%Webinar%').limit(6)
     @posts += Post.joins(:categories).where('categories.name LIKE ?', '%PVE2020%').limit(6)
-    @posts += Post.joins(:categories).where('categories.name LIKE ?', '%Telas%').limit(6)
+    @posts += Post.joins(:categories).where('categories.name LIKE ?', '%Uncategorized%').limit(6)
   end
 end
