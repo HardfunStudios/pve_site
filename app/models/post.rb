@@ -106,4 +106,9 @@ class Post < ApplicationRecord
     service_parser = PostContentParserService.new(self)
     service_parser.execute
   end
+  
+  def increase_visit
+    view_counter += 1
+    save!
+  end
 end
