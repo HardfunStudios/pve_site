@@ -13,6 +13,10 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post.increase_view
+    case params[:cat]
+    when 'gestores'
+      render 'show_gestores'
+    end   
   end
 
   def search
