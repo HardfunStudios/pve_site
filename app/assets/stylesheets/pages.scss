@@ -21,13 +21,18 @@
 }
 
 .bg-header-home {
-  background-color: transparent;
+  background-color: #F7FAFC;
   color: #584898;
-  background-image: image-url("logo_2020");
-  background-repeat: no-repeat;
-  background-position-y: 9px;
-  background-position-x: 170px;
-  background-size: 8.5%;
+  background-image: image-url("logo_2020"), image-url("top-hero-header");
+  background-repeat: no-repeat, no-repeat;
+  background-position-y: 9px, -3px;
+  background-position-x: 170px, 145px;
+  background-size: 8.5%, 1150px 235px;
+  mix-blend-mode: multiply;
+}
+
+.header-size {
+  height: 150px;
 }
 
 .border-purple-1 {
@@ -43,12 +48,11 @@
 }
 
 .home-top-bg-img {
-  background: asset_url("top-hero-header.png") no-repeat, asset_url("lower-hero-home.png") no-repeat;
-  background-size: 1200px 250px, 80%;
-  background-position: relative, relative;
-  background-position-x: 60%, left;
-  background-position-y: top, bottom;
-  background-color: #F9FAFF;
+  position: relative;
+  height: 250px;
+  width: 1200px;
+  left:0;
+  top:-1px;
 }
 
 #header-top-bg-img {
