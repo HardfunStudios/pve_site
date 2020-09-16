@@ -107,9 +107,9 @@ class Post < ApplicationRecord
     service_parser.execute
   end
   
-  def increase_visit
-    view_counter += 1
-    save!
+  def increase_view
+    views = view_counter.nil? ? 0 : view_counter + 1
+    update_column(:view_counter, views)
   end
   
   def category_number

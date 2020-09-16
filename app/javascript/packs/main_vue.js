@@ -85,6 +85,22 @@ document.addEventListener('turbolinks:load', () => {
       }
     });
   }
+
+  $('.load-more').click(function (e) {
+    e.preventDefault();
+    var cat = $(this).attr('cat');
+    $.ajax({
+      type: "GET",
+      url: $(this).attr('href'),
+      dataType: "script",
+      success: function () {
+        $('.load-more').show();
+        Array.prototype.forEach.call(document.getElementsByClassName('post-cat-' + cat), function(el) {
+          el.classList.remove('hidden');
+        }); 
+      }
+    });
+  });
 });
 
 
