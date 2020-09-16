@@ -1,167 +1,113 @@
-<section id="home-hero-section" class="xl:container xl:mx-auto xl:px-20">
-    
-  <div class="home-top-bg-img bg-cover bg-center full-bg-width" id="home-top-bg"></div>
-  
-  <div class="container mx-auto flex px-5 py-2 md:flex-row flex-col items-center mb-4">
-    <div class="lg:flex-grow md:w-1/2 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-      <h1 class="title-font sm:text-base text-sm mb-2 font-color-purple">
-        <strong>Seja bem vindo(a) ao PVE</strong>
-      </h1>
-      <p class="mb-4 leading-snug lg:text-3xl md:text-2xl text-2xl mb-4 font-color-purple">
-        <strong class="font-color-purple-light">O programa que valoriza a educação com ajuda de </strong>
-        <br/><strong class="font-color-purple"><span id='home-collaborator-name'>{{title}}</span></strong>
-      </p>
-      <%= search_form_for @q, url: search_posts_path, html: { method: :post, class:'flex w-full' } do |f| %>
-        <%= f.search_field :post_content_cont, {id: 'home-search-input',
-          class: 'w-full rounded mr-2 border-purple-1 pl-2',
-          placeholder: 'Digite o que você procura. Ex: Webinar, Telas Abertas, Notícias'} %>
-        <%= f.button type: 'submit', class: 'bg-color-orange border-grey border-l shadow hover:bg-grey-lightest rounded' do %>
-          <span class='w-auto flex justify-end items-center p-2 hover:text-grey-darkest font-color-white font-bold'>
-            <%= material_icon.search.css_class('font-bold') %>
-          </span>
+<section id="home-hero-section" class="bg-left-bottom mb-16">
+  <div class="xl:container xl:mx-auto xl:px-20">
+    <div class="container mx-auto flex px-5 pb-2 md:flex-row flex-col items-center mb-4">
+      <div class="lg:flex-grow md:w-1/2 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+        <h1 class="title-font sm:text-base text-sm mb-2 font-color-purple">
+          <strong>Seja bem vindo(a) ao PVE</strong>
+        </h1>
+        <p class="mb-4 leading-snug lg:text-3xl md:text-2xl text-2xl mb-4 font-color-purple">
+          <strong class="font-color-purple-light">O programa que valoriza<br/>a educação com ajuda de</strong>
+          <br/><strong class="font-color-purple"><span id='home-collaborator-name'>{{title}}</span></strong>
+        </p>
+        <%= search_form_for @q, url: search_posts_path, html: { method: :post, class:'flex w-full' } do |f| %>
+          <%= f.search_field :post_content_cont, {id: 'home-search-input',
+            class: 'w-full rounded mr-2 border-purple-1 pl-2',
+            placeholder: 'Digite o que você procura. Ex: Webinar, Telas Abertas, Notícias'} %>
+          <%= f.button type: 'submit', class: 'bg-color-orange border-grey border-l shadow hover:bg-grey-lightest rounded' do %>
+            <span class='w-auto flex justify-end items-center p-2 hover:text-grey-darkest font-color-white font-bold'>
+              <%= material_icon.search.css_class('font-bold') %>
+            </span>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
+      <div class="lg:max-w-lg lg:w-7/12 md:w-1/2 w-5/6 pl-16">
+        <%= image_tag 'home_hero', {class: "object-cover object-center rounded", alt:"hero"} %>
+      </div>
     </div>
-    <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 pl-16">
-      <%= image_tag 'home_hero', {class: "object-cover object-center rounded", alt:"hero"} %>
-    </div>
-  </div>
 
-  <div class="flex flex-wrap -m-4 container mx-auto" id="collaborators-buttons">
-    <div class="p-4 md:w-1/4">
-      <a class="flex h-full border-purple-1 lg:p-4 p-2 flex-col bg-white" href="#">
-        <div class="flex flex-col items-center mb-3">
-          <%= image_tag 'hero-gestores' %>
+    <div class="w-full relative bottom--110" style="margin-top: -135px;">
+      <div class="flex flex-wrap -m-4 container mx-auto" id="collaborators-buttons">
+        <div class="p-4 md:w-1/4">
+          <a class="flex h-full border-purple-1 lg:p-3 p-2 flex-col bg-white rounded" href="/gestores">
+            <div class="flex flex-col items-center mb-3">
+              <%= image_tag 'hero-gestores' %>
+            </div>
+            <div class="flex-grow text-center">
+              <p class="leading-relaxed text-sm"><strong>Gestores Educacionais</strong></p>
+            </div>
+            <div class="flex-grow text-center">
+              <p class="leading-snug text-xs"><strong>Entre aqui</strong>
+                  para ver conteúdos exclusivos para Gestores Educacionais
+              </p>
+            </div>
+          </a>
         </div>
-        <div class="flex-grow text-center">
-          <p class="leading-relaxed text-sm"><strong>Gestores Educacionais</strong></p>
+        <div class="p-4 md:w-1/4">
+          <a class="flex h-full border-purple-1 lg:p-3 p-2 flex-col bg-white rounded" href="#">
+            <div class="flex flex-col items-center mb-3">
+              <%= image_tag 'hero-familias' %>
+            </div>
+            <div class="flex-grow text-center">
+              <p class="leading-relaxed text-sm"><strong>Famílias</strong></p>
+            </div>
+            <div class="flex-grow text-center">
+              <p class="leading-snug text-xs"><strong>Entre aqui</strong>
+                  para ver conteúdos exclusivos para Mobilizadores
+              </p>
+            </div>
+          </a>
         </div>
-        <div class="flex-grow text-center">
-          <p class="leading-snug text-xs"><strong>Entre aqui</strong>
-              para ver conteúdos exclusivos para Gestores Educacionais
-          </p>
+        <div class="p-4 md:w-1/4">
+          <a class="flex h-full border-purple-1 lg:p-3 p-2 flex-col bg-white rounded" href="#">
+            <div class="flex flex-col items-center mb-3">
+              <%= image_tag 'hero-professores' %>
+            </div>
+            <div class="flex-grow text-center">
+              <p class="leading-relaxed text-sm"><strong>Professores</strong></p>
+            </div>
+            <div class="flex-grow text-center">
+              <p class="leading-snug text-xs"><strong>Entre aqui</strong>
+                  para ver conteúdos exclusivos para Professores
+              </p>
+            </div>
+          </a>
         </div>
-      </a>
-    </div>
-    <div class="p-4 md:w-1/4">
-      <a class="flex h-full border-purple-1 lg:p-4 p-2 flex-col bg-white" href="#">
-        <div class="flex flex-col items-center mb-3">
-          <%= image_tag 'hero-familias' %>
+        <div class="p-4 md:w-1/4">
+          <a class="flex h-full border-purple-1 lg:p-3 p-2 flex-col bg-white rounded" href="#">
+            <div class="flex flex-col items-center mb-3">
+              <%= image_tag 'hero-mobilizadores' %>
+            </div>
+            <div class="flex-grow text-center">
+              <p class="leading-relaxed text-sm"><strong>Mobilizadores</strong></p>
+            </div>
+            <div class="flex-grow text-center">
+              <p class="leading-snug text-xs"><strong>Entre aqui</strong>
+                  para ver conteúdos exclusivos para Mobilizadores
+              </p>
+            </div>
+          </a>
         </div>
-        <div class="flex-grow text-center">
-          <p class="leading-relaxed text-sm"><strong>Famílias</strong></p>
-        </div>
-        <div class="flex-grow text-center">
-          <p class="leading-snug text-xs"><strong>Entre aqui</strong>
-              para ver conteúdos exclusivos para Mobilizadores
-          </p>
-        </div>
-      </a>
-    </div>
-    <div class="p-4 md:w-1/4">
-      <a class="flex h-full border-purple-1 lg:p-4 p-2 flex-col bg-white" href="#">
-        <div class="flex flex-col items-center mb-3">
-          <%= image_tag 'hero-professores' %>
-        </div>
-        <div class="flex-grow text-center">
-          <p class="leading-relaxed text-sm"><strong>Professores</strong></p>
-        </div>
-        <div class="flex-grow text-center">
-          <p class="leading-snug text-xs"><strong>Entre aqui</strong>
-              para ver conteúdos exclusivos para Professores
-          </p>
-        </div>
-      </a>
-    </div>
-    <div class="p-4 md:w-1/4">
-      <a class="flex h-full border-purple-1 lg:p-4 p-2 flex-col bg-white" href="#">
-        <div class="flex flex-col items-center mb-3">
-          <%= image_tag 'hero-professores' %>
-        </div>
-        <div class="flex-grow text-center">
-          <p class="leading-relaxed text-sm"><strong>Mobilizadores</strong></p>
-        </div>
-        <div class="flex-grow text-center">
-          <p class="leading-snug text-xs"><strong>Entre aqui</strong>
-              para ver conteúdos exclusivos para Mobilizadores
-          </p>
-        </div>
-      </a>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="text-gray-700 body-font" id="pve-timeline">
-  <div class="container px-5 py-24 mx-auto flex flex-wrap">
-    <div class="flex relative pt-10 pb-20 sm:items-center md:w-2/3 mx-auto">
-      <div class="h-full w-6 absolute inset-0 flex items-center justify-center">
-        <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+<section id='section-mapa-interativo'>
+  <div class="xl:container xl:mx-auto xl:px-20">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-col w-full mb-6 text-black">
+        <h1 class="sm:text-2xl text-xl title-font mb-4">Você sabe o que é o PVE?</h1>
+        <p class="lg:w-2/6 ml-8 leading-relaxed text-sm">
+          <span class="text-gray-600">O PVE é uma iniciativa do Instituto Votorantim e das empresas investidas e parceiras da Votorantim, comprometida com a melhoria da educação pública a partir da qualificação de práticas de gestão e de mobilização social de comunidades.</span>
+        </p>
+        <p class="lg:w-2/6 ml-8 mt-6 leading-relaxed text-sm">
+          <span class="font-color-orange">Saiba mais</scan>
+        </p>
+        <div class="lg:max-w-lg lg:w-full md:w-1/2 w-6/6 pl-16 ml-64">
+      <%= image_tag 'mapa', {class: "object-cover object-center rounded", alt:"hero"} %>
       </div>
-      <div class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-green-500 text-white relative z-10 title-font font-medium text-sm">1</div>
-      <div class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
-        <div class="flex-shrink-0 w-24 h-24 bg-green-100 text-green-500 rounded-full inline-flex items-center justify-center">
-          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-12 h-12" viewBox="0 0 24 24">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-          </svg>
-        </div>
-        <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
-          <h2 class="font-medium title-font text-gray-900 mb-1 text-xl">Shooting Stars</h2>
-          <p class="leading-relaxed">VHS cornhole pop-up, try-hard 8-bit iceland helvetica. Kinfolk bespoke try-hard cliche palo santo offal.</p>
-        </div>
       </div>
-    </div>
-    <div class="flex relative pb-20 sm:items-center md:w-2/3 mx-auto">
-      <div class="h-full w-6 absolute inset-0 flex items-center justify-center">
-        <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
-      </div>
-      <div class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-green-500 text-white relative z-10 title-font font-medium text-sm">2</div>
-      <div class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
-        <div class="flex-shrink-0 w-24 h-24 bg-green-100 text-green-500 rounded-full inline-flex items-center justify-center">
-          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-12 h-12" viewBox="0 0 24 24">
-            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-          </svg>
-        </div>
-        <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
-          <h2 class="font-medium title-font text-gray-900 mb-1 text-xl">The Catalyzer</h2>
-          <p class="leading-relaxed">VHS cornhole pop-up, try-hard 8-bit iceland helvetica. Kinfolk bespoke try-hard cliche palo santo offal.</p>
-        </div>
-      </div>
-    </div>
-    <div class="flex relative pb-20 sm:items-center md:w-2/3 mx-auto">
-      <div class="h-full w-6 absolute inset-0 flex items-center justify-center">
-        <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
-      </div>
-      <div class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-green-500 text-white relative z-10 title-font font-medium text-sm">3</div>
-      <div class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
-        <div class="flex-shrink-0 w-24 h-24 bg-green-100 text-green-500 rounded-full inline-flex items-center justify-center">
-          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-12 h-12" viewBox="0 0 24 24">
-            <circle cx="12" cy="5" r="3"></circle>
-            <path d="M12 22V8M5 12H2a10 10 0 0020 0h-3"></path>
-          </svg>
-        </div>
-        <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
-          <h2 class="font-medium title-font text-gray-900 mb-1 text-xl">The 400 Blows</h2>
-          <p class="leading-relaxed">VHS cornhole pop-up, try-hard 8-bit iceland helvetica. Kinfolk bespoke try-hard cliche palo santo offal.</p>
-        </div>
-      </div>
-    </div>
-    <div class="flex relative pb-10 sm:items-center md:w-2/3 mx-auto">
-      <div class="h-full w-6 absolute inset-0 flex items-center justify-center">
-        <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
-      </div>
-      <div class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-green-500 text-white relative z-10 title-font font-medium text-sm">4</div>
-      <div class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
-        <div class="flex-shrink-0 w-24 h-24 bg-green-100 text-green-500 rounded-full inline-flex items-center justify-center">
-          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-12 h-12" viewBox="0 0 24 24">
-            <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
-            <circle cx="12" cy="7" r="4"></circle>
-          </svg>
-        </div>
-        <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
-          <h2 class="font-medium title-font text-gray-900 mb-1 text-xl">Neptune</h2>
-          <p class="leading-relaxed">VHS cornhole pop-up, try-hard 8-bit iceland helvetica. Kinfolk bespoke try-hard cliche palo santo offal.</p>
-        </div>
-      </div>
+      
     </div>
   </div>
 </section>
@@ -202,7 +148,6 @@
         </div>
       </div>
     </div>
-    
   </div>
 </section>
 
@@ -241,15 +186,3 @@
     </div>
   </div>
 </section>
-
-<script>
-  window.addEventListener('resize', adjustHomeBg);
-  document.addEventListener('turbolinks:load', adjustHomeBg);
-  function adjustHomeBg() {
-    scroll = parseInt(document.documentElement.scrollTop);
-    buttons = parseInt(document.getElementById('collaborators-buttons').offsetHeight);
-    h = parseInt(document.getElementById('home-hero-section').getBoundingClientRect().bottom) + scroll;
-    h -= buttons / 2;
-    document.getElementById("home-top-bg").style.height = h + "px";
-  }
-</script>

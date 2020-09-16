@@ -36,18 +36,55 @@ document.addEventListener('turbolinks:load', () => {
     });
   }
   
-  new Vue({
-    el: '#animated-matrix',
-    data: {
-      activeBtn: ''
-    },
-    methods: {
-      toggleSelected: function(btn) {
-        this.activeBtn = btn;
-        
+  var matrices = document.getElementById('animated-matrix');
+  if (matrices != null) {
+    new Vue({
+      el: matrices,
+      data: {
+        activeBtn: ''
+      },
+      methods: {
+        toggleSelected: function(btn) {
+          this.activeBtn = btn;
+
+        }
       }
-    }
-  });
+    });
+  }
+  
+  var gestores = document.getElementById('top-buttons-gestores');
+  if (gestores != null) {
+    new Vue({
+      el: gestores,
+      data: {
+        activeBtn: '0',
+        categories: ['gestor-category-0', 'gestor-category-1', 'gestor-category-2']
+      },
+      methods: {
+        toggleSelected: function(btn) {
+          this.activeBtn = btn;
+          this.categories.forEach(function(category) {
+            document.getElementById(category).classList.add('hidden');
+          });
+          document.getElementById(this.categories[parseInt(btn)]).classList.remove('hidden');
+          document.getElementById('gestores-ver-mais').setAttribute('cat', btn);
+
+          Array.prototype.forEach.call(document.getElementsByClassName("post-card-preview"), function(el) {
+            if (el.classList.contains('post-cat-' + btn)) {
+              el.classList.remove('hidden');
+            } else {
+              el.classList.add('hidden');
+            }
+          });
+        }
+      },
+      created () {
+        Array.prototype.forEach.call(document.getElementsByClassName('post-cat-' + this.activeBtn), function(el) {
+          el.classList.remove('hidden');
+        });   
+      }
+    });
+  }
 });
 
 

@@ -7,3 +7,27 @@
     }
   }
 }
+
+.rails-social-share-button {
+    
+  .ssb-twitter {
+    background-image: image-url('social/twitter.svg') !important;
+  }
+
+  .ssb-facebook {
+    background-image: image-url('social/facebook.svg') !important;
+  }
+  
+  .ssb-whatsapp_app {
+    background-image: image-url('social/whats.svg') !important;
+  }
+  
+  .ssb-icon {
+    border-radius: 15px;
+    border: solid 1px;
+    border-color: #5A90FF;
+    height: 22px !important;
+    width: 22px !important;
+    background-size: 12px 12px !important;
+  }
+}

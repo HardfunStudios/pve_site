@@ -1,0 +1,26 @@
+<div class="container px-5 py-16 mx-auto">
+  <div class="flex flex-wrap flex-col mx-auto w-full text-black font-bold py-4">
+    <div class="flex flex-col items-center" id="gestor-category-0">
+      <span class='ml-1'><%= image_tag 'video-call', class: 'w-9 h-9 flex-shrink-0' %></span>
+      <span class='text-base py-2'>Webinar</span>
+    </div>
+    <div class="flex flex-col items-center hidden" id="gestor-category-1">
+      <span class='ml-1'><%= image_tag 'graduate', class: 'w-9 h-9 flex-shrink-0' %></span>
+      <span class='text-base py-2'>Oportunidades Formativas</span>
+    </div>
+    <div class="flex flex-col items-center hidden" id="gestor-category-2">
+      <span class='ml-1'><%= image_tag 'newspaper', class: 'w-9 h-9 flex-shrink-0' %></span>
+      <span class='text-base py-2'>Notícias</span>
+    </div>
+  </div>
+  <div class="flex flex-wrap px-4" id='post-cards-section'>
+    <%= render @posts %>    
+  </div>
+  <div class="xl:container xl:mx-auto xl:px-20 py-4">
+    <div class="flex flex-wrap flex-col items-center mx-auto px-8 xl:px-12 text-sm">
+        <%= link_to 'VER MAIS', gestores_path,
+          {class: "w-1/5 lg:w-1/6 text-white py-2 px-4 rounded-full border-indigo-500 border bg-color-purple text-center load-more",
+          id: 'gestores-ver-mais', cat: '0'} %>
+    </div>
+  </div>
+</div>
