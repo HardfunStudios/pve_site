@@ -12,23 +12,45 @@
 
 .bg-header-gestores {
   background-color: #584898;
-  color: #F9FAFF;
-  background-image: image-url("Logo-PVE-Branco");
-  background-repeat: no-repeat;
-  background-position-y: 9px;
-  background-position-x: 170px;
-  background-size: 8.5%;
 }
 
 .bg-header-home {
   background-color: #F7FAFC;
-  color: #584898;
-  background-image: image-url("logo_2020"), image-url("top-hero-header");
-  background-repeat: no-repeat, no-repeat;
-  background-position-y: 9px, -3px;
-  background-position-x: 170px, 145px;
-  background-size: 8.5%, 1150px 235px;
-  mix-blend-mode: multiply;
+  background-image: image-url("top-hero-header");
+  background-repeat: no-repeat;
+  background-position-y: -3px;
+  background-position-x: 50%;
+  background-size: 1150px 235px;
+}
+
+.logo-header-white {
+  background-size: 100%;
+  background-image: image-url("Logo-PVE-Branco");
+  background-repeat: no-repeat;
+
+  display: block;
+  width: 120px;
+  height: 90px;
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space:nowrap;
+}
+
+.logo-header-purple { 
+  background-size: 100%;
+  background-image: image-url("logo_2020");
+  background-repeat: no-repeat;
+
+  display: block;
+  width: 120px;
+  height: 90px;
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space:nowrap;
 }
 
 .header-size {
