@@ -6,9 +6,9 @@ class ApplicationController < ActionController::Base
   private
   
   def color_header
-    @color = 'bg-color-purple'
+    @color = 'bg-header-gestores'
     if (params[:controller] == 'pages' && params[:action] == 'home')
-      @color = 'bg-transparent'
+      @color = 'bg-header-home'
     end
   end
 end

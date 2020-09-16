@@ -10,6 +10,26 @@
   background-color: #F7FAFC;
 }
 
+.bg-header-gestores {
+  background-color: #584898;
+  color: #F9FAFF;
+  background-image: image-url("Logo-PVE-Branco");
+  background-repeat: no-repeat;
+  background-position-y: 9px;
+  background-position-x: 170px;
+  background-size: 8.5%;
+}
+
+.bg-header-home {
+  background-color: transparent;
+  color: #584898;
+  background-image: image-url("logo_2020");
+  background-repeat: no-repeat;
+  background-position-y: 9px;
+  background-position-x: 170px;
+  background-size: 8.5%;
+}
+
 .border-purple-1 {
   border-color: #584898 !important;
   outline-color: #584898 !important;
@@ -55,7 +75,6 @@
 
 .font-color-white {
   color: #F9FAFF;
-  text-shadow: inherit;
 }
 
 .font-color-orange {
@@ -153,4 +172,8 @@
   button {
       min-height: 50px;
   }
+}
+
+.img-transparency {
+  opacity: 0;
 }
