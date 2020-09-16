@@ -203,18 +203,6 @@
 </section>
 
 <script>
-  window.addEventListener('resize', adjustHomeBg);
-  document.addEventListener('turbolinks:load', adjustHomeBg);
-  function adjustHomeBg() {
-    if (document.getElementById('collaborators-buttons') != null) {
-      scroll = parseInt(document.documentElement.scrollTop);
-      buttons = parseInt(document.getElementById('collaborators-buttons').offsetHeight);
-      h = parseInt(document.getElementById('home-hero-section').getBoundingClientRect().bottom) + scroll;
-      h -= buttons / 2;
-      document.getElementById("home-top-bg").style.height = h + "px";
-    }
-  }
-
   document.getElementById("MT").addEventListener("mouseover", mouseOver);
   document.getElementById("city-info").addEventListener("mouseout", mouseOut);
 
