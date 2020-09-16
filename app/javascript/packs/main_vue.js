@@ -67,7 +67,21 @@ document.addEventListener('turbolinks:load', () => {
             document.getElementById(category).classList.add('hidden');
           });
           document.getElementById(this.categories[parseInt(btn)]).classList.remove('hidden');
+          document.getElementById('gestores-ver-mais').setAttribute('cat', btn);
+
+          Array.prototype.forEach.call(document.getElementsByClassName("post-card-preview"), function(el) {
+            if (el.classList.contains('post-cat-' + btn)) {
+              el.classList.remove('hidden');
+            } else {
+              el.classList.add('hidden');
+            }
+          });
         }
+      },
+      created () {
+        Array.prototype.forEach.call(document.getElementsByClassName('post-cat-' + this.activeBtn), function(el) {
+          el.classList.remove('hidden');
+        });   
       }
     });
   }
