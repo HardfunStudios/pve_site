@@ -10,6 +10,10 @@
   background-color: #F7FAFC;
 }
 
+.bg-very-light {
+  background-color: #F9FAFF;
+}
+
 .border-purple-1 {
   border-color: #584898 !important;
   outline-color: #584898 !important;
@@ -184,10 +188,10 @@
   margin-bottom: 1em;
 }
 
-#section-top-gestores {
+.section-top-gestores {
   background: image-url('bg-gestores.svg') no-repeat;
-  background-size: cover;
   background-position: center;
+  background-color: #F9FAFF;
 }
 
 #top-buttons-gestores {
