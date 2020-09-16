@@ -36,6 +36,12 @@
   border: solid 1px;
 }
 
+#home-hero-section {
+  background: asset_url("lower-hero-home.png") no-repeat;
+  background-color: #F9FAFF;
+  background-position: left bottom;
+}
+
 .home-top-bg-img {
   background: asset_url("top-hero-header.png") no-repeat, asset_url("lower-hero-home.png") no-repeat;
   background-size: 1200px 250px, 80%;

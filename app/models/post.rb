@@ -111,4 +111,17 @@ class Post < ApplicationRecord
     view_counter += 1
     save!
   end
+  
+  def category_number
+    category_names = categories.map(&:name)
+    cat_0 = ['Webinar PVE']
+    cat_1 = ['PVE2020', 'Telas Abertas']
+    if !(category_names & cat_0).empty?
+      return '0'
+    elsif !(category_names & cat_1).empty?
+      return '1'
+    else 
+      return '2'
+    end
+  end
 end
