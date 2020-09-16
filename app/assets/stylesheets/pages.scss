@@ -16,10 +16,23 @@
   border: solid 1px;
 }
 
+#home-hero-section {
+  background: asset_url("lower-hero-home.png") no-repeat;
+  background-color: #F9FAFF;
+  background-position: left bottom;
+}
+
 .home-top-bg-img {
-  background: {
-    image: asset_url("bg_home_top.png");
-  }
+  background: asset_url("top-hero-header.png") no-repeat, asset_url("lower-hero-home.png") no-repeat;
+  background-size: 1200px 250px, 80%;
+  background-position: relative, relative;
+  background-position-x: 60%, left;
+  background-position-y: top, bottom;
+  background-color: #F9FAFF;
+}
+
+#header-top-bg-img {
+  background: asset_url("top-hero-header.png") no-repeat;
 }
 
 #home-search-input {
@@ -48,6 +61,7 @@
 
 .font-color-white {
   color: #F9FAFF;
+  text-shadow: inherit;
 }
 
 .font-color-orange {

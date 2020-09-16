@@ -1,92 +1,93 @@
-<section id="home-hero-section" class="xl:container xl:mx-auto xl:px-20">
-    
-  <div class="home-top-bg-img bg-cover bg-center full-bg-width" id="home-top-bg"></div>
-  
-  <div class="container mx-auto flex px-5 pb-2 md:flex-row flex-col items-center mb-4">
-    <div class="lg:flex-grow md:w-1/2 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-      <h1 class="title-font sm:text-base text-sm mb-2 font-color-purple">
-        <strong>Seja bem vindo(a) ao PVE</strong>
-      </h1>
-      <p class="mb-4 leading-snug lg:text-3xl md:text-2xl text-2xl mb-4 font-color-purple">
-        <strong class="font-color-purple-light">O programa que valoriza<br/>a educação com ajuda de</strong>
-        <br/><strong class="font-color-purple"><span id='home-collaborator-name'>{{title}}</span></strong>
-      </p>
-      <%= search_form_for @q, url: search_posts_path, html: { method: :post, class:'flex w-full' } do |f| %>
-        <%= f.search_field :post_content_cont, {id: 'home-search-input',
-          class: 'w-full rounded mr-2 border-purple-1 pl-2',
-          placeholder: 'Digite o que você procura. Ex: Webinar, Telas Abertas, Notícias'} %>
-        <%= f.button type: 'submit', class: 'bg-color-orange border-grey border-l shadow hover:bg-grey-lightest rounded' do %>
-          <span class='w-auto flex justify-end items-center p-2 hover:text-grey-darkest font-color-white font-bold'>
-            <%= material_icon.search.css_class('font-bold') %>
-          </span>
+<section id="home-hero-section" class="bg-left-bottom mb-16">
+  <div class="xl:container xl:mx-auto xl:px-20">
+    <div class="container mx-auto flex px-5 pb-2 md:flex-row flex-col items-center mb-4">
+      <div class="lg:flex-grow md:w-1/2 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+        <h1 class="title-font sm:text-base text-sm mb-2 font-color-purple">
+          <strong>Seja bem vindo(a) ao PVE</strong>
+        </h1>
+        <p class="mb-4 leading-snug lg:text-3xl md:text-2xl text-2xl mb-4 font-color-purple">
+          <strong class="font-color-purple-light">O programa que valoriza<br/>a educação com ajuda de</strong>
+          <br/><strong class="font-color-purple"><span id='home-collaborator-name'>{{title}}</span></strong>
+        </p>
+        <%= search_form_for @q, url: search_posts_path, html: { method: :post, class:'flex w-full' } do |f| %>
+          <%= f.search_field :post_content_cont, {id: 'home-search-input',
+            class: 'w-full rounded mr-2 border-purple-1 pl-2',
+            placeholder: 'Digite o que você procura. Ex: Webinar, Telas Abertas, Notícias'} %>
+          <%= f.button type: 'submit', class: 'bg-color-orange border-grey border-l shadow hover:bg-grey-lightest rounded' do %>
+            <span class='w-auto flex justify-end items-center p-2 hover:text-grey-darkest font-color-white font-bold'>
+              <%= material_icon.search.css_class('font-bold') %>
+            </span>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
+      <div class="lg:max-w-lg lg:w-7/12 md:w-1/2 w-5/6 pl-16">
+        <%= image_tag 'home_hero', {class: "object-cover object-center rounded", alt:"hero"} %>
+      </div>
     </div>
-    <div class="lg:max-w-lg lg:w-7/12 md:w-1/2 w-5/6 pl-16">
-      <%= image_tag 'home_hero', {class: "object-cover object-center rounded", alt:"hero"} %>
-    </div>
-  </div>
 
-  <div class="flex flex-wrap -m-4 container mx-auto" id="collaborators-buttons">
-    <div class="p-4 md:w-1/4">
-      <a class="flex h-full border-purple-1 lg:p-3 p-2 flex-col bg-white rounded" href="/gestores">
-        <div class="flex flex-col items-center mb-3">
-          <%= image_tag 'hero-gestores' %>
+    <div class="w-full relative bottom--110" style="margin-top: -135px;">
+      <div class="flex flex-wrap -m-4 container mx-auto" id="collaborators-buttons">
+        <div class="p-4 md:w-1/4">
+          <a class="flex h-full border-purple-1 lg:p-3 p-2 flex-col bg-white rounded" href="/gestores">
+            <div class="flex flex-col items-center mb-3">
+              <%= image_tag 'hero-gestores' %>
+            </div>
+            <div class="flex-grow text-center">
+              <p class="leading-relaxed text-sm"><strong>Gestores Educacionais</strong></p>
+            </div>
+            <div class="flex-grow text-center">
+              <p class="leading-snug text-xs"><strong>Entre aqui</strong>
+                  para ver conteúdos exclusivos para Gestores Educacionais
+              </p>
+            </div>
+          </a>
         </div>
-        <div class="flex-grow text-center">
-          <p class="leading-relaxed text-sm"><strong>Gestores Educacionais</strong></p>
+        <div class="p-4 md:w-1/4">
+          <a class="flex h-full border-purple-1 lg:p-3 p-2 flex-col bg-white rounded" href="#">
+            <div class="flex flex-col items-center mb-3">
+              <%= image_tag 'hero-familias' %>
+            </div>
+            <div class="flex-grow text-center">
+              <p class="leading-relaxed text-sm"><strong>Famílias</strong></p>
+            </div>
+            <div class="flex-grow text-center">
+              <p class="leading-snug text-xs"><strong>Entre aqui</strong>
+                  para ver conteúdos exclusivos para Mobilizadores
+              </p>
+            </div>
+          </a>
         </div>
-        <div class="flex-grow text-center">
-          <p class="leading-snug text-xs"><strong>Entre aqui</strong>
-              para ver conteúdos exclusivos para Gestores Educacionais
-          </p>
+        <div class="p-4 md:w-1/4">
+          <a class="flex h-full border-purple-1 lg:p-3 p-2 flex-col bg-white rounded" href="#">
+            <div class="flex flex-col items-center mb-3">
+              <%= image_tag 'hero-professores' %>
+            </div>
+            <div class="flex-grow text-center">
+              <p class="leading-relaxed text-sm"><strong>Professores</strong></p>
+            </div>
+            <div class="flex-grow text-center">
+              <p class="leading-snug text-xs"><strong>Entre aqui</strong>
+                  para ver conteúdos exclusivos para Professores
+              </p>
+            </div>
+          </a>
         </div>
-      </a>
-    </div>
-    <div class="p-4 md:w-1/4">
-      <a class="flex h-full border-purple-1 lg:p-3 p-2 flex-col bg-white rounded" href="#">
-        <div class="flex flex-col items-center mb-3">
-          <%= image_tag 'hero-familias' %>
+        <div class="p-4 md:w-1/4">
+          <a class="flex h-full border-purple-1 lg:p-3 p-2 flex-col bg-white rounded" href="#">
+            <div class="flex flex-col items-center mb-3">
+              <%= image_tag 'hero-mobilizadores' %>
+            </div>
+            <div class="flex-grow text-center">
+              <p class="leading-relaxed text-sm"><strong>Mobilizadores</strong></p>
+            </div>
+            <div class="flex-grow text-center">
+              <p class="leading-snug text-xs"><strong>Entre aqui</strong>
+                  para ver conteúdos exclusivos para Mobilizadores
+              </p>
+            </div>
+          </a>
         </div>
-        <div class="flex-grow text-center">
-          <p class="leading-relaxed text-sm"><strong>Famílias</strong></p>
-        </div>
-        <div class="flex-grow text-center">
-          <p class="leading-snug text-xs"><strong>Entre aqui</strong>
-              para ver conteúdos exclusivos para Mobilizadores
-          </p>
-        </div>
-      </a>
-    </div>
-    <div class="p-4 md:w-1/4">
-      <a class="flex h-full border-purple-1 lg:p-3 p-2 flex-col bg-white rounded" href="#">
-        <div class="flex flex-col items-center mb-3">
-          <%= image_tag 'hero-professores' %>
-        </div>
-        <div class="flex-grow text-center">
-          <p class="leading-relaxed text-sm"><strong>Professores</strong></p>
-        </div>
-        <div class="flex-grow text-center">
-          <p class="leading-snug text-xs"><strong>Entre aqui</strong>
-              para ver conteúdos exclusivos para Professores
-          </p>
-        </div>
-      </a>
-    </div>
-    <div class="p-4 md:w-1/4">
-      <a class="flex h-full border-purple-1 lg:p-3 p-2 flex-col bg-white rounded" href="#">
-        <div class="flex flex-col items-center mb-3">
-          <%= image_tag 'hero-mobilizadores' %>
-        </div>
-        <div class="flex-grow text-center">
-          <p class="leading-relaxed text-sm"><strong>Mobilizadores</strong></p>
-        </div>
-        <div class="flex-grow text-center">
-          <p class="leading-snug text-xs"><strong>Entre aqui</strong>
-              para ver conteúdos exclusivos para Mobilizadores
-          </p>
-        </div>
-      </a>
+      </div>
     </div>
   </div>
 </section>
