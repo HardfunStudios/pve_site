@@ -139,7 +139,7 @@
           <%= image_tag 'arrow-right', {class: "inline-block ml-2", alt:"hero"} %>
         </div>
         <div id="city-info">
-              <div id="city-info-header" class="font-bold title-font">Rio Grande do Sul</div>
+              <div id="city-info-header" class="font-bold title-font">Mato Grosso</div>
             </div>
       </div>
       
@@ -216,7 +216,7 @@
   }
 
   document.getElementById("MT").addEventListener("mouseover", mouseOver);
-  document.getElementById("MT").addEventListener("mouseout", mouseOut);
+  document.getElementById("city-info").addEventListener("mouseout", mouseOut);
 
   function mouseOver() {
     var city_info = document.getElementById("city-info");
@@ -233,7 +233,7 @@
   function mouseOut() {
     console.log("BYE");
     var city_info = document.getElementById("city-info");
-    
+    city_info.style.visibility = "hidden";
   }
 
   function calculateOffsetTop(state, city_info) {
