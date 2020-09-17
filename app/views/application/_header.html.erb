@@ -1,18 +1,18 @@
-<header class="text-gray-700 body-font">
 
-  <div class="container mx-auto flex flex-wrap p-2 pb-0 flex-col md:flex-row items-center">
-    <%= link_to root_url, class: "flex items-center xl:w-32 w-24" do %>
-      <%= image_tag 'logo_2020' %>
-    <% end %>
+<header class="text-gray-700 body-font lg:w-full">
+  
+  <div class="container header-size mx-auto flex flex-wrap p-2 pb-0 flex-col md:flex-row items-center">
+  
+    <a class="<%= @logo_header  %> -mt-10" href="/"></a>
      
-    <nav class=" ml-4 lg:ml-20 xl:ml-32 md:mr-auto flex flex-wrap items-center text-base justify-center pb-4">
-      <a class="leading-snug text-xs ml-10 mr-12 menu-items absolute" href="/pve">
-        <strong class="font-color-purple">O PVE</strong>
+    <nav class=" ml-4 -mt-16 lg:ml-20 xl:ml-32 md:mr-auto flex flex-wrap items-center text-base justify-center pb-4">
+      <a class="leading-snug text-xs mr-12 mt-1 menu-items absolute" href="/pve">
+        <strong class="<%= @text_color  %>">O PVE</strong>
       </a>
 
-      <div class="dropdown inline-block relative menu-items ml-56 mr-12 absolute">
+      <div class="dropdown inline-block relative menu-items ml-48 mr-12 absolute">
         <span class="leading-snug text-xs">
-          <strong class="font-color-purple">Ações</strong>
+          <strong class="<%= @text_color  %> ">Ações</strong>
         </span>
         <ul class="dropdown-menu absolute hidden text-gray-700 pt-1">
           <li class=""><a class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Linha do tempo</a></li>
@@ -24,10 +24,10 @@
 
       <div class="text-right">
         <span class="leading-snug text-xs ml-2 mr-10 -mt-1 menu-items absolute">
-          <strong id="text-in-white1" class="font-color-white">Junte-se a nós</strong>
+          <strong class="font-color-white" style="text-shadow: 1px 1px #584898;">Junte-se a nós</strong>
         </span>
         <span class="leading-snug text-xs ml-32 mr-12 -mt-1 menu-items absolute">
-          <strong class="font-color-white">Últimas notícias</strong>
+          <strong class="font-color-white" style="text-shadow: 1px 1px #584898;">Últimas notícias</strong>
         </span>
       </div>
       <button class="login-button inline-flex items-center text-base">Entrar</button>

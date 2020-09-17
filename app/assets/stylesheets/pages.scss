@@ -14,6 +14,53 @@
   background-color: #F9FAFF;
 }
 
+.bg-header-gestores {
+  background-color: #584898;
+}
+
+.bg-header-home {
+  background-color: #F7FAFC;
+  background-image: image-url("top-hero-header");
+  background-repeat: no-repeat;
+  background-position-y: -3px;
+  background-position-x: 50%;
+  background-size: 1150px 235px;
+}
+
+.logo-header-white {
+  background-size: 100%;
+  background-image: image-url("Logo-PVE-Branco");
+  background-repeat: no-repeat;
+
+  display: block;
+  width: 120px;
+  height: 90px;
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space:nowrap;
+}
+
+.logo-header-purple { 
+  background-size: 100%;
+  background-image: image-url("logo_2020");
+  background-repeat: no-repeat;
+
+  display: block;
+  width: 120px;
+  height: 90px;
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space:nowrap;
+}
+
+.header-size {
+  height: 150px;
+}
+
 .border-purple-1 {
   border-color: #584898 !important;
   outline-color: #584898 !important;
@@ -27,12 +74,11 @@
 }
 
 .home-top-bg-img {
-  background: asset_url("top-hero-header.png") no-repeat, asset_url("lower-hero-home.png") no-repeat;
-  background-size: 1200px 250px, 80%;
-  background-position: relative, relative;
-  background-position-x: 60%, left;
-  background-position-y: top, bottom;
-  background-color: #F9FAFF;
+  position: relative;
+  height: 250px;
+  width: 1200px;
+  left:0;
+  top:-1px;
 }
 
 #header-top-bg-img {
@@ -65,7 +111,6 @@
 
 .font-color-white {
   color: #F9FAFF;
-  text-shadow: inherit;
 }
 
 .font-color-orange {
@@ -139,9 +184,15 @@
 }
 
 
-#numeros-bg {
+.numeros-bg {
   background: image-url('numeros-bg.png') no-repeat;
-  background-size: auto 100%;
+  background-size: 50%;
+  background-position-x: 60%;
+  background-position-y: 30%;
+}
+
+.numeros-frase {
+  width:200px;
 }
 
 #section-pve-impact {
@@ -153,17 +204,19 @@
 
 #mapa {
   width: 100%;
-  height: 1005;
-  margin-left: 35rem;
+  height: 100%;
   margin-top: -9rem;
   display: inline-block;
 }
 
 #mapa svg a:hover{ 
   cursor: pointer;
-  z-index:9;
+  z-index:1000;
 }
 
+#mapa svg {
+  margin-left: 44em;
+}
 
 #city-info {
   position:relative;
