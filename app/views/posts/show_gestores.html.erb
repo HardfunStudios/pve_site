@@ -3,8 +3,9 @@
     <div class="container mx-auto pl-20 pr-24 xl:py-32 lg:py-24 py-20">
       <div class='w-full flex flex-wrap'>
         <div class="xl:w-5/6 w-3/4 pr-8 xl:pr-32 flex flex-wrap content-center mx-auto">
-          <p class="leading-snug text-xl text-black font-bold w-full mb-4">
-            Dicas para Gestores
+          <p class="leading-snug text-xl text-black font-base w-full mb-1 flex items-center">
+            <%= image_tag category_image, class: 'w-9 h-9 flex-shrink-0 mr-2' %>
+            <%= big_category %>
           </p>
           <p class="leading-6 text-2xl font-color-purple w-full">
             <strong><%= @post.post_title %></strong>
@@ -16,8 +17,18 @@
 </section>
 
 <section class="bg-very-light xl:px-40 lg:px-32 px-8">
-  <div class="xl:container xl:mx-auto bg-white py-16 px-32 border-r-2 border-l-2 border-gray-300 wordpress-theme">
+  <div class="xl:container xl:mx-auto bg-white py-16 px-24 xl:px-32 border-r-2 border-l-2 border-gray-300">
     <p class="text-black text-xs">Publicado em <%= I18n.l(@post.post_date_gmt, format: :very_long) %></p>
-    <%= @post.post_content.html_safe %>
+    <div class="wordpress-theme"><%= @post.post_content.html_safe %></div>
+    <hr class="my-4">
+    <p class="text-black text-xs">ESSE CONTEÚDO FOI INSPIRADOR?</p>
+    <p>CURTIR</p>
+    <p class="text-black text-xs mb-4">Tags: <%= @post.tag_names %></p>
+    <p class="text-black text-xs mb-4">VOCÊ PODE SE INTERESSAR TAMBÉM:</p>
+    <div class="flex flex-wrap" id='post-cards-section'>
+    <% @related.each do |related| %>
+      <%= render "posts/card_sm", post: related %>
+    <% end %>
+    </div>
   </div>
 </section>
