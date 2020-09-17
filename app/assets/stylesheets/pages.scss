@@ -139,9 +139,15 @@
 }
 
 
-#numeros-bg {
+.numeros-bg {
   background: image-url('numeros-bg.png') no-repeat;
-  background-size: auto 100%;
+  background-size: 50%;
+  background-position-x: 60%;
+  background-position-y: 30%;
+}
+
+.numeros-frase {
+  width:200px;
 }
 
 #section-pve-impact {
