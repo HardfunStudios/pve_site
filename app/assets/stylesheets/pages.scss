@@ -149,17 +149,19 @@
 
 #mapa {
   width: 100%;
-  height: 1005;
-  margin-left: 35rem;
+  height: 100%;
   margin-top: -9rem;
   display: inline-block;
 }
 
 #mapa svg a:hover{ 
   cursor: pointer;
-  z-index:9;
+  z-index:1000;
 }
 
+#mapa svg {
+  margin-left: 44em;
+}
 
 #city-info {
   position:relative;
