@@ -265,6 +265,9 @@
 }
 
 .footer-bg {
+  background-image: image-url('light-purple-square-footer.png');
+  background-repeat: no-repeat;
+  background-position: right;
   background-color: #584898;
   width: 100%;
 }
@@ -281,8 +284,3 @@
   width: 15%;
   margin-top: 30em;
 }
-
-.footer-square {
-  margin-left: 20.9em;
-}
-
