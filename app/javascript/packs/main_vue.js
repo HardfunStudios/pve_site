@@ -57,7 +57,7 @@ document.addEventListener('turbolinks:load', () => {
     new Vue({
       el: gestores,
       data: {
-        activeBtn: '0',
+        activeBtn: (sessionStorage.getItem('pve_button') == null) ? '0' : sessionStorage.getItem('pve_button'),
         categories: ['gestor-category-0', 'gestor-category-1', 'gestor-category-2']
       },
       methods: {
@@ -76,6 +76,7 @@ document.addEventListener('turbolinks:load', () => {
               el.classList.add('hidden');
             }
           });
+          sessionStorage.setItem('pve_button', btn);
         }
       },
       created () {
