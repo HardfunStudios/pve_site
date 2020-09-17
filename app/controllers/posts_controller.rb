@@ -13,6 +13,8 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post.increase_view
+    @related = @post.related_posts
+    puts @related.inspect
     case params[:cat]
     when 'gestores'
       render 'show_gestores'

@@ -124,4 +124,16 @@ class Post < ApplicationRecord
       return '2'
     end
   end
+  
+  def related_posts
+    related = []
+    tags&.each do |tag|
+      related += tag.posts.where.not(id: id)
+    end
+    related.take(3)
+  end
+  
+  def tag_names
+    tags&.pluck(:name).join(', ')
+  end
 end
