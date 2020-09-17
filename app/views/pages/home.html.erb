@@ -1,4 +1,5 @@
 <section id="home-hero-section" class="bg-left-bottom mb-16">
+
   <div class="xl:container xl:mx-auto xl:px-20">
     <div class="container mx-auto flex px-5 pb-2 md:flex-row flex-col items-center mb-4">
       <div class="lg:flex-grow md:w-1/2 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
@@ -106,7 +107,7 @@
             <%= image_tag 'arrow-right', {class: "inline-block ml-2", alt:"hero"} %>
           </p>
           <figure id="mapa">
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 808" >
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="588" height="554.88">
               <image width="588" height="554.88" xlink:href="mapa-locations.png">
               </image>
               <a>
@@ -129,7 +130,7 @@
             </svg>
           </figure>
         </div>
-        <div class="w-full text-center inline-block -mt-56">
+        <div class="w-full text-center inline-block -mt-4">
           <h1 class="mr-48 sm:text-2xl text-xl title-font mt-32 -mb-2 -mt-32">Onde estamos?</h1>
           <p class="text-left w-1/6 text-gray-600 inline-block">Arraste a lupa até os estados para ver as cidades em que atuamos.</p>
           <div id="lupa" class="magnifying-glass inline-block ml-2">
@@ -157,10 +158,30 @@
         </p>
       </div>
       <div class="flex flex-wrap w-4/4 lg:w-4/4 items-center mx-auto">
-        <div class="p-1 lg:p-16 md:w-1/5 w-full ml-40" id='numeros-bg'></div>
-        <div class="p-1 lg:p-16 md:w-1/5 w-full" id='numeros-bg'></div>
-        <div class="p-1 lg:p-16 md:w-1/5 w-full" id='numeros-bg'></div>
-        <div class="p-1 lg:p-16 md:w-1/5 w-full" id='numeros-bg'></div>
+        <div class="p-1 lg:p-16 md:w-1/4 w-full numeros-bg">
+          <div class="numeros-frase">
+            <h2 class="text-3xl ml-12 title-font font-color-purple mb-4">100+</h2>
+            <scan class="ml-2 leading-relaxed text-base font-bold">Municípios atendidos</scan>
+          </div>
+        </div>
+        <div class="p-1 lg:p-16 md:w-1/4 w-full numeros-bg">
+          <div class="numeros-frase">
+            <h2 class="text-3xl ml-10 title-font font-color-purple mb-4">1000+</h2>
+            <scan class="ml-4 leading-relaxed text-base font-bold">Escolas atendidas</scan>
+          </div>
+        </div>
+        <div class="p-1 lg:p-16 md:w-1/4 w-full numeros-bg">
+          <div class="numeros-frase">
+            <h2 class="text-3xl ml-6 title-font font-color-purple mb-4">21.000+</h2>
+            <scan class="ml-2 leading-relaxed text-base font-bold">Pessoas mobilizadas</scan>
+          </div>
+        </div>
+        <div class="p-1 lg:p-16 md:w-1/4 w-full numeros-bg">
+          <div class="numeros-frase">
+            <h2 class="text-3xl ml-4 title-font font-color-purple mb-4">548.000+</h2>
+            <scan class="ml-2 leading-relaxed text-base font-bold">Alunos impactados</scan>
+          </div>
+        </div>
       </div>
     </div>
   </div>
