@@ -18,12 +18,12 @@
 
 <section class="bg-very-light xl:px-40 lg:px-32 px-8">
   <div class="xl:container xl:mx-auto bg-white py-16 px-24 xl:px-32 border-r-2 border-l-2 border-gray-300">
-    <p class="text-black text-xs">Publicado em <%= I18n.l(@post.post_date_gmt, format: :very_long) %></p>
+    <p class="text-black text-xs mb-4 font-bold">Publicado em <%= I18n.l(@post.post_date_gmt, format: :very_long) %></p>
     <div class="wordpress-theme"><%= @post.post_content.html_safe %></div>
     <hr class="my-4">
     <p class="text-black text-xs">ESSE CONTEÚDO FOI INSPIRADOR?</p>
-    <p>CURTIR</p>
-    <p class="text-black text-xs mb-4">Tags: <%= @post.tag_names %></p>
+    <p class="flex mb-4"><%= image_tag 'curtir', class: 'w-5 h-5 flex-shrink-0 mr-1' %>0</p>
+    <p class="text-black text-xs mb-12">Tags: <%= @post.tag_names %></p>
     <p class="text-black text-xs mb-4">VOCÊ PODE SE INTERESSAR TAMBÉM:</p>
     <div class="flex flex-wrap" id='post-cards-section'>
     <% @related.each do |related| %>

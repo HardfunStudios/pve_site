@@ -67,7 +67,6 @@ document.addEventListener('turbolinks:load', () => {
             document.getElementById(category).classList.add('hidden');
           });
           document.getElementById(this.categories[parseInt(btn)]).classList.remove('hidden');
-          document.getElementById('gestores-ver-mais').setAttribute('cat', btn);
 
           Array.prototype.forEach.call(document.getElementsByClassName("post-card-preview"), function(el) {
             if (el.classList.contains('post-cat-' + btn)) {
@@ -80,19 +79,18 @@ document.addEventListener('turbolinks:load', () => {
         }
       },
       created () {
-        Array.prototype.forEach.call(document.getElementsByClassName('post-cat-' + this.activeBtn), function(el) {
-          el.classList.remove('hidden');
-        });   
+        this.toggleSelected(this.activeBtn);
       }
     });
   }
 
   $('.load-more').click(function (e) {
     e.preventDefault();
-    var cat = $(this).attr('cat');
+    var cat = (sessionStorage.getItem('pve_button') == null) ? '0' : sessionStorage.getItem('pve_button');
     $.ajax({
       type: "GET",
-      url: $(this).attr('href'),
+     // url: $(this).attr('href'),
+      url: window.location.href,
       dataType: "script",
       success: function () {
         $('.load-more').show();

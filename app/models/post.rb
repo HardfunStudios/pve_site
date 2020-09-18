@@ -86,6 +86,7 @@ class Post < ApplicationRecord
     existing_post.post_title = json_post.dig('post', 'post_title')
     existing_post.post_status = json_post.dig('post', 'post_status')
     existing_post.post_excerpt = json_post.dig('post', 'post_excerpt')
+    existing_post.post_thumbnail = json_post.dig('post_thumbnail')
 
     if existing_post.save
 
