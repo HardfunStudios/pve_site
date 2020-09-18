@@ -17,8 +17,8 @@ class PagesController < ApplicationController
     @@limit += 6 if request.format.js?
 
     @posts = Post.joins(:categories).where('categories.name LIKE ?', '%Webinar%').order(post_date_gmt: :desc).limit(@@limit)
-    @posts += Post.joins(:categories).where('categories.name LIKE ?', '%PVE2020%').order(post_date_gmt: :desc).limit(@@limit)
-    @posts += Post.joins(:categories).where('categories.name LIKE ?', '%Uncategorized%').order(post_date_gmt: :desc).limit(@@limit)
+    @posts += Post.joins(:categories).where('categories.name LIKE ?', '%Oportunidades%').order(post_date_gmt: :desc).limit(@@limit)
+    @posts += Post.joins(:categories).where('categories.name LIKE ?', '%Notícias%').order(post_date_gmt: :desc).limit(@@limit)
     respond_to do |format|
       format.html
       format.js

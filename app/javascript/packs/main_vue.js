@@ -89,7 +89,6 @@ document.addEventListener('turbolinks:load', () => {
     var cat = (sessionStorage.getItem('pve_button') == null) ? '0' : sessionStorage.getItem('pve_button');
     $.ajax({
       type: "GET",
-     // url: $(this).attr('href'),
       url: window.location.href,
       dataType: "script",
       success: function () {
