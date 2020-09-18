@@ -12,6 +12,7 @@ class PostContentParserService
     parse_images
     parse_files
     parse_texts
+    @post.update_column(:post_content, @parsed_data.to_html)
   end
 
   def parse_videos
@@ -22,6 +23,13 @@ class PostContentParserService
         @post.videos << Video.find_or_create_by(url: video.text.squish)
       end
     end
+    
+    # format videos at center
+    nodes = @parsed_data.css 'iframe'
+    nodes.each do |n|
+      n.add_next_sibling('<hr class="my-4">')
+    end
+    nodes.wrap('<div class="flex flex-col items-center"></div>')
   end
 
   def parse_images
@@ -41,6 +49,12 @@ class PostContentParserService
       content.each do |txt|
         @post.text_contents << TextContent.create(content: txt.inner_html.squish) unless txt.text.blank?
       end
+    end
+    
+    # insert hr on h3 and h4
+    nodes = @parsed_data.css 'h3, h4, h5'
+    nodes.each do |n|
+      n.add_previous_sibling('<hr class="my-4">')
     end
   end
 

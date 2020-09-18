@@ -86,6 +86,7 @@ class Post < ApplicationRecord
     existing_post.post_title = json_post.dig('post', 'post_title')
     existing_post.post_status = json_post.dig('post', 'post_status')
     existing_post.post_excerpt = json_post.dig('post', 'post_excerpt')
+    existing_post.post_thumbnail = json_post.dig('post_thumbnail')
 
     if existing_post.save
 
@@ -115,7 +116,7 @@ class Post < ApplicationRecord
   def category_number
     category_names = categories.map(&:name)
     cat_0 = ['Webinar PVE']
-    cat_1 = ['PVE2020', 'Telas Abertas']
+    cat_1 = ['Oportunidades Formativas', 'Oportunidades formativas']
     if !(category_names & cat_0).empty?
       return '0'
     elsif !(category_names & cat_1).empty?
