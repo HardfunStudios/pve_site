@@ -265,6 +265,10 @@
 }
 
 .footer-bg {
+  background-image: image-url('Footer.png');
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 100%;
   background-color: #584898;
   width: 100%;
 }
@@ -281,8 +285,3 @@
   width: 15%;
   margin-top: 30em;
 }
-
-.footer-square {
-  margin-left: 20.9em;
-}
-
