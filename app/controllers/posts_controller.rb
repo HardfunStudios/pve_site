@@ -18,7 +18,7 @@ class PostsController < ApplicationController
     case params[:cat]
     when 'gestores'
       render 'show_gestores'
-    end   
+    end
   end
 
   def search

@@ -23,4 +23,5 @@ Rails.application.routes.draw do
   get 'portal', to: 'pages#portal'
   get 'pve', to: 'pages#pve'
   get 'gestores', to: 'pages#gestores'
+  get 'mobilizadores', to: 'pages#mobilizadores'
 end

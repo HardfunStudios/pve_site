@@ -24,4 +24,16 @@ class PagesController < ApplicationController
       format.js
     end
   end
+  
+  def mobilizadores
+    @@limit = 6 if request.format.html?
+    @@limit += 6 if request.format.js?
+
+    @posts = Post.joins(:categories).where('categories.name LIKE ?', '%Conteúdos%').order(post_date_gmt: :desc).limit(@@limit)
+    @posts += Post.joins(:categories).where('categories.name LIKE ?', '%Materiais%').order(post_date_gmt: :desc).limit(@@limit)
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
 end
