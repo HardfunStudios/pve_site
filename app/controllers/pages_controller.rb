@@ -15,10 +15,11 @@ class PagesController < ApplicationController
   def gestores
     @@limit = 6 if request.format.html?
     @@limit += 6 if request.format.js?
-
+      
     @posts = Post.joins(:categories).where('categories.name LIKE ?', '%Webinar%').order(post_date_gmt: :desc).limit(@@limit)
     @posts += Post.joins(:categories).where('categories.name LIKE ?', '%Oportunidades%').order(post_date_gmt: :desc).limit(@@limit)
     @posts += Post.joins(:categories).where('categories.name LIKE ?', '%Notícias%').order(post_date_gmt: :desc).limit(@@limit)
+    @cat = 'gestores'
     respond_to do |format|
       format.html
       format.js
@@ -31,6 +32,7 @@ class PagesController < ApplicationController
 
     @posts = Post.joins(:categories).where('categories.name LIKE ?', '%Conteúdos%').order(post_date_gmt: :desc).limit(@@limit)
     @posts += Post.joins(:categories).where('categories.name LIKE ?', '%Materiais%').order(post_date_gmt: :desc).limit(@@limit)
+    @cat = 'mobilizadores'
     respond_to do |format|
       format.html
       format.js

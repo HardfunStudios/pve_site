@@ -17,8 +17,13 @@ class PostsController < ApplicationController
     puts @related.inspect
     case params[:cat]
     when 'gestores'
+      @cat = 'gestores'
       render 'show_gestores'
+    when 'mobilizadores'
+      @cat = 'mobilizadores'
+      render 'show_mobilizadores'
     end
+    
   end
 
   def search

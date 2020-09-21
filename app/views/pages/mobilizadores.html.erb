@@ -1,4 +1,4 @@
-<section class='section-top-gestores bg-center bg-very-light'>
+<section class='section-top-mobilizadores bg-center bg-very-light'>
   <div class="xl:container xl:mx-auto xl:px-20">
     <div class="container mx-auto pt-24 pb-8 xl:pt-32 xl:pb-10">
       <div class='w-full flex flex-wrap'>
@@ -16,20 +16,20 @@
         </div>
       </div>
     </div>
-    <div class='w-full relative bottom--40' id='top-buttons-gestores'>
+    <div class='w-full relative bottom--40' id='top-buttons-mobilizadores'>
       <div class="flex flex-wrap justify-center text-center w-3/4 lg:w-2/3 items-center mx-auto px-8 xl:px-12">
         <div class="p-2 lg:p-4 md:w-1/3 w-full">
-          <button @click='toggleSelected("0")' :class='{ active: activeBtn === "0" }' 
+          <button @click='toggleSelected("3")' :class='{ active: activeBtn === "3" }' 
               class="w-full text-black font-bold py-2 px-4 rounded-full border-indigo-500 border bg-white flex items-center">
             <span class='ml-1'><%= image_tag 'ios-document', class: 'w-9 h-9 flex-shrink-0' %></span>
-            <span class='w-full'>Webinar</span>
+            <span class='w-full'>Conteúdos de apoio</span>
           </button>
         </div>
         <div class="p-2 lg:p-4 md:w-1/3 w-full">
-          <button @click='toggleSelected("1")' :class='{ active: activeBtn === "1" }' 
+          <button @click='toggleSelected("4")' :class='{ active: activeBtn === "4" }' 
               class="w-full text-black font-bold py-2 px-4 rounded-full border-indigo-500 border bg-white flex items-center">
             <span class='ml-1'><%= image_tag 'simple-docusign', class: 'w-9 h-9 flex-shrink-0' %></span>
-            <span class='w-full leading-4'>Oportunidades Formativas</span>
+            <span class='w-full leading-4'>Materiais para baixar</span>
           </button>
         </div>
       </div>
@@ -38,5 +38,5 @@
 </section>
 
 <section class="text-gray-700 body-font xl:container xl:mx-auto xl:px-20">
-  <%= render 'posts/content', collection: @posts, cache: true %>
+  <%= render 'posts/content_mobilizadores', collection: @posts, cache: true %>
 </section>

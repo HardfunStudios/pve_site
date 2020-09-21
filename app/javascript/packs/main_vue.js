@@ -57,7 +57,7 @@ document.addEventListener('turbolinks:load', () => {
     new Vue({
       el: gestores,
       data: {
-        activeBtn: (sessionStorage.getItem('pve_button') == null) ? '0' : sessionStorage.getItem('pve_button'),
+        activeBtn: (sessionStorage.getItem('pve_button_1') == null) ? '0' : sessionStorage.getItem('pve_button_1'),
         categories: ['gestor-category-0', 'gestor-category-1', 'gestor-category-2']
       },
       methods: {
@@ -75,7 +75,39 @@ document.addEventListener('turbolinks:load', () => {
               el.classList.add('hidden');
             }
           });
-          sessionStorage.setItem('pve_button', btn);
+          sessionStorage.setItem('pve_button_1', btn);
+        }
+      },
+      created () {
+        this.toggleSelected(this.activeBtn);
+      }
+    });
+  }
+  
+  var mobilizadores = document.getElementById('top-buttons-mobilizadores');
+  if (mobilizadores != null) {
+    new Vue({
+      el: mobilizadores,
+      data: {
+        activeBtn: (sessionStorage.getItem('pve_button_4') == null) ? '3' : sessionStorage.getItem('pve_button_4'),
+        categories: ['mobilizador-category-3', 'mobilizador-category-4']
+      },
+      methods: {
+        toggleSelected: function(btn) {
+          this.activeBtn = btn;
+          this.categories.forEach(function(category) {
+            document.getElementById(category).classList.add('hidden');
+          });
+          document.getElementById('mobilizador-category-' + btn).classList.remove('hidden');
+
+          Array.prototype.forEach.call(document.getElementsByClassName("post-card-preview"), function(el) {
+            if (el.classList.contains('post-cat-' + btn)) {
+              el.classList.remove('hidden');
+            } else {
+              el.classList.add('hidden');
+            }
+          });
+          sessionStorage.setItem('pve_button_4', btn);
         }
       },
       created () {
@@ -86,7 +118,12 @@ document.addEventListener('turbolinks:load', () => {
 
   $('.load-more').click(function (e) {
     e.preventDefault();
-    var cat = (sessionStorage.getItem('pve_button') == null) ? '0' : sessionStorage.getItem('pve_button');
+    var cat = (sessionStorage.getItem('pve_button_1') == null) ? '0' : sessionStorage.getItem('pve_button_1');
+    switch ($(this).attr('id')) {
+      case 'mobilizadores-ver-mais':
+        cat = (sessionStorage.getItem('pve_button_4') == null) ? '3' : sessionStorage.getItem('pve_button_4');
+       break;
+    }
     $.ajax({
       type: "GET",
       url: window.location.href,
