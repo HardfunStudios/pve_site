@@ -123,6 +123,14 @@
   color: #7C7C7C;
 }
 
+.font-color-green {
+  color: #45AB5C;
+}
+
+.font-color-red {
+  color: #D02831;
+}
+
 .font-color-blue {
   color: #5A90FF;
 }
@@ -202,7 +210,6 @@
   background-position-x: 128%;
 }
 
-
 #mapa {
   width: 100%;
   height: 100%;
@@ -254,6 +261,18 @@
   background-color: #F9FAFF;
 }
 
+.section-top-familias {
+  background: image-url('bg-familias.svg') no-repeat;
+  background-position: center;
+  background-color: #F9FAFF;
+}
+
+.section-top-professores {
+  background: image-url('bg-professores.svg') no-repeat;
+  background-position: center;
+  background-color: #F9FAFF;
+}
+
 #top-buttons-gestores {
   button:hover, button.active {
     background-color: #584898;
@@ -266,7 +285,7 @@
   }
   
   button {
-      min-height: 50px;
+    min-height: 50px;
   }
 }
 
@@ -286,7 +305,47 @@
   }
   
   button {
-      min-height: 50px;
+    min-height: 50px;
+  }
+}
+
+#top-buttons-familias {
+  button {
+    border-color: #F36B26;
+  }
+  
+  button:hover, button.active {
+    background-color: #E85118;
+    color: white;
+    outline: none;
+    
+    img {
+      filter: brightness(0) invert(1);
+    }
+  }
+  
+  button {
+    min-height: 50px;
+  }
+}
+
+#top-buttons-professores {
+  button {
+    border-color: #45AB5C;
+  }
+  
+  button:hover, button.active {
+    background-color: #45AB5C;
+    color: white;
+    outline: none;
+    
+    img {
+      filter: brightness(0) invert(1);
+    }
+  }
+  
+  button {
+    min-height: 50px;
   }
 }
 

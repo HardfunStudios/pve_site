@@ -120,6 +120,9 @@ class Post < ApplicationRecord
     cat_2 = ['Notícias']
     cat_3 = ['Conteúdos', 'Conteúdos de apoio']
     cat_4 = ['Materiais', 'Materiais de mobilização', 'Materiais para baixar']
+    cat_5 = ['Telas Abertas', 'Telas']
+    cat_6 = ['Dicas', 'Dicas para a Família', 'Dicas para Família']
+    cat_7 = ['Eleições']
     if !(category_names & cat_0).empty?
       return '0'
     elsif !(category_names & cat_1).empty?
@@ -130,6 +133,12 @@ class Post < ApplicationRecord
       return '3'
     elsif !(category_names & cat_4).empty? 
       return '4'
+    elsif !(category_names & cat_5).empty? 
+      return '5'
+    elsif !(category_names & cat_6).empty? 
+      return '6'
+    elsif !(category_names & cat_7).empty? 
+      return '7'
     end
   end
   

@@ -22,6 +22,12 @@ class PostsController < ApplicationController
     when 'mobilizadores'
       @cat = 'mobilizadores'
       render 'show_mobilizadores'
+    when 'familias'
+      @cat = 'familias'
+      render 'show_familias'
+    when 'professores'
+      @cat = 'professores'
+      render 'show_professores' 
     end
     
   end
