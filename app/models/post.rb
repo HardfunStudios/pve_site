@@ -117,12 +117,19 @@ class Post < ApplicationRecord
     category_names = categories.map(&:name)
     cat_0 = ['Webinar PVE']
     cat_1 = ['Oportunidades Formativas', 'Oportunidades formativas']
+    cat_2 = ['Notícias']
+    cat_3 = ['Conteúdos', 'Conteúdos de apoio']
+    cat_4 = ['Materiais', 'Materiais de mobilização', 'Materiais para baixar']
     if !(category_names & cat_0).empty?
       return '0'
     elsif !(category_names & cat_1).empty?
       return '1'
-    else 
+    elsif !(category_names & cat_2).empty? 
       return '2'
+    elsif !(category_names & cat_3).empty? 
+      return '3'
+    elsif !(category_names & cat_4).empty? 
+      return '4'
     end
   end
   

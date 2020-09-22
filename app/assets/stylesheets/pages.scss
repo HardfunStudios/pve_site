@@ -248,9 +248,35 @@
   background-color: #F9FAFF;
 }
 
+.section-top-mobilizadores {
+  background: image-url('bg-mobilizadores.svg') no-repeat;
+  background-position: center;
+  background-color: #F9FAFF;
+}
+
 #top-buttons-gestores {
   button:hover, button.active {
     background-color: #584898;
+    color: white;
+    outline: none;
+    
+    img {
+      filter: brightness(0) invert(1);
+    }
+  }
+  
+  button {
+      min-height: 50px;
+  }
+}
+
+#top-buttons-mobilizadores {
+  button {
+    border-color: #D02831;
+  }
+  
+  button:hover, button.active {
+    background-color: #D02831;
     color: white;
     outline: none;
     

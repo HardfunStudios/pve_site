@@ -9,6 +9,10 @@ module CategoriesHelper
       'Oportunidades formativas'
     when '2'
       'Notícias'
+    when '3'
+      'Conteúdos de apoio'  
+    when '4'
+      'Materiais para baixar'
     end   
   end
   
@@ -20,6 +24,12 @@ module CategoriesHelper
       'graduate'
     when '2'
       'newspaper'
+    when '3'
+      'ios-document'  
+    when '4'
+      'simple-docusign'
+    else
+      'simple-docusign'
     end 
   end
 end
