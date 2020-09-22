@@ -13,6 +13,16 @@ module CategoriesHelper
       'Conteúdos de apoio'  
     when '4'
       'Materiais para baixar'
+    when '5'
+      'Telas Abertas'
+    when '6'
+      'Dicas para Família'
+    when '7'
+      'Eleições'
+    when '8'
+      'Oportunidades Formativas'  
+    when '9'
+      'Telas Abertas'
     end   
   end
   
@@ -28,6 +38,16 @@ module CategoriesHelper
       'ios-document'  
     when '4'
       'simple-docusign'
+    when '5'
+      'material-computer'
+    when '6'
+      'simple-hipchat'
+    when '7'
+      'awesome-newspaper'
+    when '8'
+      'graduate-v'  
+    when '9'
+      'material-computer-v'
     else
       'simple-docusign'
     end 

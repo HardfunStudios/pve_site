@@ -38,4 +38,31 @@ class PagesController < ApplicationController
       format.js
     end
   end
+  
+  def familias
+    @@limit = 6 if request.format.html?
+    @@limit += 6 if request.format.js?
+      
+    @posts = Post.joins(:categories).where('categories.name LIKE ?', '%Telas%').order(post_date_gmt: :desc).limit(@@limit)
+    @posts += Post.joins(:categories).where('categories.name LIKE ?', '%Dicas%').order(post_date_gmt: :desc).limit(@@limit)
+    @posts += Post.joins(:categories).where('categories.name LIKE ?', '%Eleições%').order(post_date_gmt: :desc).limit(@@limit)
+    @cat = 'familias'
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+  
+  def professores
+    @@limit = 6 if request.format.html?
+    @@limit += 6 if request.format.js?
+
+    @posts = Post.joins(:categories).where('categories.name LIKE ?', '%Oportunidades%').order(post_date_gmt: :desc).limit(@@limit)
+    @posts += Post.joins(:categories).where('categories.name LIKE ?', '%Telas%').order(post_date_gmt: :desc).limit(@@limit)
+    @cat = 'professores'
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
 end

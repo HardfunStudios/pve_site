@@ -84,6 +84,70 @@ document.addEventListener('turbolinks:load', () => {
     });
   }
   
+  var familias = document.getElementById('top-buttons-familias');
+  if (familias != null) {
+    new Vue({
+      el: familias,
+      data: {
+        activeBtn: (sessionStorage.getItem('pve_button_2') == null) ? '5' : sessionStorage.getItem('pve_button_2'),
+        categories: ['familia-category-5', 'familia-category-6', 'familia-category-7']
+      },
+      methods: {
+        toggleSelected: function(btn) {
+          this.activeBtn = btn;
+          this.categories.forEach(function(category) {
+            document.getElementById(category).classList.add('hidden');
+          });
+          document.getElementById('familia-category-' + btn).classList.remove('hidden');
+
+          Array.prototype.forEach.call(document.getElementsByClassName("post-card-preview"), function(el) {
+            if (el.classList.contains('post-cat-' + btn)) {
+              el.classList.remove('hidden');
+            } else {
+              el.classList.add('hidden');
+            }
+          });
+          sessionStorage.setItem('pve_button_2', btn);
+        }
+      },
+      created () {
+        this.toggleSelected(this.activeBtn);
+      }
+    });
+  }
+  
+  var professores = document.getElementById('top-buttons-professores');
+  if (professores != null) {
+    new Vue({
+      el: professores,
+      data: {
+        activeBtn: (sessionStorage.getItem('pve_button_3') == null) ? '8' : sessionStorage.getItem('pve_button_3'),
+        categories: ['professor-category-8', 'professor-category-9']
+      },
+      methods: {
+        toggleSelected: function(btn) {
+          this.activeBtn = btn;
+          this.categories.forEach(function(category) {
+            document.getElementById(category).classList.add('hidden');
+          });
+          document.getElementById('professor-category-' + btn).classList.remove('hidden');
+
+          Array.prototype.forEach.call(document.getElementsByClassName("post-card-preview"), function(el) {
+            if (el.classList.contains('post-cat-' + btn)) {
+              el.classList.remove('hidden');
+            } else {
+              el.classList.add('hidden');
+            }
+          });
+          sessionStorage.setItem('pve_button_3', btn);
+        }
+      },
+      created () {
+        this.toggleSelected(this.activeBtn);
+      }
+    });
+  }
+  
   var mobilizadores = document.getElementById('top-buttons-mobilizadores');
   if (mobilizadores != null) {
     new Vue({
@@ -120,9 +184,15 @@ document.addEventListener('turbolinks:load', () => {
     e.preventDefault();
     var cat = (sessionStorage.getItem('pve_button_1') == null) ? '0' : sessionStorage.getItem('pve_button_1');
     switch ($(this).attr('id')) {
+      case 'familias-ver-mais':
+        cat = (sessionStorage.getItem('pve_button_2') == null) ? '5' : sessionStorage.getItem('pve_button_2');
+        break;
+      case 'professores-ver-mais':
+        cat = (sessionStorage.getItem('pve_button_3') == null) ? '8' : sessionStorage.getItem('pve_button_3');
+        break;
       case 'mobilizadores-ver-mais':
         cat = (sessionStorage.getItem('pve_button_4') == null) ? '3' : sessionStorage.getItem('pve_button_4');
-       break;
+        break;
     }
     $.ajax({
       type: "GET",
