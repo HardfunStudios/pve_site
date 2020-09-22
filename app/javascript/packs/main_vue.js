@@ -121,8 +121,8 @@ document.addEventListener('turbolinks:load', () => {
     new Vue({
       el: professores,
       data: {
-        activeBtn: (sessionStorage.getItem('pve_button_3') == null) ? '8' : sessionStorage.getItem('pve_button_3'),
-        categories: ['professor-category-8', 'professor-category-9']
+        activeBtn: (sessionStorage.getItem('pve_button_3') == null) ? '1' : sessionStorage.getItem('pve_button_3'),
+        categories: ['professor-category-1', 'professor-category-5']
       },
       methods: {
         toggleSelected: function(btn) {
@@ -188,7 +188,7 @@ document.addEventListener('turbolinks:load', () => {
         cat = (sessionStorage.getItem('pve_button_2') == null) ? '5' : sessionStorage.getItem('pve_button_2');
         break;
       case 'professores-ver-mais':
-        cat = (sessionStorage.getItem('pve_button_3') == null) ? '8' : sessionStorage.getItem('pve_button_3');
+        cat = (sessionStorage.getItem('pve_button_3') == null) ? '1' : sessionStorage.getItem('pve_button_3');
         break;
       case 'mobilizadores-ver-mais':
         cat = (sessionStorage.getItem('pve_button_4') == null) ? '3' : sessionStorage.getItem('pve_button_4');

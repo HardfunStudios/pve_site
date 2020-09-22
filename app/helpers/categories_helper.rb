@@ -52,4 +52,15 @@ module CategoriesHelper
       'simple-docusign'
     end 
   end
+  
+  def category_image_prof
+    case @post.category_number
+    when '1'
+      'graduate-v'  
+    when '5'
+      'material-computer-v'
+    else
+      'material-computer-v'
+    end 
+  end
 end

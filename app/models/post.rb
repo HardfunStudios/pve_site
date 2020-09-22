@@ -123,8 +123,6 @@ class Post < ApplicationRecord
     cat_5 = ['Telas Abertas', 'Telas']
     cat_6 = ['Dicas', 'Dicas para a Família', 'Dicas para Família']
     cat_7 = ['Eleições']
-    cat_8 = ['Oportunidades Formativas', 'Oportunidades formativas']
-    cat_9 = ['Telas Abertas', 'Telas']
     if !(category_names & cat_0).empty?
       return '0'
     elsif !(category_names & cat_1).empty?
@@ -141,10 +139,6 @@ class Post < ApplicationRecord
       return '6'
     elsif !(category_names & cat_7).empty? 
       return '7'
-    elsif !(category_names & cat_8).empty? 
-      return '8'
-    elsif !(category_names & cat_9).empty? 
-      return '9'
     end
   end
   
