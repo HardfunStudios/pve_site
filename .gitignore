@@ -13,6 +13,7 @@
 !/tmp/.keep
 
 .env
+.rbenv-vars
 .DS_Store
 *.swp
 *.rdb

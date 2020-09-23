@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: pve_site_production
-  username: pve_site
+  username: wordpressUser
   password: <%= ENV['PVE_SITE_DATABASE_PASSWORD'] %>
