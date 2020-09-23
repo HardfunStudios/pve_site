@@ -26,4 +26,8 @@ Rails.application.routes.draw do
   get 'mobilizadores', to: 'pages#mobilizadores'
   get 'familias', to: 'pages#familias'
   get 'professores', to: 'pages#professores'
+  
+  get '2020/*dt', to: "wpconnector#redirect_wppost"
+  get '2019/*dt', to: "wpconnector#redirect_wppost"
+  get '2018/*dt', to: "wpconnector#redirect_wppost"
 end

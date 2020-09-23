@@ -9,20 +9,21 @@ class PostContentParserService
 
   def execute
     parse_videos
-    parse_images
-    parse_files
+    #parse_images - # not used for now
+    #parse_files - # not used for now
     parse_texts
     @post.update_column(:post_content, @parsed_data.to_html)
   end
 
   def parse_videos
-    @post.videos.destroy_all
-    content = @parsed_data.css('.wp-block-embed-youtube div')
-    unless content.empty?
-      content.each do |video|
-        @post.videos << Video.find_or_create_by(url: video.text.squish)
-      end
-    end
+    # not used for now
+    #@post.videos.destroy_all
+    #content = @parsed_data.css('.wp-block-embed-youtube div')
+    #unless content.empty?
+    #  content.each do |video|
+    #    @post.videos << Video.find_or_create_by(url: video.text.squish)
+    #  end
+    #end
     
     # format videos at center
     nodes = @parsed_data.css 'iframe'
@@ -43,13 +44,14 @@ class PostContentParserService
   end
 
   def parse_texts
-    @post.text_contents.destroy_all
-    content = @parsed_data.css('p')
-    unless content.empty?
-      content.each do |txt|
-        @post.text_contents << TextContent.create(content: txt.inner_html.squish) unless txt.text.blank?
-      end
-    end
+    # not used for now
+    #@post.text_contents.destroy_all
+    #content = @parsed_data.css('p')
+    #unless content.empty?
+    #  content.each do |txt|
+    #    @post.text_contents << TextContent.create(content: txt.inner_html.squish) unless txt.text.blank?
+    #  end
+    #end
     
     # insert hr on h3 and h4
     nodes = @parsed_data.css 'h3, h4, h5'
