@@ -1,0 +1,30 @@
+# Place this file at /etc/systemd/system/
+# To activate on startup
+# sudo systemctl enable pve_site.service
+
+# To interact
+# sudo systemctl [start/stop/restart] pve_site.service
+
+[Unit]
+Description=Start pve site
+After=network.target
+
+[Service]
+# Foreground process (do not use --daemon in ExecStart or config.rb)
+Type=simple
+
+# Preferably configure a non-privileged user
+User=manager
+
+# The path to the your application code root directory.
+WorkingDirectory=/home/manager/pve_site
+
+# SystemD will not run puma even if it is in your path. You must specify
+# an absolute URL to puma. For example /usr/local/bin/puma
+# Alternatively, create a binstub with `bundle binstubs puma --path ./sbin` in the WorkingDirectory
+ExecStart=/home/manager/.rbenv/shims/bundle exec puma -p 3000 
+
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

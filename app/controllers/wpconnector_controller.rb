@@ -2,7 +2,7 @@
 
 class WpconnectorController < ApplicationController
   include WpWebhookEndpoint
-  skip_before_action :verify_authenticity_token
+  #skip_before_action :verify_authenticity_token
 
   def model_create
     model = params[:model].classify.constantize
