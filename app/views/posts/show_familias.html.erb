@@ -45,20 +45,19 @@
     });
   }
   function onPlayerStateChange(event) {
-    var url = event.target.f.getAttribute('src');
-    var duration = event.target.getDuration();
+    var url = event.target.getIframe().getAttribute('src');
     switch(event.data) {
       case 0:
         ga('send', 'event', "youtube", "concluido", url);     
         console.log('video ended = ' + url);
         break;
       case 1:
-        ga('send', 'event', "youtube", "play", url, duration);     
-        console.log('video play = ' + url + ' s=' + duration);
+        ga('send', 'event', "youtube", "play", url);     
+        console.log('video play = ' + url);
         break;
       case 2:
-        ga('send', 'event', "youtube", "pause", url, duration);
-        console.log('video paused = ' + url + ' s=' + duration);
+        ga('send', 'event', "youtube", "pause", url);
+        console.log('video paused = ' + url);
     }
   }
 </script>
