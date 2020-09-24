@@ -13,10 +13,10 @@ class PagesController < ApplicationController
 
     regex = /(?<=\<p>).+?(?=\<\/p>)/
 
-    @escolas = post_escolas.post_content.match(regex)
-    @alunos = post_alunos.post_content.match(regex)
-    @municipios = post_municipios.post_content.match(regex)
-    @pessoas = post_pessoas.post_content.match(regex)
+    @escolas = post_escolas.post_content.match(regex) unless @escolas.nil?
+    @alunos = post_alunos.post_content.match(regex) unless @alunos.nil?
+    @municipios = post_municipios.post_content.match(regex) unless @municipios.nil?
+    @pessoas = post_pessoas.post_content.match(regex) unless @pessoas.nil?
   end
 
   def portal
