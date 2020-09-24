@@ -36,8 +36,8 @@
 <script>
   var player;
   function onYouTubeIframeAPIReady() {
-    console.log('AAAA');
-    player = new YT.Player( 'ytplayer', {
+    players = document.getElementsByClassName('youtube-iframe');
+    player = new YT.Player( players[0].getAttribute('id'), {
       events: { 'onStateChange': onPlayerStateChange }
     });
   }

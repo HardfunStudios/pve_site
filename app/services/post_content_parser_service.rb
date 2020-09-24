@@ -29,8 +29,11 @@ class PostContentParserService
     nodes = @parsed_data.css 'iframe'
     nodes.each do |n|
       n.add_next_sibling('<hr class="my-4">')
-      n.set_attribute('id', 'ytplayer-' + DateTime.now.to_i.to_s)
-      n.set_attribute('src', n.attributes['src'].value + '?enablejsapi=1')
+      if n.attributes['src'].value.include? 'youtube'
+        n.set_attribute('id', 'ytplayer-' + DateTime.now.to_i.to_s)
+        n.set_attribute('src', n.attributes['src'].value + '?enablejsapi=1')
+        n.set_attribute('class', 'youtube-iframe')
+      end
     end
     nodes.wrap('<div class="flex flex-col items-center"></div>')
   end
