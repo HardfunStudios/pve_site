@@ -96,60 +96,55 @@
 <section id='section-mapa-interativo'>
   <div class="xl:container xl:mx-auto xl:px-20">
     <div class="container px-5 py-24 mx-auto">
-      <div class="flex flex-col w-full -mb-32 text-black">
-        <div class="w-full inline-block">
-          <h1 class="sm:text-2xl text-xl title-font mb-4">Você sabe o que é o PVE?</h1>
+      <div class="flex-col w-full -mb-32 text-black">
+        <div class="w-full mx-auto flex-wrap inline-block mt-32 bg-map">
+          <h1 class="sm:text-2xl text-xl title-font -mt-24 mb-4">Você sabe o que é o PVE?</h1>
           <p class="lg:w-2/4 ml-8 leading-relaxed text-sm">
             <span class="text-gray-600">O PVE é uma iniciativa do Instituto Votorantim e das empresas investidas e parceiras da Votorantim, comprometida com a melhoria da educação pública a partir da qualificação de práticas de gestão e de mobilização social de comunidades.</span>
           </p>
-          <p class="lg:w-2/6 ml-8 mt-6 leading-relaxed text-sm inline-block align-top">
-            <span class="font-color-orange">Saiba mais</scan>
+          <p class="lg:w-2/4 ml-8 mt-4 leading-relaxed text-sm">  
+            <a class="font-color-orange" href="/pve">Saiba mais</a>
             <%= image_tag 'arrow-right', {class: "inline-block ml-2", alt:"hero"} %>
           </p>
-          <figure id="mapa">
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="588" height="554.88">
-              <image width="588" height="554.88" xlink:href="mapa-locations.png">
-              </image>
+          <figure id="mapa" class="-mt-10">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 500">
               <a>
-                <rect id="MT" x="210" y="210" opacity="0" width="32" height="35" />
-                <rect id="PA" x="262" y="122" opacity="0" width="32" height="35" />
-                <rect id="TO" x="367" y="170" opacity="0" width="32" height="35" />
-                <rect id="PE" x="550" y="170" opacity="0" width="32" height="35" />
-                <rect id="PI" x="442" y="150" opacity="0" width="32" height="35" />
-                <rect id="BA" x="453" y="230" opacity="0" width="32" height="35" />
-                <rect id="SE" x="526" y="210" opacity="0" width="32" height="35" />
-                <rect id="GO" x="343" y="256" opacity="0" width="32" height="35" />
-                <rect id="MG" x="427" y="290" opacity="0" width="32" height="35" />
-                <rect id="RJ" x="454" y="365" opacity="0" width="32" height="35" />
-                <rect id="SP" x="384" y="345" opacity="0" width="32" height="35" />
-                <rect id="RS" x="321" y="485" opacity="0" width="32" height="35" />
-                <rect id="SC" x="351" y="415" opacity="0" width="32" height="35" />
-                <rect id="PR" x="328" y="367" opacity="0" width="32" height="35" />
-                <rect id="MS" x="277" y="335" opacity="0" width="32" height="35" />
+                <circle id="MT" cx="692" cy="198" r="20" opacity="0" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
+                <circle id="PA" cx="735" cy="125" r="20" opacity="0" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
+                <circle id="TO" cx="825" cy="166" r="20" opacity="0" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
+                <circle id="PE" cx="983" cy="166" r="20" opacity="0" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
+                <circle id="PI" cx="890" cy="147" r="20" opacity="0" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
+                <circle id="BA" cx="900" cy="216" r="20" opacity="0" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
+                <circle id="SE" cx="963" cy="200" r="20" opacity="0" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
+                <circle id="GO" cx="806" cy="239" r="20" opacity="0" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
+                <circle id="MG" cx="878" cy="267" r="20" opacity="0" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
+                <circle id="RJ" cx="900" cy="332" r="20" opacity="0" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
+                <circle id="SP" cx="840" cy="313" r="20" opacity="0" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
+                <circle id="RS" cx="786" cy="433" r="20" opacity="0" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
+                <circle id="SC" cx="813" cy="375" r="20" opacity="0" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
+                <circle id="PR" cx="795" cy="332" r="20" opacity="0" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
+                <circle id="MS" cx="750" cy="303" r="20" opacity="0" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
               </a>
             </svg>
-          </figure>
+        </figure>
         </div>
-        <div class="w-full text-center inline-block -mt-4">
-          <h1 class="mr-48 sm:text-2xl text-xl title-font mt-32 -mb-2 -mt-32">Onde estamos?</h1>
-          <p class="text-left w-1/6 text-gray-600 inline-block">Arraste a lupa até os estados para ver as cidades em que atuamos.</p>
-          <div id="lupa" class="magnifying-glass inline-block ml-2">
-              <img src="lupa.png">
-          </div>
-          <p class="-ml-4 -mt-64 font-color-orange inline-block">Arraste </p>
+        <div class="w-full">
+          <h1 class="ml-40 -mt-64 sm:text-2xl text-xl title-font">Onde estamos?</h1>
+          <p class="text-left mt-4 ml-40 w-1/6 text-gray-600 inline-block">Passe o mouse sobre o mapa ao lado para ver em que cidades atuamos.</p>
+          <p class="-mt-64 font-color-orange inline-block">Passe o mouse </p>
           <%= image_tag 'arrow-right', {class: "inline-block ml-2", alt:"hero"} %>
         </div>
         <div id="city-info">
-              <div id="city-info-header" class="font-bold title-font">Mato Grosso</div>
-            </div>
+          <div id="city-info-inside" class="city-info-header font-bold title-font"></div>
+          <div id="cities_names"></div>
+        </div>
       </div>
-      
     </div>
   </div>
 </section>
 
 <section id='section-numeros'>
-  <div class="xl:container xl:mx-auto xl:px-20">
+  <div class="xl:container xl:mx-auto xl:px-20 mt-8">
     <div class="container px-5 py-24 mx-auto">
       <div class="flex flex-col text-center w-full mb-6 text-black">
         <h1 class="sm:text-2xl text-xl font-bold title-font mb-4">PVE em números</h1>
@@ -224,73 +219,83 @@
 </section>
 
 <script>
-  document.getElementById("MT").addEventListener("mouseover", mouseOver);
-  document.getElementById("city-info").addEventListener("mouseout", mouseOut);
 
-  function mouseOver() {
-    var city_info = document.getElementById("city-info");
-    var state = document.getElementById("MT");
-    
-    city_info.style.top = calculateOffsetTop(state, city_info) + "px";
-    city_info.style.left = calculateOffsetLeft(state, city_info) + "px";
-    city_info.style.visibility = "visible";
-     
-    
-    console.log("HELLO");
-  }
+function mouseOverMethod(e) {
+  var city_information = document.getElementById("city-info");
+  var cities = document.getElementById("city-info-inside");
+  var names = document.getElementById("cities_names");
 
-  function mouseOut() {
-    console.log("BYE");
-    var city_info = document.getElementById("city-info");
-    city_info.style.visibility = "hidden";
-  }
+  city_information.style.visibility = 'visible';
+  if (e.id == "RS") {
+    cities.innerHTML = "Rio Grande do Sul";
+    names.innerHTML = "<ul><li>Esteio</li><li>Pinheiro Machado</li></ul>";
+  } 
+  if (e.id == "PA") {
+    cities.innerHTML = "Pará";
+    names.innerHTML = "<ul><li>Capanema</li><li>Primavera</li></ul>";
+  } 
+  if (e.id == "MT") {
+    cities.innerHTML = "Mato Grosso";
+    names.innerHTML = "<ul><li>Aripuanã</li><li>Nobres</li></ul>";
+  } 
+  if (e.id == "TO") {
+    cities.innerHTML = "Tocantins";
+    names.innerHTML = "<ul><li>Xambioá</li></ul>";
+  } 
+  if (e.id == "PE") {
+    cities.innerHTML = "Pernambuco";
+    names.innerHTML = "<ul><li>Araripina</li><li>Santa Filomena</li><li>Trindade</li></ul>";
+  } 
+  if (e.id == "PI") {
+    cities.innerHTML = "Piauí";
+    names.innerHTML = "<ul><li>Betânia do Piauí</li><li>Curral Novo do Piauí</li><li>Simões</li></ul>";
+  } 
+  if (e.id == "BA") {
+    cities.innerHTML = "Bahia";
+    names.innerHTML = "<ul><li>Cachoeira</li><li>Camaçari</li><li>Governador Mangabeira</li><li>Maragogipe</li><li>São Félix</li></ul>";
+  } 
+  if (e.id == "SE") {
+    cities.innerHTML = "Sergipe";
+    names.innerHTML = "<ul><li>Laranjeiras</li></ul>";
+  } 
+  if (e.id == "GO") {
+    cities.innerHTML = "Goiás";
+    names.innerHTML = "<ul><li>Caçu</li><li>Edealina</li><li>Niquelândia</li><li>Uruaçu</li></ul>";
+  } 
+  if (e.id == "MG") {
+    city_information.style.height = '350px';
+    city_information.style.width = '280px';    
+    cities.innerHTML = "Minas Gerais";
+    names.innerHTML = "<ul><li>Belmiro Braga</li><li>Coromandel</li><li>Guarda-Mor</li><li>Itaú de Minas</li><li>Juiz de Fora</li><li>Lagamar</li><li>Lagoa Grande</li><li>Matias Barbosa</li><li>Muriaé</li><li>Presidente Olegário</li><li>São Gonçalo do Abaeté</li><li>São Sebastião da Vargem Alegre</li><li>Três Marias</li><li>Vazante</li></ul>";
+  } 
+  if (e.id == "RJ") {
+    cities.innerHTML = "Rio de Janeiro";
+    names.innerHTML = "<ul><li>Barra Mansa</li><li>Cantagalo</li><li>Resende</li></ul>";
+  } 
+  if (e.id == "SP") {
+    city_information.style.height = '470px';
+    cities.innerHTML = "São Paulo";
+    names.innerHTML = "<ul><li>Alumínio</li><li>Angatuba</li><li>Botucatu</li><li>Catanduva</li><li>Chavantes</li><li>Divinolândia</li><li>Ibitinga</li><li>Ibiúna</li><li>Itapetininga</li><li>Juquiá</li><li>Juquitiba</li><li>Limeira</li><li>Matão</li><li>Miracatu</li><li>Nova Europa</li><li>Nova Granada</li><li>Rosana</li><li>Salto de Pirapora</li><li>Santa Isabel</li><li>Votorantim</li></ul>";
+  } 
+  if (e.id == "SC") {
+    cities.innerHTML = "Santa Catarina";
+    names.innerHTML = "<ul><li>Apiúna</li><li>Campo Belo do Sul</li><li>Capivari de Baixo</li><li>Celso Ramos</li><li>Ibirama</li><li>Imbituba</li><li>Vidal Ramos</li></ul>";
+  } 
+  if (e.id == "PR") {
+    cities.innerHTML = "Paraná";
+    names.innerHTML = "<ul><li>Almirante Tamandaré</li><li>Colombo</li><li>Itaperuçu</li><li>Ribeirão Claro</li><li>Rio Branco do Sul</li></ul>";
+  } 
+  if (e.id == "MS") {
+    cities.innerHTML = "Mato Grosso do Sul";
+    names.innerHTML = "<ul><li>Brasilândia</li><li>Corumbá</li><li>Ladário</li></ul>";
+  } 
+}
 
-  function calculateOffsetTop(state, city_info) {
-    var state_rect = state.getBoundingClientRect();
-    var city_rect = city_info.getBoundingClientRect();
-    var offset   = state_rect.top - city_rect.top;
-
-    return offset;
-  }
-
-  function calculateOffsetLeft(state, city_info) {
-    var state_rect = state.getBoundingClientRect();
-    var city_rect = city_info.getBoundingClientRect();
-    var offset   = state_rect.left - city_rect.left;
-
-    return offset;
-  }
-
-  dragElement(document.getElementById("lupa"));
-
-  function dragElement(elmnt) {
-    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-    
-    elmnt.onmousedown = dragMouseDown;
-
-    function dragMouseDown(e) {
-      e = e || window.event;
-      e.preventDefault();
-      pos3 = e.clientX;
-      pos4 = e.clientY;
-      document.onmouseup = closeDragElement;
-      document.onmousemove = elementDrag;
-    }
-
-    function elementDrag(e) {
-      e = e || window.event;
-      e.preventDefault();
-      pos1 = pos3 - e.clientX;
-      pos2 = pos4 - e.clientY;
-      pos3 = e.clientX;
-      pos4 = e.clientY;
-      elmnt.style.top = pos2 + "px";
-      elmnt.style.left = pos1 + "px";
-    }
+function mouseOutMethod() {
+  var city_information = document.getElementById("city-info");
+  city_information.style.visibility = 'hidden';
+  city_information.style.height = '200px';
+  city_information.style.width = '230px';
+}
   
-    function closeDragElement() {
-      document.onmouseup = null;
-      document.onmousemove = null;
-    }
-  }
 </script>

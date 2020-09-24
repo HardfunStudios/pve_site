@@ -143,10 +143,10 @@
   color: #584898;
 }
 
-.magnifying-glass {
+.drag-text {
   position: relative;
-  width: 10%;
-  z-index: 10;
+  margin-left: 28rem;
+  top: -3em;
 }
 
 .map {
@@ -210,35 +210,25 @@
   background-position-x: 128%;
 }
 
-#mapa {
-  width: 100%;
-  height: 100%;
-  margin-top: -9rem;
-  display: inline-block;
-}
-
-#mapa svg a:hover{ 
-  cursor: pointer;
-  z-index:1000;
-}
-
-#mapa svg {
-  margin-left: 44em;
+#mapa svg a:hover { 
+  cursor: image-url('lupa.svg') 40 10, auto;
 }
 
 #city-info {
-  position:relative;
-  top: 0;
-  left: 0;
+  position: relative;
+  visibility: hidden;
+  left: 35%;
+  top: -20em;
   border-radius: 15px;
   border: 1px solid #7C7C7C;
   width: 230px;
   height: 200px; 
   background-color: #F7FAFC;
-  visibility: hidden;
+  z-index: 9000;
+  box-shadow: 10px 10px 5px grey;
 }
 
-#city-info-header {
+.city-info-header {
   text-align: center;
   border-top-left-radius: 14px;
   border-top-right-radius: 14px;
@@ -247,6 +237,25 @@
   background-color: #584898;
   color: #fff;
   margin-bottom: 1em;
+  height:40px;
+}
+
+#cities_names {
+  margin-left:50px;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li::before {
+  content: "\2022";
+  color: #F36B26;
+  font-weight: bolder;
+  font-size:1.5em;
+  display: inline-block; 
+  width: 1em;
+  margin-left: -1em;
 }
 
 .section-top-gestores {
@@ -348,6 +357,13 @@
     min-height: 50px;
   }
 }
+.bg-map {
+  background-image: image-url('mapa-locations.png');
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 50%;
+  width: 100%;
+}
 
 .footer-bg {
   background-image: image-url('Footer.png');
@@ -370,3 +386,4 @@
   width: 15%;
   margin-top: 30em;
 }
+
