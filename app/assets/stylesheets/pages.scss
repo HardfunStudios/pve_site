@@ -195,13 +195,14 @@
 
 .numeros-bg {
   background: image-url('numeros-bg.png') no-repeat;
-  background-size: 50%;
-  background-position-x: 60%;
-  background-position-y: 30%;
+  background-size: 180px;
+  background-position: center;
+  width:300px;
+  height:200px;
 }
 
-.numeros-frase {
-  width:200px;
+.width-span {
+  width:100%;
 }
 
 #section-pve-impact {
