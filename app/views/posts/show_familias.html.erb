@@ -32,3 +32,30 @@
     </div>
   </div>
 </section>
+
+<script>
+  var player;
+  function onYouTubeIframeAPIReady() {
+    console.log('AAAA');
+    player = new YT.Player( 'ytplayer', {
+      events: { 'onStateChange': onPlayerStateChange }
+    });
+  }
+  function onPlayerStateChange(event) {
+    console.log('a');
+    switch(event.data) {
+      case 0:
+        record('video ended');
+        break;
+      case 1:
+        record('video playing from '+player.getCurrentTime());
+        break;
+      case 2:
+        record('video paused at '+player.getCurrentTime());
+    }
+  }
+  function record(str){
+    console.log(str);
+  }
+</script>
+<script src="https://www.youtube.com/iframe_api"></script>
