@@ -34,28 +34,32 @@
 </section>
 
 <script>
-  var player;
+  var players;
   function onYouTubeIframeAPIReady() {
-    players = document.getElementsByClassName('youtube-iframe');
-    player = new YT.Player( players[0].getAttribute('id'), {
-      events: { 'onStateChange': onPlayerStateChange }
+    players = [];
+    iframes = document.getElementsByClassName('youtube-iframe');
+    Array.prototype.forEach.call(iframes, function(iframe) {
+      players.push(new YT.Player(iframe.getAttribute('id'), {
+        events: { 'onStateChange': onPlayerStateChange }
+      }));    
     });
   }
   function onPlayerStateChange(event) {
-    console.log('a');
+    var url = event.target.f.getAttribute('src');
+    var duration = event.target.getDuration();
     switch(event.data) {
       case 0:
-        record('video ended');
+        ga('send', 'event', "youtube", "concluido", url);     
+        console.log('video ended = ' + url);
         break;
       case 1:
-        record('video playing from '+player.getCurrentTime());
+        ga('send', 'event', "youtube", "play", url, duration);     
+        console.log('video play = ' + url + ' s=' + duration);
         break;
       case 2:
-        record('video paused at '+player.getCurrentTime());
+        ga('send', 'event', "youtube", "pause", url, duration);
+        console.log('video paused = ' + url + ' s=' + duration);
     }
-  }
-  function record(str){
-    console.log(str);
   }
 </script>
 <script src="https://www.youtube.com/iframe_api"></script>
