@@ -25,6 +25,10 @@ class PagesController < ApplicationController
   
   def pve; end
   
+  def terms; end
+
+  def privacy; end
+  
   def gestores
     @@limit = 6 if request.format.html?
     @@limit += 6 if request.format.js?

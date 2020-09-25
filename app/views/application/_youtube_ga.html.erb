@@ -1,0 +1,30 @@
+<script>
+  var players;
+  function onYouTubeIframeAPIReady() {
+    console.log('Loading YT GA');
+    players = [];
+    iframes = document.getElementsByClassName('youtube-iframe');
+    Array.prototype.forEach.call(iframes, function(iframe) {
+      players.push(new YT.Player(iframe.getAttribute('id'), {
+        events: { 'onStateChange': onPlayerStateChange }
+      }));    
+    });
+  }
+  function onPlayerStateChange(event) {
+    var url = event.target.getIframe().getAttribute('src');
+    switch(event.data) {
+      case 0:
+        ga('send', 'event', "youtube", "concluido", url);     
+        console.log('video ended = ' + url);
+        break;
+      case 1:
+        ga('send', 'event', "youtube", "play", url);     
+        console.log('video play = ' + url);
+        break;
+      case 2:
+        ga('send', 'event', "youtube", "pause", url);
+        console.log('video paused = ' + url);
+    }
+  }
+</script>
+<script src="https://www.youtube.com/iframe_api"></script>
