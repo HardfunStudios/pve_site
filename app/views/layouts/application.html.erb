@@ -12,6 +12,19 @@
       ga('create', '<%= ENV["GA_TRACKING_CODE_UA"] %>', 'auto');
       ga('send', 'pageview');
     </script>
+    
+    <!-- Facebook Events -->
+    <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId            : "<%= ENV['FACEBOOK_APPID'] %>",
+          autoLogAppEvents : true,
+          xfbml            : true,
+          version          : 'v7.0'
+        });
+      };
+    </script>
 
     <title>Site do PVE</title>
     <%= csrf_meta_tags %>

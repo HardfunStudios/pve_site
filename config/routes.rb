@@ -27,6 +27,9 @@ Rails.application.routes.draw do
   get 'familias', to: 'pages#familias'
   get 'professores', to: 'pages#professores'
   
+  get '/termos-e-condicoes-de-uso', as: :terms, to: 'pages#terms'
+  get '/politica-de-privacidade-e-protecao-de-dados-do-pve', as: :privacy, to: 'pages#privacy'
+  
   get '2020/*dt', to: "wpconnector#redirect_wppost"
   get '2019/*dt', to: "wpconnector#redirect_wppost"
   get '2018/*dt', to: "wpconnector#redirect_wppost"
