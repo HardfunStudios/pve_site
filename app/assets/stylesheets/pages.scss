@@ -384,3 +384,64 @@ ul li::before {
   margin-top: 30em;
 }
 
+.share-buttons {
+  width: 4%;
+  
+  .rails-social-share-button { 
+
+    .ssb-twitter {
+      background-image: image-url('social/icon-twitter.png') !important;
+    }
+  
+    .ssb-facebook {
+      background-image: image-url('social/icon-facebook.png') !important;
+    }
+    
+    .ssb-whatsapp_app {
+      background-image: image-url('social/icon-whatsapp.png') !important;
+    }
+
+    .ssb-icon {
+      height: 28px !important;
+      width: 28px !important;
+      border-radius: 16px;
+      border: transparent;
+      background-size: 28px 28px !important;
+      margin-bottom: 1rem;
+    }
+  }
+    
+}
+
+#increase-blog-font-size-btn,
+#decrease-blog-font-size-btn {
+  cursor: pointer;
+  white-space: nowrap;
+  height:10%;
+}
+
+@media(max-width: 575px) {
+  #increase-blog-font-size-btn,
+  #decrease-blog-font-size-btn {
+    margin: 6px 5px 0 5px;
+  }
+}
+
+#blog-content-body {
+  font-size: 14px;
+}
+
+.copy-icon {
+  background-image: image-url('social/link.png') !important;
+  background-size: 28px 28px !important;
+  margin-top:14.5rem;
+  margin-left: -0.25rem;
+  height: 28px;
+  width: 28px;
+  display: block;
+  cursor: pointer;
+}
+
+.margin-post {
+  margin-top: -16.5rem;
+}

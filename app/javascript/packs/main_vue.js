@@ -206,6 +206,24 @@ document.addEventListener('turbolinks:load', () => {
       }
     });
   });
+
+  $('#increase-blog-font-size-btn').on('click', function() {
+    var originalFontSize = $('#blog-content-body').css('font-size');
+    var originalFontNumber = parseFloat(originalFontSize, 10);
+    var newFontSize = originalFontNumber * 1.2;
+
+    if (newFontSize <= 72)
+      $('#blog-content-body').css('font-size', newFontSize);
+  });
+
+  $('#decrease-blog-font-size-btn').on('click', function() {
+    var originalFontSize = $('#blog-content-body').css('font-size');
+    var originalFontNumber = parseFloat(originalFontSize, 10);
+    var newFontSize = originalFontNumber / 1.2;
+
+    if (newFontSize >= 6)
+      $('#blog-content-body').css('font-size', newFontSize);
+  });
 });
 
 
