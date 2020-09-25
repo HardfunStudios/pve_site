@@ -206,6 +206,22 @@ document.addEventListener('turbolinks:load', () => {
       }
     });
   });
+  
+  $('#enter-gestores').click(function() {
+    ga('send', 'event', "home", "clicou gestores");
+  });
+  
+  $('#enter-familia').click(function() {
+    ga('send', 'event', "home", "clicou familia"); 
+  });
+  
+  $('#enter-professores').click(function() {
+    ga('send', 'event', "home", "clicou professores");
+  });
+  
+  $('#enter-mobilizadores').click(function() {
+    ga('send', 'event', "home", "clicou mobilizadores");
+  });
 });
 
 
