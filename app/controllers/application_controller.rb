@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-  before_action :color_header
+  before_action :color_header, :turn_turbolinks
   
   private
   
@@ -14,5 +14,10 @@ class ApplicationController < ActionController::Base
       @text_color = 'font-color-purple'
       @logo_header = 'logo-header-purple'
     end
+  end
+  
+  def turn_turbolinks
+    @is_on = 'true'
+    @is_on = 'false' if (params[:controller] == 'posts' && params[:action].start_with?('show'))
   end
 end
