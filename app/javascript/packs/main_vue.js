@@ -224,6 +224,17 @@ document.addEventListener('turbolinks:load', () => {
     if (newFontSize >= 6)
       $('#blog-content-body').css('font-size', newFontSize);
   });
+
+  $('#copy-link').on('click', function() {
+    var urlCurrent = $(location).attr('href');
+    var inputDump = document.createElement('input');
+    document.body.appendChild(inputDump);
+    inputDump.value = urlCurrent;
+    inputDump.select();
+    document.execCommand('copy');
+    document.body.removeChild(inputDump);
+    alert("Link copiado!");
+  });
 });
 
 

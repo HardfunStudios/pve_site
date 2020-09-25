@@ -28,7 +28,7 @@
       <span class="flex inline-block mt-20 -ml-8 share-buttons">
         <%= rails_social_share_button_tag(@post.post_title, desc: @post.post_title) %>
       </span>
-      <span class="copy-icon" data-trigger="click" data-toggle="tooltip" data-placement="right" title="Copiado!" data-clipboard-text="<%= request.original_url %>">
+      <span id="copy-link" class="copy-icon">
       </span>
     </div>
     <div id="blog-content-body" class="margin-post">
