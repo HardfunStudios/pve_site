@@ -208,22 +208,22 @@ document.addEventListener('turbolinks:load', () => {
   });
 
   $('#increase-blog-font-size-btn').on('click', function() {
-    var originalFontSize = $('#post-content').css('font-size');
+    var originalFontSize = $('.wordpress-theme,h2,h3,h4,h5').not('#post-cards-section').css('font-size');
     var originalFontNumber = parseFloat(originalFontSize, 10);
     var newFontSize = originalFontNumber * 1.2;
 
     if (newFontSize <= 72)
-      $('#post-content').css('font-size', newFontSize);
+      $('.wordpress-theme,h2,h3,h4,h5').not('#post-cards-section').css('font-size', newFontSize);
       $('#post-content').css('line-height', 1.4);
   });
 
   $('#decrease-blog-font-size-btn').on('click', function() {
-    var originalFontSize = $('#post-content').css('font-size');
+    var originalFontSize = $('.wordpress-theme,h2,h3,h4,h5').css('font-size');
     var originalFontNumber = parseFloat(originalFontSize, 10);
     var newFontSize = originalFontNumber / 1.2;
 
     if (newFontSize >= 6)
-      $('#post-content').css('font-size', newFontSize);
+      $('.wordpress-theme,h2,h3,h4,h5').css('font-size', newFontSize);
   });
 
   $('#copy-link').on('click', function() {
