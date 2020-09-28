@@ -214,6 +214,7 @@ document.addEventListener('turbolinks:load', () => {
 
     if (newFontSize <= 72)
       $('#post-content').css('font-size', newFontSize);
+      $('#post-content').css('line-height', 1.4);
   });
 
   $('#decrease-blog-font-size-btn').on('click', function() {
