@@ -17,7 +17,7 @@ document.addEventListener('turbolinks:load', () => {
           title: 'Famílias',
           timer: '',
           i: 0,
-          names: ['Famílias', 'Professores', 'Gestores Educacionais', 'Mobilizadores']
+          names: ['Famílias', 'Professores', 'Gestores Educacionais', 'Mobilizadores',  'Gestores Escolares']
         }
       },
       created () {
@@ -25,7 +25,7 @@ document.addEventListener('turbolinks:load', () => {
       },
       methods: {
         changeTitle() {
-          this.i >= 3 ? this.i = 0 : this.i++;
+          this.i >= 4 ? this.i = 0 : this.i++;
           this.title = this.names[this.i];
           return this.title;
         }
