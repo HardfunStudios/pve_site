@@ -18,17 +18,32 @@
 
 <section class="bg-very-light xl:px-40 lg:px-32 px-8">
   <div class="xl:container xl:mx-auto bg-white py-16 px-24 xl:px-32 border-r-2 border-l-2 border-gray-300">
-    <p class="text-black text-xs mb-4 font-bold">Publicado em <%= I18n.l(@post.post_date_gmt, format: :very_long) %></p>
-    <div class="wordpress-theme"><%= @post.post_content.html_safe %></div>
-    <hr class="my-4">
-    <p class="text-black text-xs">ESSE CONTEÚDO FOI INSPIRADOR?</p>
-    <p class="flex mb-4"><%= image_tag 'curtir', class: 'w-5 h-5 flex-shrink-0 mr-1' %>0</p>
-    <p class="text-black text-xs mb-12">Tags: <%= @post.tag_names %></p>
-    <p class="text-black text-xs mb-4">VOCÊ PODE SE INTERESSAR TAMBÉM:</p>
-    <div class="flex flex-wrap" id='post-cards-section'>
-    <% @related.each do |related| %>
-      <%= render "posts/card_sm", post: related %>
-    <% end %>
+    <div class="flex inline-block w-1/12 -ml-16">
+      <span id="increase-blog-font-size-btn" class="text-2xl font-bold -mt-1">
+        A+
+      </span>
+      <span id="decrease-blog-font-size-btn" class="text-2xl font-bold mt-10 -ml-8">
+        A-
+      </span>
+      <span class="flex inline-block mt-20 -ml-8 share-buttons">
+        <%= rails_social_share_button_tag(@post.post_title, desc: @post.post_title) %>
+      </span>
+      <span id="copy-link" class="copy-icon">
+      </span>
+    </div>
+    <div id="blog-content-body" class="margin-post">
+      <div id="post-content">
+        <p class="text-black text-xs mb-4 font-bold">Publicado em <%= I18n.l(@post.post_date_gmt, format: :very_long) %></p>
+        <div class="wordpress-theme"><%= @post.post_content.html_safe %></div>
+        <hr class="my-4">
+        <p class="text-black text-xs mb-12">Tags: <%= @post.tag_names %></p>
+        <p class="text-black text-xs mb-4">VOCÊ PODE SE INTERESSAR TAMBÉM:</p>
+      </div>
+      <div class="flex flex-wrap" id='post-cards-section'>
+      <% @related.each do |related| %>
+        <%= render "posts/card_sm", post: related %>
+      <% end %>
+    </div>
     </div>
   </div>
 </section>
