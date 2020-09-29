@@ -178,6 +178,69 @@ document.addEventListener('turbolinks:load', () => {
       }
     });
   });
+
+  $('#increase-blog-font-size-btn').on('click', function() {
+    var originalFontSizeH2 = $('#post-content h2').css('font-size');
+    var originalFontSizeH3 = $('#post-content h3').css('font-size');
+    var originalFontSizeH4 = $('#post-content h4').css('font-size');
+    var originalFontSizeH5 = $('#post-content h5').css('font-size');
+    var originalFontSizeP = $('#post-content p').css('font-size');
+    var originalFontNumberH2 = parseFloat(originalFontSizeH2, 10);
+    var originalFontNumberH3 = parseFloat(originalFontSizeH3, 10);
+    var originalFontNumberH4 = parseFloat(originalFontSizeH4, 10);
+    var originalFontNumberH5 = parseFloat(originalFontSizeH5, 10);
+    var originalFontNumberP = parseFloat(originalFontSizeP, 10);
+    var newFontSizeH2 = originalFontNumberH2 * 1.2;
+    var newFontSizeH3 = originalFontNumberH3 * 1.2;
+    var newFontSizeH4 = originalFontNumberH4 * 1.2;
+    var newFontSizeH5 = originalFontNumberH5 * 1.2;
+    var newFontSizeP = originalFontNumberP * 1.2;
+
+    if (newFontSizeP <= 72)
+      $('#post-content h2').css('font-size', newFontSizeH2);
+      $('#post-content h3').css('font-size', newFontSizeH3);
+      $('#post-content h4').css('font-size', newFontSizeH4);
+      $('#post-content h5').css('font-size', newFontSizeH5);
+      $('#post-content p').css('font-size', newFontSizeP);
+      $('#post-content h2,h3,h4,h5,p').css('line-height', 1.4);
+  });
+
+  $('#decrease-blog-font-size-btn').on('click', function() {
+    var originalFontSizeH2 = $('#post-content h2').css('font-size');
+    var originalFontSizeH3 = $('#post-content h3').css('font-size');
+    var originalFontSizeH4 = $('#post-content h4').css('font-size');
+    var originalFontSizeH5 = $('#post-content h5').css('font-size');
+    var originalFontSizeP = $('#post-content p').css('font-size');
+    var originalFontNumberH2 = parseFloat(originalFontSizeH2, 10);
+    var originalFontNumberH3 = parseFloat(originalFontSizeH3, 10);
+    var originalFontNumberH4 = parseFloat(originalFontSizeH4, 10);
+    var originalFontNumberH5 = parseFloat(originalFontSizeH5, 10);
+    var originalFontNumberP = parseFloat(originalFontSizeP, 10);
+    var newFontSizeH2 = originalFontNumberH2 / 1.2;
+    var newFontSizeH3 = originalFontNumberH3 / 1.2;
+    var newFontSizeH4 = originalFontNumberH4 / 1.2;
+    var newFontSizeH5 = originalFontNumberH5 / 1.2;
+    var newFontSizeP = originalFontNumberP / 1.2;
+
+    if (newFontSizeP <= 72)
+      $('#post-content h2').css('font-size', newFontSizeH2);
+      $('#post-content h3').css('font-size', newFontSizeH3);
+      $('#post-content h4').css('font-size', newFontSizeH4);
+      $('#post-content h5').css('font-size', newFontSizeH5);
+      $('#post-content p').css('font-size', newFontSizeP);
+      $('#post-content h2,h3,h4,h5,p').css('line-height', 1.4);
+  });
+
+  $('#copy-link').on('click', function() {
+    var urlCurrent = $(location).attr('href');
+    var inputDump = document.createElement('input');
+    document.body.appendChild(inputDump);
+    inputDump.value = urlCurrent;
+    inputDump.select();
+    document.execCommand('copy');
+    document.body.removeChild(inputDump);
+    alert("Link copiado!");
+  });
   
   $('#enter-gestores').click(function() {
     ga('send', 'event', "home", "clicou gestores");
@@ -275,7 +338,6 @@ document.addEventListener('turbolinks:load', () => {
     pause: 500
   });
 });
-
 
 // The above code uses Vue without the compiler, which means you cannot
 // use Vue to target elements in your existing html templates. You would
