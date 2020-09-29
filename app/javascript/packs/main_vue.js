@@ -208,22 +208,22 @@ document.addEventListener('turbolinks:load', () => {
   });
 
   $('#increase-blog-font-size-btn').on('click', function() {
-    var originalFontSize = $('.wordpress-theme,h2,h3,h4,h5').not('#post-cards-section').css('font-size');
+    var originalFontSize = $('#post-content h2,h3,h4,h5,p').css('font-size');
     var originalFontNumber = parseFloat(originalFontSize, 10);
     var newFontSize = originalFontNumber * 1.2;
 
     if (newFontSize <= 72)
-      $('.wordpress-theme,h2,h3,h4,h5').not('#post-cards-section').css('font-size', newFontSize);
-      $('#post-content').css('line-height', 1.4);
+      $('#post-content h2,h3,h4,h5,p').css('font-size', newFontSize);
+      $('#post-content h2,h3,h4,h5,p').css('line-height', 1.4);
   });
 
   $('#decrease-blog-font-size-btn').on('click', function() {
-    var originalFontSize = $('.wordpress-theme,h2,h3,h4,h5').css('font-size');
+    var originalFontSize = $('#post-content h2,h3,h4,h5,p').css('font-size');
     var originalFontNumber = parseFloat(originalFontSize, 10);
-    var newFontSize = originalFontNumber / 1.2;
+    var newFontSize = originalFontNumber / 1.4;
 
     if (newFontSize >= 6)
-      $('.wordpress-theme,h2,h3,h4,h5').css('font-size', newFontSize);
+      $('#post-content h2,h3,h4,h5,p').css('font-size', newFontSize);
   });
 
   $('#copy-link').on('click', function() {
