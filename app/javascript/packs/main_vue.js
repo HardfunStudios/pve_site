@@ -263,13 +263,13 @@ document.addEventListener('turbolinks:load', () => {
     });
   }(jQuery));
   
-  $('#target').teletype({
+  $('#collaborators-titles-animated').teletype({
     text: [
       'Famílias', 'Professores', 'Gestores Educacionais', 'Mobilizadores',  'Gestores Escolares'
     ]
   });
   
-  $('#cursor').teletype({
+  $('#cursor-animation-collaborators').teletype({
     text: ['|', ' '],
     delay: 0,
     pause: 500
