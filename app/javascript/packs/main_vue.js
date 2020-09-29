@@ -7,34 +7,6 @@ Vue.use(TurbolinksAdapter);
  
 document.addEventListener('turbolinks:load', () => {
   Vue.http.headers.common['X-CSRF-Token'] = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
- 
-  var collaboratorType = document.getElementById("home-collaborator-name");
-  if (collaboratorType != null) {
-    new Vue({
-      el: collaboratorType,
-      data () {
-        return {
-          title: 'Famílias',
-          timer: '',
-          i: 0,
-          names: ['Famílias', 'Professores', 'Gestores Educacionais', 'Mobilizadores',  'Gestores Escolares']
-        }
-      },
-      created () {
-        this.timer = setInterval(this.changeTitle, 5000);
-      },
-      methods: {
-        changeTitle() {
-          this.i >= 4 ? this.i = 0 : this.i++;
-          this.title = this.names[this.i];
-          return this.title;
-        }
-      },
-      beforeDestroy () {
-        clearInterval(this.timer);
-      }
-    });
-  }
   
   var matrices = document.getElementById('animated-matrix');
   if (matrices != null) {
@@ -284,6 +256,86 @@ document.addEventListener('turbolinks:load', () => {
   
   $('#enter-mobilizadores').click(function() {
     ga('send', 'event', "home", "clicou mobilizadores");
+  });
+
+  (function ($) {
+    function typeString($target, str, cursor, delay, cb) {
+      $target.html(function (_, html) {
+        return html + str[cursor];
+      });
+      
+      if (cursor < str.length - 1) {
+        setTimeout(function () {
+          typeString($target, str, cursor + 1, delay, cb);
+        }, delay);
+      }
+      else {
+        cb();
+      }
+    }
+
+    function deleteString($target, delay, cb) {
+      var length;
+      
+      $target.html(function (_, html) {
+        length = html.length;
+        return html.substr(0, length - 1);
+      });
+      
+      if (length > 1) {
+        setTimeout(function () {
+          deleteString($target, delay, cb);
+        }, delay);
+      }
+      else {
+        cb();
+      }
+    }
+  
+    // jQuery hook
+    $.fn.extend({
+      teletype: function (opts) {
+        var settings = $.extend({}, $.teletype.defaults, opts);
+        
+        return $(this).each(function () {
+          (function loop($tar, idx) {
+            // type
+            typeString($tar, settings.text[idx], 0, settings.delay, function () {
+              // delete
+              setTimeout(function () {
+                deleteString($tar, settings.delay, function () {
+                  loop($tar, (idx + 1) % settings.text.length);
+                });
+              }, settings.pause);
+            });
+          
+          }($(this), 0));
+        });
+      }
+    });
+  
+    // plugin defaults  
+    $.extend({
+      teletype: {
+        defaults: {
+          delay: 50,
+          pause: 4000,
+          text: []
+        }
+      }
+    });
+  }(jQuery));
+  
+  $('#collaborators-titles-animated').teletype({
+    text: [
+      'Famílias', 'Professores', 'Gestores Educacionais', 'Mobilizadores',  'Gestores Escolares'
+    ]
+  });
+  
+  $('#cursor-animation-collaborators').teletype({
+    text: ['|', ' '],
+    delay: 0,
+    pause: 500
   });
 });
 
