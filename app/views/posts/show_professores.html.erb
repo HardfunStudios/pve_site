@@ -3,6 +3,23 @@
     <div class="container mx-auto pl-20 pr-24 xl:py-32 lg:py-24 py-20">
       <div class='w-full flex flex-wrap'>
         <div class="xl:w-5/6 w-3/4 pr-8 xl:pr-32 flex flex-wrap content-center mx-auto">
+          <div class="mb-10">
+            <a href="/" class="inline-block breadcrumb-hover leading-6 text-sm mb-4">
+              Home 
+            </a>
+            <a>/</a>
+            <a href="/professores" class="inline-block breadcrumb-hover leading-6 text-sm">
+              Professores
+            </a>
+            <a>/</a>
+            <a href="/professores" class="inline-block breadcrumb-hover leading-6 text-sm">
+              <%= big_category %>
+            </a>
+            <a>/</a>
+            <a title="Você está aqui!" class="inline-block leading-6 text-sm font-bold">
+              Publicação
+            </a>
+          </div>
           <p class="leading-snug text-xl text-black font-base w-full mb-1 flex items-center">
             <%= image_tag category_image_prof, class: 'w-9 h-9 flex-shrink-0 mr-2' %>
             <%= big_category %>
@@ -17,17 +34,6 @@
 </section>
 
 <section class="bg-very-light xl:px-40 lg:px-32 px-8">
-  <div class="breadcrumb_professores -mt-2">
-    <a href="/" class="inline-block breadcrumb-hover leading-6 text-xl mb-4 font-color-green">
-      Página Principal   >
-    </a>
-    <a href="/professores" class="inline-block breadcrumb-hover leading-6 text-xl mb-4 font-color-green">
-      Professores   >
-    </a>
-    <a title="Você está aqui!" class="inline-block leading-6 text-xl mb-4 font-color-green-light">
-      Publicação
-    </a>
-  </div>
   <div class="xl:container xl:mx-auto bg-white py-16 px-24 xl:px-32 border-r-2 border-l-2 border-gray-300">
     <div class="flex inline-block w-1/12 -ml-16">
       <span id="increase-blog-font-size-btn" class="text-2xl font-bold -mt-1">
