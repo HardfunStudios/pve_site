@@ -3,7 +3,7 @@
   <div class="h-full rounded overflow-hidden relative border-2 border-gray-500">
     <a href='<%= post_path(post) %>/?cat=<%= @cat %>'>
       <div class="flex flex-wrap flex-col w-full bg-gray-300">
-        <img src="<%= post.image_files.first&.origin_url %>" class='object-center lg:h-40 h-32' />
+        <img src="<%= post.post_thumbnail %>" class='object-center lg:h-40 h-32' />
       </div>
     </a>
     <div class='p-4 pb-6'>
