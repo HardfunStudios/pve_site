@@ -3,6 +3,23 @@
     <div class="container mx-auto pl-20 pr-24 xl:py-32 lg:py-24 py-20">
       <div class='w-full flex flex-wrap'>
         <div class="xl:w-5/6 w-3/4 pr-8 xl:pr-32 flex flex-wrap content-center mx-auto">
+          <div class="mb-10">
+              <a href="/" class="inline-block breadcrumb-hover leading-6 text-sm mb-4">
+                Home 
+              </a>
+              <a>/</a>
+              <a href="/mobilizadores" class="inline-block breadcrumb-hover leading-6 text-sm">
+                Mobilizadores
+              </a>
+              <a>/</a>
+              <a href="/mobilizadores" class="inline-block breadcrumb-hover leading-6 text-sm">
+                <%= big_category %>
+              </a>
+              <a>/</a>
+              <a title="Você está aqui!" class="inline-block leading-6 text-sm font-bold">
+                Publicação
+              </a>
+            </div>
           <p class="leading-snug text-xl text-black font-base w-full mb-1 flex items-center">
             <%= image_tag category_image, class: 'w-9 h-9 flex-shrink-0 mr-2' %>
             <%= big_category %>

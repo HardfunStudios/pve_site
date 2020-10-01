@@ -119,6 +119,10 @@
   mix-blend-mode: multiply;
 }
 
+.font-color-orange-light {
+  color: #f0a37c;
+}
+
 .font-color-gray {
   color: #7C7C7C;
 }
@@ -127,8 +131,16 @@
   color: #45AB5C;
 }
 
+.font-color-green-light {
+  color: #8fc59c;
+}
+
 .font-color-red {
   color: #D02831;
+}
+
+.font-color-red-light {
+  color: #d89b9e;
 }
 
 .font-color-blue {
@@ -442,4 +454,9 @@ ul {
 
 .margin-post {
   margin-top: -16.5rem;
+}
+
+.breadcrumb-hover:hover {
+  cursor:pointer;
+  font-weight:bold;
 }
