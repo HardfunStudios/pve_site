@@ -18,12 +18,14 @@
         console.log('video ended = ' + url);
         break;
       case 1:
-        ga('send', 'event', "youtube", "play", url);     
-        console.log('video play = ' + url);
+        minutes = parseInt(event.target.getCurrentTime()) / 60;
+        ga('send', 'event', "youtube", "play", url, minutes + ' min');     
+        console.log(minutes + ' video play = ' + url);
         break;
       case 2:
-        ga('send', 'event', "youtube", "pause", url);
-        console.log('video paused = ' + url);
+        minutes = parseInt(event.target.getCurrentTime()) / 60;
+        ga('send', 'event', "youtube", "pause", url, minutes + ' min');
+        console.log(minutes + ' video paused = ' + url);
     }
   }
 </script>
