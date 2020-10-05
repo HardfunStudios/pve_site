@@ -153,6 +153,7 @@ document.addEventListener('turbolinks:load', () => {
   }
 
   $('.load-more').click(function (e) {
+    ga('send', 'event', 'posts', 'clicou ver mais');
     e.preventDefault();
     var cat = (sessionStorage.getItem('pve_button_1') == null) ? '0' : sessionStorage.getItem('pve_button_1');
     switch ($(this).attr('id')) {
@@ -337,7 +338,28 @@ document.addEventListener('turbolinks:load', () => {
     delay: 0,
     pause: 500
   });
+  
+  // fires ga events when user scrolls to sections
+  var scrolled_to_sections  = [];
+  $(".sections").each(function(e) {
+    new Waypoint({
+      element: $(this),
+      handler: function(direction) {
+        var id = $(this)[0].element[0].id;
+        if (id != "") {
+          //checks if we nagigated to this section before and only
+          //sends events once        
+          if (scrolled_to_sections[id] === undefined ) {
+            console.log("Scrollled to section " + id);
+            ga('send', 'event', 'scroll', id);
+          }
+          scrolled_to_sections[id] = "true"
+        } 
+      }
+    });
+  });
 });
+
 
 // The above code uses Vue without the compiler, which means you cannot
 // use Vue to target elements in your existing html templates. You would
