@@ -3,16 +3,16 @@
   
   <div class="container header-size mx-auto flex flex-wrap p-2 pb-0 flex-col md:flex-row items-center">
   
-    <a class="<%= @logo_header  %> -mt-10" href="/"></a>
+    <a class="<%= @logo_header %> -mt-10" href="/"></a>
      
     <nav class=" ml-4 -mt-16 lg:ml-20 xl:ml-32 md:mr-auto flex flex-wrap items-center text-base justify-center pb-4">
       <a class="leading-snug text-xs mr-12 mt-1 menu-items absolute" href="/pve">
-        <strong class="<%= @text_color  %>">O PVE</strong>
+        <strong class="<%= @text_color %>">O PVE</strong>
       </a>
 
       <div class="dropdown inline-block relative menu-items ml-48 mr-12 absolute">
         <span class="leading-snug text-xs">
-          <strong class="<%= @text_color  %> ">Ações</strong>
+          <strong class="<%= @text_color %> ">Ações</strong>
         </span>
         <ul class="dropdown-menu absolute hidden text-gray-700 pt-1">
           <li class=""><a class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Linha do tempo</a></li>
@@ -26,9 +26,9 @@
         <span class="leading-snug text-xs ml-2 mr-10 -mt-1 menu-items absolute">
           <strong class="font-color-white" style="text-shadow: 1px 1px #584898;">Junte-se a nós</strong>
         </span>
-        <span class="leading-snug text-xs ml-32 mr-12 -mt-1 menu-items absolute">
+        <a class="leading-snug text-xs ml-32 mr-12 -mt-1 menu-items absolute" href='/news'>
           <strong class="font-color-white" style="text-shadow: 1px 1px #584898;">Últimas notícias</strong>
-        </span>
+        </a>
       </div>
       <button class="login-button inline-flex items-center text-base">Entrar</button>
     </nav>
