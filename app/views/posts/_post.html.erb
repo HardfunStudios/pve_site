@@ -1,5 +1,5 @@
 <% cache post do %>
-<div class="p-4 md:w-1/3 hidden post-card-preview post-cat-<%= post.category_number %>">
+<div class="<%= size_class %> p-4 post-card-preview post-cat-<%= post.category_number %>">
   <div class="h-full pb-8 rounded overflow-hidden relative border-2 border-gray-500">
     <a href='<%= post_path(post) %>/?cat=<%= @cat %>'>
       <div class="flex flex-wrap flex-col w-full bg-gray-300">

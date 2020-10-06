@@ -1,1 +1,1 @@
-$('#post-cards-section').html('<%= escape_javascript render(@posts) %>');
+$('#post-cards-section').html('<%= escape_javascript render partial: @posts, locals: {size_class: "lg:w-1/3 hidden"} %>');
