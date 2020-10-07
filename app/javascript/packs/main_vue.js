@@ -51,6 +51,12 @@ document.addEventListener('turbolinks:load', () => {
         }
       },
       created () {
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const category = urlParams.get('category');
+        if (category != null) {
+          this.activeBtn = category;
+        }
         this.toggleSelected(this.activeBtn);
       }
     });
@@ -115,6 +121,12 @@ document.addEventListener('turbolinks:load', () => {
         }
       },
       created () {
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const category = urlParams.get('category');
+        if (category != null) {
+          this.activeBtn = category;
+        }
         this.toggleSelected(this.activeBtn);
       }
     });

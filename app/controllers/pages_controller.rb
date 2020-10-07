@@ -90,6 +90,7 @@ class PagesController < ApplicationController
     @oportunidades = Post.joins(:categories).where('categories.name LIKE ?', '%Oportunidades%').order(post_date_gmt: :desc).limit(3)
     @interessantes = Post.joins(:categories).where('categories.name LIKE ?', '%Dicas%').order(post_date_gmt: :desc).limit(2)
     @interessantes += Post.joins(:categories).where('categories.name LIKE ?', '%Conteúdos%').order(post_date_gmt: :desc).limit(1)
+    @cat = 'gestores'
     respond_to do |format|
       format.html
       format.js
