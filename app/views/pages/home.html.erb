@@ -3,10 +3,10 @@
   <div class="xl:container xl:mx-auto xl:px-20">
     <div class="container mx-auto flex px-5 pb-2 md:flex-row flex-col items-center mb-4">
       <div class="lg:flex-grow md:w-1/2 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-        <h1 class="title-font sm:text-base text-sm mb-2 font-color-purple">
+        <h1 class="title-font text-xl lg:text-sm mb-2 font-color-purple">
           <strong>Seja bem vindo(a) ao PVE</strong>
         </h1>
-        <p class="mb-4 leading-snug lg:text-3xl md:text-2xl text-2xl mb-4 font-color-purple">
+        <p class="mb-4 leading-snug lg:text-3xl text-3xl mb-4 font-color-purple">
           <strong class="font-color-purple-light">O programa que valoriza<br/>a educação com ajuda de</strong>
           <br/><strong class="font-color-purple">
             <span id="collaborators-titles-animated"></span>
@@ -101,18 +101,18 @@
     <div class="container px-5 py-24 mx-auto">
       <div class="flex-col w-full -mb-32 text-black">
         <div class="w-full mx-auto flex-wrap inline-block mt-32 bg-map">
-          <h1 class="sm:text-2xl text-xl title-font -mt-24 mb-4">Você sabe o que é o PVE?</h1>
-          <p class="lg:w-2/4 ml-8 leading-relaxed text-sm">
+          <h1 class="sm:text-2xl text-2xl title-font md:text-3xl -mt-24 mb-4">Você sabe o que é o PVE?</h1>
+          <p class="lg:w-2/4 ml-8 leading-relaxed text-xl lg:text-sm">
             <span class="text-gray-600">O PVE é uma iniciativa do Instituto Votorantim e das empresas investidas e parceiras da Votorantim, comprometida com a melhoria da educação pública a partir da qualificação de práticas de gestão e de mobilização social de comunidades.</span>
           </p>
-          <p class="lg:w-2/4 ml-8 mt-4 leading-relaxed text-sm">  
+          <p class="lg:w-2/4 ml-8 mt-1 lg:mt-4 leading-relaxed text-xl lg:text-sm">  
             <a class="font-color-orange" href="/pve">Saiba mais</a>
             <%= image_tag 'arrow-right', {class: "inline-block ml-2", alt:"hero"} %>
           </p>
-          <figure id="mapa" class="-mt-10">
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 500">
+          <div id="mapa" class="-mt-12 lg:mt-0">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 600">
               <a>
-                <circle id="MT" cx="692" cy="198" r="20" opacity="0" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
+                <circle id="MT" cx="692" cy="198" r="20" opacity="1" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
                 <circle id="PA" cx="735" cy="125" r="20" opacity="0" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
                 <circle id="TO" cx="825" cy="166" r="20" opacity="0" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
                 <circle id="PE" cx="983" cy="166" r="20" opacity="0" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
@@ -129,12 +129,12 @@
                 <circle id="MS" cx="750" cy="303" r="20" opacity="0" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
               </a>
             </svg>
-        </figure>
+        </div>
         </div>
         <div class="w-full">
-          <h1 class="ml-40 -mt-64 sm:text-2xl text-xl title-font">Onde estamos?</h1>
-          <p class="text-left mt-4 ml-40 w-1/6 text-gray-600 inline-block">Passe o mouse sobre o mapa ao lado para ver em que cidades atuamos.</p>
-          <p class="-mt-64 font-color-orange inline-block">Passe o mouse </p>
+          <h1 class="ml-24 lg:ml-40 -mt-64 lg:text-xl text-3xl title-font">Onde estamos?</h1>
+          <p class="text-left leading-relaxed text-lg w-1/5 lg:text-sm mt-4 ml-24 lg:ml-40 lg:w-1/6 text-gray-600 inline-block">Passe o mouse sobre o mapa ao lado para ver em que cidades atuamos.</p>
+          <p class="-mt-64 text-base lg:text-sm font-color-orange inline-block">Passe o mouse </p>
           <%= image_tag 'arrow-right', {class: "inline-block ml-2", alt:"hero"} %>
         </div>
         <div id="city-info">
@@ -150,27 +150,27 @@
   <div class="xl:container xl:mx-auto xl:px-20 mt-8">
     <div class="container px-5 py-24 mx-auto">
       <div class="flex flex-col text-center w-full mb-6 text-black">
-        <h1 class="sm:text-2xl text-xl font-bold title-font mb-4">PVE 2019 em números</h1>
-        <p class="lg:w-2/3 mx-auto leading-relaxed text-xs">
+        <h1 class="lg:text-xl text-3xl font-bold title-font mb-4">PVE 2019 em números</h1>
+        <p class="lg:w-2/3 mx-auto leading-relaxed text-2xl lg:text-xs">
           <span class="text-gray-600">O PVE acredita que todo mundo tem um papel na educação das crianças, e, por isso, fortalece parcerias para otimizar a intenção e o foco das ações para melhoria da educação municipal.</span>
         </p>
       </div>
       <div class="flex flex-wrap w-4/4 lg:w-4/4 items-center mx-auto">
         <div class="lg:p-4 md:w-1/4 w-full numeros-bg text-center">
             <h2 id="municipios-atendidos" class="text-3xl title-font font-color-purple mb-4 mt-16"><%= @municipios  %></h2>
-            <scan class="leading-relaxed text-base font-bold">Municípios atendidos</scan>
+            <scan class="leading-relaxed text-lg lg:text-base font-bold">Municípios atendidos</scan>
         </div>
         <div class="lg:p-4 md:w-1/4 w-full numeros-bg text-center align-text-bottom">
             <h2 id="escolas-atendidas" class="text-3xl title-font font-color-purple mb-4 mt-16"><%= @escolas  %></h2>
-            <scan class="leading-relaxed text-center text-base font-bold">Escolas participantes</scan>
+            <scan class="leading-relaxed text-center text-lg lg:text-base font-bold">Escolas participantes</scan>
         </div>
-        <div class="lg:p-4 md:w-1/4 w-full numeros-bg text-center">
-            <h2 id="pessoas-mobilizadas" class="text-3xl title-font font-color-purple mb-4 mt-16"><%= @pessoas  %></h2>
-            <scan class="leading-relaxed text-base font-bold">Pessoas mobilizadas</scan>
+        <div class="p-5 lg:p-4 md:w-1/4 w-full numeros-bg text-center">
+            <h2 id="pessoas-mobilizadas" class="text-3xl title-font font-color-purple mb-4 mt-10 lg:mt-16"><%= @pessoas  %></h2>
+            <scan class="leading-relaxed text-lg lg:text-base font-bold">Pessoas mobilizadas</scan>
         </div>
-        <div class="lg:p-4 md:w-1/4 w-full numeros-bg text-center">
-            <h2 id="alunos-impactados" class="text-3xl title-font font-color-purple mb-4 mt-16"><%= @alunos  %></h2>
-            <scan class="leading-relaxed text-center text-base font-bold">Alunos impactados</scan>
+        <div class="p-5 lg:p-4 md:w-1/4 w-full numeros-bg text-center">
+            <h2 id="alunos-impactados" class="text-3xl title-font font-color-purple mb-4 mt-10 lg:mt-16"><%= @alunos  %></h2>
+            <scan class="leading-relaxed text-center text-lg lg:text-base font-bold">Alunos impactados</scan>
         </div>
       </div>
     </div>
@@ -181,8 +181,8 @@
   <div class="xl:container xl:mx-auto xl:px-20" id='animated-matrix'>
     <div class="container px-5 py-24 mx-auto">
       <div class="flex flex-col text-center w-full mb-6 text-black">
-        <h1 class="sm:text-2xl text-xl font-bold title-font mb-4">Matrizes de competências</h1>
-        <p class="lg:w-2/3 mx-auto leading-relaxed text-xs">
+        <h1 class="lg:text-xl text-3xl font-bold title-font mb-4">Matrizes de competências</h1>
+        <p class="lg:w-2/3 mx-auto leading-relaxed text-xl lg:text-xs">
           <strong>Clique nas competências</strong>
           <span class="text-gray-600">para ver como o PVE pretende melhorar a educação</span>
         </p>
