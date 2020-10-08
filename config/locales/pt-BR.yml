@@ -18,5 +18,6 @@ pt-BR:
       short: "%d/%m, %H:%M h"
       long: "%A, %d de %B de %Y, %H:%M h"
       very_long: "%d de %B de %Y, %H:%M"
+      just_day: "%d de %B"
     am: ''
     pm: ''
