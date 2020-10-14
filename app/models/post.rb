@@ -19,6 +19,7 @@ class Post < ApplicationRecord
   has_many :text_contents, dependent: :destroy
 
   validates :post_title, :post_content, :wp_id, presence: true
+  validates :wp_id, uniqueness: true
 
   after_save :parse_content
 
