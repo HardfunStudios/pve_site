@@ -82,4 +82,18 @@ class PagesController < ApplicationController
       format.js
     end
   end
+  
+  def news
+    @posts = Post.joins(:categories).where('categories.name LIKE ?', '%Notícias%').order(post_date_gmt: :desc).limit(5)
+    @webinars = Post.joins(:categories).where('categories.name LIKE ?', '%Webinar%').order(post_date_gmt: :desc).limit(3)
+    @telas = Post.joins(:categories).where('categories.name LIKE ?', '%Telas%').order(post_date_gmt: :desc).limit(3)
+    @oportunidades = Post.joins(:categories).where('categories.name LIKE ?', '%Oportunidades%').order(post_date_gmt: :desc).limit(3)
+    @interessantes = Post.joins(:categories).where('categories.name LIKE ?', '%Dicas%').order(post_date_gmt: :desc).limit(2)
+    @interessantes += Post.joins(:categories).where('categories.name LIKE ?', '%Conteúdos%').order(post_date_gmt: :desc).limit(1)
+    @cat = 'gestores'
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
 end
