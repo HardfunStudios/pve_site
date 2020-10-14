@@ -268,29 +268,40 @@ ul {
   }
 }
 
-
 .section-top-gestores {
-  background: image-url('bg-gestores.svg') no-repeat;
-  background-position: center;
+  background: image-url('Prancheta-gestores.svg') no-repeat, image-url('Prancheta-circle-details.svg') no-repeat;
+  background-position: left, 80% top;
   background-color: #F9FAFF;
 }
 
 .section-top-mobilizadores {
-  background: image-url('bg-mobilizadores.svg') no-repeat;
-  background-position: center;
+  background: image-url('Prancheta-mobilizadores.svg') no-repeat, image-url('Prancheta-circle-details.svg') no-repeat;
+  background-position: left, 80% top;
   background-color: #F9FAFF;
 }
 
 .section-top-familias {
-  background: image-url('bg-familias.svg') no-repeat;
-  background-position: center;
+  background: image-url('Prancheta-familias.svg') no-repeat, image-url('Prancheta-circle-details.svg') no-repeat;
+  background-position: left, 80% top;
   background-color: #F9FAFF;
 }
 
 .section-top-professores {
-  background: image-url('bg-professores.svg') no-repeat;
-  background-position: center;
+  background: image-url('Prancheta-professores.svg') no-repeat, image-url('Prancheta-circle-details.svg') no-repeat;
+  background-position: left, 80% top;
   background-color: #F9FAFF;
+}
+
+.section-top-colaboradores-size {
+  background-size: contain, 20em;
+}
+
+
+@media(max-width: 1024px) {
+  .section-top-colaboradores-size {
+    background-size: 17em;
+    background-position: left, right top;
+  }
 }
 
 #top-buttons-gestores {
@@ -371,9 +382,8 @@ ul {
 .bg-map {
   background-image: image-url('mapa-locations.png');
   background-repeat: no-repeat;
-  background-position: right;
+  background-position: right bottom;
   background-size: 50%;
-  background-position-y: 60px;
   width: 100%;
   height: 100%;
 }

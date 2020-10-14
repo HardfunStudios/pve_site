@@ -1,15 +1,15 @@
-<section class='section-top-familias bg-center bg-very-light'>
+<section class='section-top-familias bg-very-light section-top-colaboradores-size'>
   <div class="xl:container xl:mx-auto xl:px-20">
     <div class="container mx-auto pt-24 pb-8 xl:pt-32 xl:pb-10">
       <div class='w-full flex flex-wrap'>
         <div class="w-2/3 lg:w-1/2 pr-16 lg:pr-20 xl:pr-32 flex flex-wrap content-center mx-auto">
-          <p class="leading-6 text-xl text-black w-full">
+          <p class="leading-6 text-3xl mb-4 lg:mb-0 lg:text-xl text-black w-full">
             <strong>Famílias</strong>
           </p>
-          <p class="leading-snug text-sm text-black font-bold w-full mb-4">
+          <p class="leading-snug text-xl lg:text-sm text-black font-bold w-full mb-4">
             Esperamos que tenha uma boa experiência
           </p>
-          <p class="leading-snug text-sm font-color-gray w-full">
+          <p class="leading-snug text-xl lg:text-sm font-color-gray w-full">
             Aqui você encontrará conteúdos para apoiar as famílias a participarem e se envolverem no processo de aprendizagem das crianças. Escolha o ícone abaixo:
             <strong>Telas Abertas, Dicas para Família ou Notícias</strong> e fique atualizado.
           </p>
@@ -20,21 +20,21 @@
       <div class="flex flex-wrap justify-center text-center w-3/4 lg:w-2/3 items-center mx-auto px-8 xl:px-12">
         <div class="p-2 lg:p-4 md:w-1/3 w-full">
           <button @click='toggleSelected("5")' :class='{ active: activeBtn === "5" }' 
-              class="w-full text-black font-bold py-2 px-4 rounded-full border-indigo-500 border bg-white flex items-center">
+              class="w-full text-lg lg:text-sm text-black font-bold py-2 px-4 rounded-full border-indigo-500 border bg-white flex items-center">
             <span class='ml-1'><%= image_tag 'material-computer', class: 'w-9 h-9 flex-shrink-0' %></span>
             <span class='w-full'>Telas Abertas</span>
           </button>
         </div>
         <div class="p-2 lg:p-4 md:w-1/3 w-full">
           <button @click='toggleSelected("6")' :class='{ active: activeBtn === "6" }' 
-              class="w-full text-black font-bold py-2 px-4 rounded-full border-indigo-500 border bg-white flex items-center">
+              class="w-full text-lg lg:text-sm text-black font-bold py-2 px-4 rounded-full border-indigo-500 border bg-white flex items-center">
             <span class='ml-1'><%= image_tag 'simple-hipchat', class: 'w-9 h-9 flex-shrink-0' %></span>
             <span class='w-full leading-4'>Dicas para Família</span>
           </button>
         </div>
         <div class="p-2 lg:p-4 md:w-1/3 w-full">
           <button @click='toggleSelected("7")' :class='{ active: activeBtn === "7" }' 
-              class="w-full text-black font-bold py-2 px-4 rounded-full border-indigo-500 border bg-white flex items-center">
+              class="w-full text-lg lg:text-sm text-black font-bold py-2 px-4 rounded-full border-indigo-500 border bg-white flex items-center">
             <span class='ml-1'><%= image_tag 'awesome-newspaper', class: 'w-9 h-9 flex-shrink-0' %></span>
             <span class='w-full leading-4'>Eleições</span>
           </button>

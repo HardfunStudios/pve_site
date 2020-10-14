@@ -181,11 +181,11 @@ document.addEventListener('turbolinks:load', () => {
   });
 
   $('#increase-blog-font-size-btn').on('click', function() {
-    var originalFontSizeH2 = $('#post-content h2').css('font-size');
-    var originalFontSizeH3 = $('#post-content h3').css('font-size');
-    var originalFontSizeH4 = $('#post-content h4').css('font-size');
-    var originalFontSizeH5 = $('#post-content h5').css('font-size');
-    var originalFontSizeP = $('#post-content p').css('font-size');
+    var originalFontSizeH2 = $('.wordpress-theme h2').css('font-size');
+    var originalFontSizeH3 = $('.wordpress-theme h3').css('font-size');
+    var originalFontSizeH4 = $('.wordpress-theme h4').css('font-size');
+    var originalFontSizeH5 = $('.wordpress-theme h5').css('font-size');
+    var originalFontSizeP = $('.wordpress-theme p').css('font-size');
     var originalFontNumberH2 = parseFloat(originalFontSizeH2, 10);
     var originalFontNumberH3 = parseFloat(originalFontSizeH3, 10);
     var originalFontNumberH4 = parseFloat(originalFontSizeH4, 10);
@@ -198,20 +198,20 @@ document.addEventListener('turbolinks:load', () => {
     var newFontSizeP = originalFontNumberP * 1.2;
 
     if (newFontSizeP <= 72)
-      $('#post-content h2').css('font-size', newFontSizeH2);
-      $('#post-content h3').css('font-size', newFontSizeH3);
-      $('#post-content h4').css('font-size', newFontSizeH4);
-      $('#post-content h5').css('font-size', newFontSizeH5);
-      $('#post-content p').css('font-size', newFontSizeP);
-      $('#post-content h2,h3,h4,h5,p').css('line-height', 1.4);
+      $('.wordpress-theme h2').css('font-size', newFontSizeH2);
+      $('.wordpress-theme h3').css('font-size', newFontSizeH3);
+      $('.wordpress-theme h4').css('font-size', newFontSizeH4);
+      $('.wordpress-theme h5').css('font-size', newFontSizeH5);
+      $('.wordpress-theme p').css('font-size', newFontSizeP);
+      $('.wordpress-theme h2,h3,h4,h5,p').css('line-height', 1.4);
   });
 
   $('#decrease-blog-font-size-btn').on('click', function() {
-    var originalFontSizeH2 = $('#post-content h2').css('font-size');
-    var originalFontSizeH3 = $('#post-content h3').css('font-size');
-    var originalFontSizeH4 = $('#post-content h4').css('font-size');
-    var originalFontSizeH5 = $('#post-content h5').css('font-size');
-    var originalFontSizeP = $('#post-content p').css('font-size');
+    var originalFontSizeH2 = $('.wordpress-theme h2').css('font-size');
+    var originalFontSizeH3 = $('.wordpress-theme h3').css('font-size');
+    var originalFontSizeH4 = $('.wordpress-theme h4').css('font-size');
+    var originalFontSizeH5 = $('.wordpress-theme h5').css('font-size');
+    var originalFontSizeP = $('.wordpress-theme p').css('font-size');
     var originalFontNumberH2 = parseFloat(originalFontSizeH2, 10);
     var originalFontNumberH3 = parseFloat(originalFontSizeH3, 10);
     var originalFontNumberH4 = parseFloat(originalFontSizeH4, 10);
@@ -224,12 +224,12 @@ document.addEventListener('turbolinks:load', () => {
     var newFontSizeP = originalFontNumberP / 1.2;
 
     if (newFontSizeP <= 72)
-      $('#post-content h2').css('font-size', newFontSizeH2);
-      $('#post-content h3').css('font-size', newFontSizeH3);
-      $('#post-content h4').css('font-size', newFontSizeH4);
-      $('#post-content h5').css('font-size', newFontSizeH5);
-      $('#post-content p').css('font-size', newFontSizeP);
-      $('#post-content h2,h3,h4,h5,p').css('line-height', 1.4);
+      $('.wordpress-theme h2').css('font-size', newFontSizeH2);
+      $('.wordpress-theme h3').css('font-size', newFontSizeH3);
+      $('.wordpress-theme h4').css('font-size', newFontSizeH4);
+      $('.wordpress-theme h5').css('font-size', newFontSizeH5);
+      $('.wordpress-theme p').css('font-size', newFontSizeP);
+      $('.wordpress-theme h2,h3,h4,h5,p').css('line-height', 1.4);
   });
 
   $('#copy-link').on('click', function() {

@@ -37,10 +37,10 @@
               <%= image_tag 'hero-gestores', class: 'h-24' %>
             </div>
             <div class="flex-grow text-center">
-              <p class="leading-relaxed text-sm"><strong>Gestores</strong></p>
+              <p class="leading-relaxed text-xl lg:text-sm"><strong>Gestores</strong></p>
             </div>
             <div class="flex-grow text-center">
-              <p class="leading-snug text-xs"><strong>Entre aqui</strong>
+              <p class="leading-snug text-base lg:text-xs"><strong>Entre aqui</strong>
                   para ver conteúdos para Gestores Escolares e Educacionais
               </p>
             </div>
@@ -52,10 +52,10 @@
               <%= image_tag 'hero-familias', class: 'h-24' %>
             </div>
             <div class="flex-grow text-center">
-              <p class="leading-relaxed text-sm"><strong>Famílias</strong></p>
+              <p class="leading-relaxed text-xl lg:text-sm"><strong>Famílias</strong></p>
             </div>
             <div class="flex-grow text-center">
-              <p class="leading-snug text-xs"><strong>Entre aqui</strong>
+              <p class="leading-snug text-base lg:text-xs"><strong>Entre aqui</strong>
                   para ver conteúdos para Mobilizadores
               </p>
             </div>
@@ -67,10 +67,10 @@
               <%= image_tag 'hero-professores', class: 'h-24' %>
             </div>
             <div class="flex-grow text-center">
-              <p class="leading-relaxed text-sm"><strong>Professores</strong></p>
+              <p class="leading-relaxed text-xl lg:text-sm"><strong>Professores</strong></p>
             </div>
             <div class="flex-grow text-center">
-              <p class="leading-snug text-xs"><strong>Entre aqui</strong>
+              <p class="leading-snug text-base lg:text-xs"><strong>Entre aqui</strong>
                   para ver conteúdos para Professores
               </p>
             </div>
@@ -82,10 +82,10 @@
               <%= image_tag 'hero-mobilizadores', class: 'h-24' %>
             </div>
             <div class="flex-grow text-center">
-              <p class="leading-relaxed text-sm"><strong>Mobilizadores</strong></p>
+              <p class="leading-relaxed text-xl lg:text-sm"><strong>Mobilizadores</strong></p>
             </div>
             <div class="flex-grow text-center">
-              <p class="leading-snug text-xs"><strong>Entre aqui</strong>
+              <p class="leading-snug text-base lg:text-xs"><strong>Entre aqui</strong>
                   para ver conteúdos para Mobilizadores
               </p>
             </div>
@@ -99,42 +99,42 @@
 <section id='section-mapa-interativo' class='sections'>
   <div class="xl:container xl:mx-auto xl:px-20">
     <div class="container px-5 py-24 mx-auto">
-      <div class="flex-col w-full -mb-32 text-black">
+      <div class=" w-full -mb-32 text-black">
         <div class="w-full mx-auto flex-wrap inline-block mt-32 bg-map">
-          <h1 class="sm:text-2xl text-2xl title-font md:text-3xl -mt-24 mb-4">Você sabe o que é o PVE?</h1>
-          <p class="lg:w-2/4 ml-8 leading-relaxed text-xl lg:text-sm">
+          <h1 class="text-3xl title-font lg:text-xl -mt-24 mb-4">Você sabe o que é o PVE?</h1>
+          <p class="lg:w-2/4 ml-8 leading-relaxed text-2xl lg:text-sm">
             <span class="text-gray-600">O PVE é uma iniciativa do Instituto Votorantim e das empresas investidas e parceiras da Votorantim, comprometida com a melhoria da educação pública a partir da qualificação de práticas de gestão e de mobilização social de comunidades.</span>
           </p>
-          <p class="lg:w-2/4 ml-8 mt-1 lg:mt-4 leading-relaxed text-xl lg:text-sm">  
+          <p class="lg:w-2/4 ml-8 mt-1 mb-8 lg:mb-0 lg:mt-4 leading-relaxed text-xl lg:text-sm">  
             <a class="font-color-orange" href="/pve">Saiba mais</a>
             <%= image_tag 'arrow-right', {class: "inline-block ml-2", alt:"hero"} %>
           </p>
           <div id="mapa" class="-mt-12 lg:mt-0">
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 600">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 500">
               <a>
                 <circle id="MT" cx="692" cy="198" r="20" opacity="1" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
-                <circle id="PA" cx="735" cy="125" r="20" opacity="0" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
-                <circle id="TO" cx="825" cy="166" r="20" opacity="0" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
-                <circle id="PE" cx="983" cy="166" r="20" opacity="0" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
-                <circle id="PI" cx="890" cy="147" r="20" opacity="0" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
-                <circle id="BA" cx="900" cy="216" r="20" opacity="0" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
-                <circle id="SE" cx="963" cy="200" r="20" opacity="0" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
-                <circle id="GO" cx="806" cy="239" r="20" opacity="0" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
-                <circle id="MG" cx="878" cy="267" r="20" opacity="0" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
-                <circle id="RJ" cx="900" cy="332" r="20" opacity="0" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
-                <circle id="SP" cx="840" cy="313" r="20" opacity="0" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
-                <circle id="RS" cx="786" cy="433" r="20" opacity="0" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
-                <circle id="SC" cx="813" cy="375" r="20" opacity="0" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
-                <circle id="PR" cx="795" cy="332" r="20" opacity="0" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
-                <circle id="MS" cx="750" cy="303" r="20" opacity="0" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
+                <circle id="PA" cx="735" cy="125" r="20" opacity="1" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
+                <circle id="TO" cx="825" cy="166" r="20" opacity="1" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
+                <circle id="PE" cx="983" cy="166" r="20" opacity="1" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
+                <circle id="PI" cx="890" cy="147" r="20" opacity="1" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
+                <circle id="BA" cx="900" cy="216" r="20" opacity="1" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
+                <circle id="SE" cx="963" cy="200" r="20" opacity="1" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
+                <circle id="GO" cx="806" cy="239" r="20" opacity="1" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
+                <circle id="MG" cx="878" cy="267" r="20" opacity="1" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
+                <circle id="RJ" cx="900" cy="332" r="20" opacity="1" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
+                <circle id="SP" cx="840" cy="313" r="20" opacity="1" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
+                <circle id="RS" cx="786" cy="433" r="20" opacity="1" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
+                <circle id="SC" cx="813" cy="375" r="20" opacity="1" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
+                <circle id="PR" cx="795" cy="332" r="20" opacity="1" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
+                <circle id="MS" cx="750" cy="303" r="20" opacity="1" onmouseover="mouseOverMethod(this)" onmouseout="mouseOutMethod()"/>
               </a>
             </svg>
         </div>
         </div>
         <div class="w-full">
           <h1 class="ml-24 lg:ml-40 -mt-64 lg:text-xl text-3xl title-font">Onde estamos?</h1>
-          <p class="text-left leading-relaxed text-lg w-1/5 lg:text-sm mt-4 ml-24 lg:ml-40 lg:w-1/6 text-gray-600 inline-block">Passe o mouse sobre o mapa ao lado para ver em que cidades atuamos.</p>
-          <p class="-mt-64 text-base lg:text-sm font-color-orange inline-block">Passe o mouse </p>
+          <p class="text-left leading-relaxed text-xl w-1/4 lg:text-sm mt-4 ml-24 lg:ml-40 lg:w-1/6 text-gray-600 inline-block">Passe o mouse sobre o mapa ao lado para ver em que cidades atuamos.</p>
+          <p class="-ml-12 lg:ml-0 text-base lg:text-sm font-color-orange inline-block">Passe o mouse </p>
           <%= image_tag 'arrow-right', {class: "inline-block ml-2", alt:"hero"} %>
         </div>
         <div id="city-info">

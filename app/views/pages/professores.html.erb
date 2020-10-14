@@ -1,15 +1,15 @@
-<section class='section-top-professores bg-center bg-very-light'>
+<section class='section-top-professores bg-very-light section-top-colaboradores-size'>
   <div class="xl:container xl:mx-auto xl:px-20">
     <div class="container mx-auto pt-24 pb-8 xl:pt-32 xl:pb-10">
       <div class='w-full flex flex-wrap'>
         <div class="w-2/3 lg:w-1/2 pr-16 lg:pr-20 xl:pr-32 flex flex-wrap content-center mx-auto">
-          <p class="leading-6 text-xl text-black w-full">
+          <p class="leading-6 text-3xl mb-4 lg:mb-0 lg:text-xl text-black w-full">
             <strong>Professores</strong>
           </p>
-          <p class="leading-snug text-sm text-black font-bold w-full mb-4">
+          <p class="leading-snug text-xl lg:text-sm text-black font-bold w-full mb-4">
             Esperamos que tenha uma boa experiência
           </p>
-          <p class="leading-snug text-sm font-color-gray w-full">
+          <p class="leading-snug text-xl lg:text-sm font-color-gray w-full">
             Aqui você encontrará conteúdos para apoiar os professores a enfrentarem os desafios impostos pela pandemia e a necessidade de se adaptar. Escolha o ícone abaixo:
             <strong>Oportunidades Formativas ou Telas Abertas</strong> e fique atualizado.
           </p>
@@ -17,12 +17,12 @@
       </div>
     </div>
     <div class='w-full relative bottom--40' id='top-buttons-professores'>
-      <div class="flex flex-wrap justify-center text-center w-3/4 lg:w-2/3 items-center mx-auto px-8 xl:px-12">
+      <div class="flex flex-wrap justify-center text-lg lg:text-sm text-center w-3/4 lg:w-2/3 items-center mx-auto px-8 xl:px-12">
         <div class="p-2 lg:p-4 md:w-1/3 w-full">
           <button @click='toggleSelected("1")' :class='{ active: activeBtn === "1" }' 
               class="w-full text-black font-bold py-2 px-4 rounded-full border-indigo-500 border bg-white flex items-center">
             <span class='ml-1'><%= image_tag 'graduate-v', class: 'w-9 h-9 flex-shrink-0' %></span>
-            <span class='w-full'>Oportunidades Formativas</span>
+            <span class='ml-2 w-full'>Oportunidades Formativas</span>
           </button>
         </div>
         <div class="p-2 lg:p-4 md:w-1/3 w-full">
