@@ -16,7 +16,7 @@
         </span>
       </div>
       <a href='<%= post_path(post) %>/?cat=<%= @cat %>'>
-        <h1 class="sm:text-xl text-base font-medium text-black mb-3 leading-5"><%= post.post_title %></h1>
+        <h1 class="text-xl lg:text-base font-medium text-black mb-3 leading-7 lg:leading-5"><%= post.post_title %></h1>
         <p class="leading-relaxed mb-1">
           <%= truncate(strip_tags(post.text_contents.first&.content), :length => 125) %>
         </p>

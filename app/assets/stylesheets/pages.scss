@@ -386,10 +386,17 @@ ul {
 .bg-map {
   background-image: image-url('mapa-locations.png');
   background-repeat: no-repeat;
-  background-position: right bottom;
+  background-position: right;
   background-size: 50%;
-  width: 100%;
-  height: 100%;
+}
+
+@media(max-width:1024px) {
+  .bg-map {
+    background-image: image-url('mapa-locations.png');
+    background-repeat: no-repeat;
+    background-position: right 7rem;
+    background-size: 50%;
+  }
 }
 
 .footer-bg {

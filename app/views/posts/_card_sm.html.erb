@@ -8,7 +8,7 @@
     </a>
     <div class='p-4 pb-6'>
       <div class="flex flex-wrap mx-auto">
-        <h2 class="tracking-widest text-xs title-font font-medium text-gray-500 mb-1 w-1/2 truncate">
+        <h2 class="tracking-widest text-lg lg:text-xs title-font font-medium text-gray-500 mb-1 w-1/2 truncate">
           <%= post.categories.first&.name %>
         </h2>
         <span class="w-1/2 flex flex-row-reverse">
@@ -16,7 +16,7 @@
         </span>
       </div>
       <a href='<%= post_path(post) %>/?cat=<%= @cat %>'>
-        <h1 class="text-base font-medium text-black mb-3 leading-5">
+        <h1 class="text-xl lg:text-base font-medium text-black mb-3 leading-5">
           <%= truncate(post.post_title, :length => 75) %>
         </h1>
       </a>

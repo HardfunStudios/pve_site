@@ -24,7 +24,7 @@
             <%= image_tag category_image, class: 'w-9 h-9 flex-shrink-0 mr-2' %>
             <%= big_category %>
           </p>
-          <p class="leading-6 text-2xl font-color-purple w-full">
+          <p class="leading-8 text-3xl lg:leading-6 lg:text-2xl font-color-purple w-full">
             <strong><%= @post.post_title %></strong>
           </p>
         </div>
@@ -50,11 +50,11 @@
     </div>
     <div id="blog-content-body" class="margin-post">
       <div id="post-content">
-        <p class="text-black text-xs mb-4 font-bold">Publicado em <%= I18n.l(@post.post_date_gmt, format: :very_long) %></p>
+        <p class="text-black text-lg lg:text-xs mb-4 font-bold">Publicado em <%= I18n.l(@post.post_date_gmt, format: :very_long) %></p>
         <div class="wordpress-theme"><%= @post.post_content.html_safe %></div>
         <hr class="my-4">
-        <p class="text-black text-xs mb-12">Tags: <%= @post.tag_names %></p>
-        <p class="text-black text-xs mb-4">VOCÊ PODE SE INTERESSAR TAMBÉM:</p>
+        <p class="text-black text-lg lg:text-xs mb-12">Tags: <%= @post.tag_names %></p>
+        <p class="text-black text-lg lg:text-xs mb-4">VOCÊ PODE SE INTERESSAR TAMBÉM:</p>
       </div>
       <div class="flex flex-wrap" id='post-cards-section'>
         <% @related.each do |related| %>
