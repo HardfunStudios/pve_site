@@ -30,64 +30,84 @@
     </div>
 
     <div class="w-full relative bottom--110" style="margin-top: -135px;">
-      <div class="flex flex-wrap -m-4 container mx-auto" id="collaborators-buttons">
-        <div class="p-4 md:w-1/4">
-          <a class="flex h-full border-purple-1 lg:p-3 p-2 flex-col bg-white rounded" id='enter-gestores' href="/gestores">
-            <div class="flex flex-col items-center mb-3">
+      <div class="flex flex-wrap -m-4 lg:container mx-auto" id="collaborators-buttons">
+        <div class="p-0 lg:p-4 lg:w-1/4 min-w-full lg:min-w-0">
+          <a class="flex h-full border-purple-1 lg:p-3 p-2 lg:flex-col bg-white lg:rounded" id='enter-gestores' href="/gestores">
+            <div class="flex flex-col items-center lg:mb-3 mx-auto">
               <%= image_tag 'hero-gestores', class: 'h-24' %>
             </div>
-            <div class="flex-grow text-center">
-              <p class="leading-relaxed text-xl lg:text-sm"><strong>Gestores</strong></p>
+            <div class="hidden lg:block">
+              <div class="flex-grow text-center">
+                <p class="leading-relaxed text-xl lg:text-sm"><strong>Gestores</strong></p>
+              </div>
+              <div class="flex-grow text-center">
+                <p class="leading-snug text-base lg:text-xs"><strong>Entre aqui</strong>
+                    para ver conteúdos para Gestores Escolares e Educacionais
+                </p>
+              </div>
             </div>
-            <div class="flex-grow text-center">
-              <p class="leading-snug text-base lg:text-xs"><strong>Entre aqui</strong>
-                  para ver conteúdos para Gestores Escolares e Educacionais
-              </p>
+            <div class="flex items-center text-center lg:hidden mx-auto">
+              <p class="leading-relaxed text-xl lg:text-sm"><strong>Eu sou Gestor</strong></p>
             </div>
           </a>
         </div>
-        <div class="p-4 md:w-1/4">
-          <a class="flex h-full border-purple-1 lg:p-3 p-2 flex-col bg-white rounded" id='enter-familia' href="/familias">
-            <div class="flex flex-col items-center mb-3">
+        <div class="p-0 lg:p-4 lg:w-1/4 min-w-full lg:min-w-0">
+          <a class="flex h-full border-purple-1 lg:p-3 p-2 lg:flex-col bg-white lg:rounded" id='enter-familia' href="/familias">
+            <div class="flex flex-col items-center lg:mb-3 mx-auto">
               <%= image_tag 'hero-familias', class: 'h-24' %>
             </div>
-            <div class="flex-grow text-center">
-              <p class="leading-relaxed text-xl lg:text-sm"><strong>Famílias</strong></p>
+            <div class="hidden lg:block">
+              <div class="flex-grow text-center">
+                <p class="leading-relaxed text-xl lg:text-sm"><strong>Famílias</strong></p>
+              </div>
+              <div class="flex-grow text-center">
+                <p class="leading-snug text-base lg:text-xs"><strong>Entre aqui</strong>
+                    para ver conteúdos para Mobilizadores
+                </p>
+              </div>
             </div>
-            <div class="flex-grow text-center">
-              <p class="leading-snug text-base lg:text-xs"><strong>Entre aqui</strong>
-                  para ver conteúdos para Mobilizadores
-              </p>
+            <div class="flex items-center text-center lg:hidden mx-auto">
+              <p class="leading-relaxed text-xl lg:text-sm"><strong>Eu sou Família</strong></p>
             </div>
           </a>
         </div>
-        <div class="p-4 md:w-1/4">
-          <a class="flex h-full border-purple-1 lg:p-3 p-2 flex-col bg-white rounded" id='enter-professores' href="/professores">
-            <div class="flex flex-col items-center mb-3">
+        <div class="p-0 lg:p-4 lg:w-1/4 min-w-full lg:min-w-0">
+          <a class="flex h-full border-purple-1 lg:p-3 p-2 lg:flex-col bg-white lg:rounded" id='enter-professores' href="/professores">
+            <div class="flex flex-col items-center lg:mb-3 mx-auto">
               <%= image_tag 'hero-professores', class: 'h-24' %>
             </div>
-            <div class="flex-grow text-center">
-              <p class="leading-relaxed text-xl lg:text-sm"><strong>Professores</strong></p>
+            <div class="hidden lg:block">
+              <div class="flex-grow text-center">
+                <p class="leading-relaxed text-xl lg:text-sm"><strong>Professores</strong></p>
+              </div>
+              <div class="flex-grow text-center">
+                <p class="leading-snug text-base lg:text-xs"><strong>Entre aqui</strong>
+                    para ver conteúdos para Professores
+                </p>
+              </div>
             </div>
-            <div class="flex-grow text-center">
-              <p class="leading-snug text-base lg:text-xs"><strong>Entre aqui</strong>
-                  para ver conteúdos para Professores
-              </p>
+            <div class="flex items-center text-center lg:hidden mx-auto">
+              <p class="leading-relaxed text-xl lg:text-sm"><strong>Eu sou Professor</strong></p>
             </div>
           </a>
         </div>
-        <div class="p-4 md:w-1/4">
-          <a class="flex h-full border-purple-1 lg:p-3 p-2 flex-col bg-white rounded" id='enter-mobilizadores' href="/mobilizadores">
-            <div class="flex flex-col items-center mb-3">
+        <div class="p-0 lg:p-4 lg:w-1/4 min-w-full lg:min-w-0">
+          <a class="flex h-full border-purple-1 lg:p-3 p-2 lg:flex-col bg-white lg:rounded" id='enter-mobilizadores' href="/mobilizadores">
+            <div class="flex flex-col items-center lg:mb-3 mx-auto">
               <%= image_tag 'hero-mobilizadores', class: 'h-24' %>
             </div>
-            <div class="flex-grow text-center">
-              <p class="leading-relaxed text-xl lg:text-sm"><strong>Mobilizadores</strong></p>
+            <div class="hidden lg:block">
+              <div class="flex-grow text-center">
+                <p class="leading-relaxed text-xl lg:text-sm"><strong>Mobilizadores</strong></p>
+              </div>
+              <div class="flex-grow text-center">
+                <p class="leading-snug text-base lg:text-xs"><strong>Entre aqui</strong>
+                    para ver conteúdos para Mobilizadores
+                </p>
+              </div>
             </div>
-            <div class="flex-grow text-center">
-              <p class="leading-snug text-base lg:text-xs"><strong>Entre aqui</strong>
-                  para ver conteúdos para Mobilizadores
-              </p>
+            <div class="flex items-center text-center lg:hidden mx-auto">
+              <p class="leading-relaxed text-xl lg:text-sm"><strong>Eu sou Mobilizador</strong></p>
             </div>
           </a>
         </div>
