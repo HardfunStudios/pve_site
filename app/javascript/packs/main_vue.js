@@ -164,6 +164,23 @@ document.addEventListener('turbolinks:load', () => {
     });
   }
 
+  var logo = document.getElementById('logo');
+  var nav = document.getElementById('nav');
+  if ($(window).width() < 1024) {
+    var urlCurrent = $(location).attr('href');
+    if (urlCurrent.charAt(urlCurrent.length-1) == "/") {
+      logo.style.visibility = "hidden";
+      nav.style.visibility = "hidden";
+    } else {
+      logo.style.visibility = "visible";
+      nav.style.visibility = "visible";
+    }
+  }
+  else {
+    logo.style.visibility = "visible";
+    nav.style.visibility = "visible";
+  }
+
   $('.load-more').click(function (e) {
     ga('send', 'event', 'posts', 'clicou ver mais');
     e.preventDefault();
