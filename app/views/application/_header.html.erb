@@ -1,16 +1,16 @@
 
-<header class="text-gray-700 body-font lg:w-full">
+<header class="text-gray-700 body-font flex lg:w-full">
   
   <div class="container header-size mx-auto flex flex-wrap p-2 pb-0 flex-col md:flex-row items-center">
   
-    <a class="<%= @logo_header %> -mt-10" href="/"></a>
+    <a class="<%= @logo_header %> hidden -mt-10 flex" href="/"></a>
      
-    <nav class="ml-4 -mt-16 lg:ml-20 xl:ml-32 md:mr-auto flex flex-wrap items-center text-base justify-center pb-4">
-      <a class="text-2xl -ml-32 mt-8 lg:mt-1 lg:text-xs lg:mr-12 lg:-ml-2 menu-items absolute" href="/pve">
+    <nav class="hidden ml-8 -mt-16 lg:ml-20 xl:ml-32 md:mr-auto lg:flex flex-wrap items-center text-base justify-center pb-4">
+      <a class="text-2xl -ml-0 mt-8 lg:mt-1 lg:text-xs lg:mr-12 lg:-ml-2 menu-items absolute" href="/pve">
         <strong class="<%= @text_color  %>">O PVE</strong>
       </a>
 
-      <div class="dropdown mt-4 lg:mt-1 inline-block relative menu-items ml-48 mr-12 absolute">
+      <div class="dropdown mt-6 lg:mt-1 inline-block relative menu-items ml-48 mr-12 absolute">
         <span class="leading-snug text-2xl -ml-16 lg:text-xs lg:ml-0">
           <strong class="<%= @text_color  %> ">Ações</strong>
         </span>
@@ -22,11 +22,11 @@
         </ul>
       </div>
 
-      <div class="text-right">
-        <span class="leading-snug text-2xl -ml-4 lg:text-xs lg:ml-2 lg:mr-10 lg:-mt-1 menu-items absolute">
+      <div class="text-right -mt-1 lg:mt-0">
+        <span class="leading-snug text-2xl -mt-6 -ml-4 lg:text-xs lg:ml-2 lg:mr-10 lg:-mt-1 menu-items absolute">
           <strong class="font-color-white" style="text-shadow: 0 0 3px #584898;">Junte-se a nós</strong>
         </span>
-        <a class="leading-snug text-2xl margin-left-header lg:text-xs lg:ml-32 lg:mr-12 lg:-mt-1 menu-items absolute" href="/news">
+        <a class="leading-snug text-2xl margin-left-header -mt-6 lg:text-xs lg:ml-32 lg:mr-12 lg:-mt-1 menu-items absolute" href="/news">
           <strong class="font-color-white" style="text-shadow: 0 0 3px #584898;">Últimas notícias</strong>
         </a>
       </div>

@@ -1,30 +1,42 @@
-<section id="home-hero-section" class="bg-left-bottom mb-16 sections">
+<section id="home-hero-section" class="bg-left-bottom mb-16 sections -mt-40 lg:mt-0">
 
   <div class="xl:container xl:mx-auto xl:px-20">
     <div class="container mx-auto flex px-5 pb-2 md:flex-row flex-col items-center mb-4">
-      <div class="lg:flex-grow md:w-1/2 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-        <h1 class="title-font text-xl lg:text-sm mb-2 font-color-purple">
+      <div class="lg:flex-grow w-full lg:w-1/2 flex flex-col md:items-start lg:text-left mb-16 lg:mb-0 items-center text-center">
+        
+      <div class="relative w-full ml-20 mt-10 lg:hidden">
+        <button class="absolute top-0 right-0 flex items-center px-3 py-2 text-white">
+          <svg class="fill-current h-12 w-16" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+        </button>
+      </div>
+
+        <a class="<%= @logo_header %> -mt-0 -ml-56 block lg:hidden" href="/"></a>
+
+        <h1 class="title-font mt-10 lg:mt-0 ml-48 lg:ml-0 text-3xl mb-8 text-center lg:text-sm lg:mb-2 font-color-mobdesk">
           <strong>Seja bem vindo(a) ao PVE</strong>
         </h1>
-        <p class="mb-4 leading-snug lg:text-3xl text-3xl mb-4 font-color-purple">
+        <p class="mb-4 leading-snug ml-20 text-5xl lg:ml-0 lg:text-3xl mb-20 lg:mb-4">
           <strong class="font-color-purple-light">O programa que valoriza<br/>a educação com ajuda de</strong>
-          <br/><strong class="font-color-purple">
+          <br/><strong class="font-color-mobdesk">
             <span id="collaborators-titles-animated"></span>
             <span id="cursor-animation-collaborators"></span>
           </strong>
         </p>
         <%= search_form_for @q, url: search_posts_path, html: { method: :post, class:'flex w-full' } do |f| %>
           <%= f.search_field :post_content_cont, {id: 'home-search-input',
-            class: 'w-full rounded mr-2 border-purple-1 pl-2',
+            class: 'w-full rounded mr-2 border-purple-1 pl-2 h-20 lg:h-10',
             placeholder: 'Digite o que você procura. Ex: Webinar, Telas Abertas, Notícias'} %>
-          <%= f.button type: 'submit', class: 'bg-color-orange border-grey border-l shadow hover:bg-grey-lightest rounded' do %>
-            <span class='w-auto flex justify-end items-center p-2 hover:text-grey-darkest font-color-white font-bold'>
+          <%= f.button type: 'submit', class: 'bg-color-orange border-grey border-l shadow w-24 lg:w-10 hover:bg-grey-lightest rounded' do %>
+            <span class='w-auto hidden lg:flex justify-end items-center mr-8 lg:mr-0 lg:p-2 hover:text-grey-darkest font-color-white font-bold'>
               <%= material_icon.search.css_class('font-bold') %>
+            </span>
+            <span class='w-auto flex lg:hidden justify-end items-center mr-5 lg:mr-0 lg:p-2 hover:text-grey-darkest font-color-white font-bold'>
+              <%= material_icon.search.css_class('font-bold md-48') %>
             </span>
           <% end %>
         <% end %>
       </div>
-      <div class="lg:max-w-lg lg:w-7/12 md:w-1/2 w-5/6 pl-16">
+      <div class="hidden lg:block lg:max-w-lg lg:w-7/12 md:w-1/2 w-5/6 pl-16">
         <%= image_tag 'home_hero', {class: "object-cover object-center rounded", alt:"hero"} %>
       </div>
     </div>
@@ -33,8 +45,11 @@
       <div class="flex flex-wrap -m-4 lg:container mx-auto" id="collaborators-buttons">
         <div class="p-0 lg:p-4 lg:w-1/4 min-w-full lg:min-w-0">
           <a class="flex h-full border-purple-1 lg:p-3 p-2 lg:flex-col bg-white lg:rounded" id='enter-gestores' href="/gestores">
-            <div class="flex flex-col items-center lg:mb-3 mx-auto">
+            <div class="hidden lg:flex flex-col items-center lg:mb-3 mx-auto">
               <%= image_tag 'hero-gestores', class: 'h-24' %>
+            </div>
+            <div class="flex lg:hidden flex-col items-center mb-12 mt-16 ml-20 lg:ml-0 lg:mt-0 lg:mb-3 mx-auto">
+              <%= image_tag 'gestores-mobile', class: 'h-24' %>
             </div>
             <div class="hidden lg:block">
               <div class="flex-grow text-center">
@@ -46,15 +61,19 @@
                 </p>
               </div>
             </div>
-            <div class="flex items-center text-center lg:hidden mx-auto">
-              <p class="leading-relaxed text-xl lg:text-sm"><strong>Eu sou Gestor</strong></p>
+            <div class="flex items-center w-2/3 text-center lg:hidden mx-auto">
+              <p class="leading-relaxed font-color-purple text-4xl lg:text-sm"><strong>Eu sou Gestor Educational</strong></p>
+              <%= image_tag 'arrow-right', {class: "inline-block ml-32 h-8", alt:"hero"} %>
             </div>
           </a>
         </div>
         <div class="p-0 lg:p-4 lg:w-1/4 min-w-full lg:min-w-0">
           <a class="flex h-full border-purple-1 lg:p-3 p-2 lg:flex-col bg-white lg:rounded" id='enter-familia' href="/familias">
-            <div class="flex flex-col items-center lg:mb-3 mx-auto">
+            <div class="hidden lg:flex flex-col items-center lg:mb-3 mx-auto">
               <%= image_tag 'hero-familias', class: 'h-24' %>
+            </div>
+            <div class="flex lg:hidden flex-col items-center mb-16 mt-16 ml-20 lg:ml-0 lg:mt-0 lg:mb-3 mx-auto">
+              <%= image_tag 'pessoa-mobile', class: 'h-20' %>
             </div>
             <div class="hidden lg:block">
               <div class="flex-grow text-center">
@@ -66,15 +85,19 @@
                 </p>
               </div>
             </div>
-            <div class="flex items-center text-center lg:hidden mx-auto">
-              <p class="leading-relaxed text-xl lg:text-sm"><strong>Eu sou Família</strong></p>
+            <div class="flex items-center w-2/3 text-center lg:hidden mx-auto">
+              <p class="leading-relaxed font-color-purple text-4xl lg:text-sm"><strong>Eu sou Gestor Família</strong></p>
+              <%= image_tag 'arrow-right', {class: "inline-block ml-48 h-8", alt:"hero"} %>
             </div>
           </a>
         </div>
         <div class="p-0 lg:p-4 lg:w-1/4 min-w-full lg:min-w-0">
           <a class="flex h-full border-purple-1 lg:p-3 p-2 lg:flex-col bg-white lg:rounded" id='enter-professores' href="/professores">
-            <div class="flex flex-col items-center lg:mb-3 mx-auto">
+            <div class="hidden lg:flex flex-col items-center lg:mb-3 mx-auto">
               <%= image_tag 'hero-professores', class: 'h-24' %>
+            </div>
+            <div class="flex lg:hidden flex-col items-center mb-12 mt-16 ml-20 lg:ml-0 lg:mt-0 lg:mb-3 mx-auto">
+              <%= image_tag 'professor-mobile', class: 'h-24' %>
             </div>
             <div class="hidden lg:block">
               <div class="flex-grow text-center">
@@ -86,15 +109,19 @@
                 </p>
               </div>
             </div>
-            <div class="flex items-center text-center lg:hidden mx-auto">
-              <p class="leading-relaxed text-xl lg:text-sm"><strong>Eu sou Professor</strong></p>
+            <div class="flex items-center w-2/3 lg:hidden mx-auto">
+              <p class="leading-relaxed font-color-purple text-4xl lg:text-sm"><strong>Eu sou Professor</strong></p>
+              <%= image_tag 'arrow-right', {class: "inline-block ml-64 h-8", alt:"hero"} %>
             </div>
           </a>
         </div>
         <div class="p-0 lg:p-4 lg:w-1/4 min-w-full lg:min-w-0">
           <a class="flex h-full border-purple-1 lg:p-3 p-2 lg:flex-col bg-white lg:rounded" id='enter-mobilizadores' href="/mobilizadores">
-            <div class="flex flex-col items-center lg:mb-3 mx-auto">
+            <div class="hidden lg:flex flex-col items-center lg:mb-3 mx-auto">
               <%= image_tag 'hero-mobilizadores', class: 'h-24' %>
+            </div>
+            <div class="flex lg:hidden flex-col items-center mb-12 mt-16 ml-16 lg:ml-0 lg:mt-0 lg:mb-3 mx-auto">
+              <%= image_tag 'lampada-mobile', class: 'h-32' %>
             </div>
             <div class="hidden lg:block">
               <div class="flex-grow text-center">
@@ -106,8 +133,9 @@
                 </p>
               </div>
             </div>
-            <div class="flex items-center text-center lg:hidden mx-auto">
-              <p class="leading-relaxed text-xl lg:text-sm"><strong>Eu sou Mobilizador</strong></p>
+            <div class="flex items-center w-2/3 text-center lg:hidden mx-auto">
+              <p class="leading-relaxed font-color-purple text-4xl lg:text-sm"><strong>Eu sou Mobilizador</strong></p>
+              <%= image_tag 'arrow-right', {class: "inline-block ml-56 h-8", alt:"hero"} %>
             </div>
           </a>
         </div>
